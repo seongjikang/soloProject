@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
 public class LoadingActivity extends Activity {
 
@@ -17,6 +18,7 @@ public class LoadingActivity extends Activity {
 
     private void startLoading() {
         Handler handler = new Handler();
+        loadData();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -25,5 +27,9 @@ public class LoadingActivity extends Activity {
                 finish();
             }
         }, 2000);
+    }
+
+    private void loadData() {
+        Log.i("loaddata","loaddata");
     }
 }
