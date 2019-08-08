@@ -2,6 +2,7 @@ package solo.shinhan.com.solo;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -13,6 +14,7 @@ public class LoadingActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading);
 
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         startLoading();
     }
 
@@ -22,8 +24,9 @@ public class LoadingActivity extends Activity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                Intent intent = new Intent(getBaseContext(), LoginActivity.class);
                 startActivity(intent);
+                overridePendingTransition(0,0);
                 finish();
             }
         }, 2000);
