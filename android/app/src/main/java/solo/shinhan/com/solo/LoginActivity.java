@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class LoginActivity  extends Activity{
-    private Button solLoginBtn;
+    private Button mSolLoginBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,9 +16,9 @@ public class LoginActivity  extends Activity{
         setContentView(R.layout.activity_login);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        solLoginBtn = (Button) findViewById(R.id.sol_login_btn);
+        mSolLoginBtn = (Button) findViewById(R.id.sol_login_btn);
 
-        solLoginBtn.setOnClickListener(new View.OnClickListener() {
+        mSolLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getBaseContext(), MainActivity.class);

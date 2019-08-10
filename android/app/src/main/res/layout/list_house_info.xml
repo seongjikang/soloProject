@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" android:background="#ED7D31">
+
+    <ImageView
+        android:id="@+id/house_view"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="25dp"
+        android:background="#ffffff"
+        android:src="@drawable/default_house" />
+
+    <RelativeLayout
+        android:id="@+id/house_info_layout"
+        android:layout_width="202dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="25dp"
+        tools:ignore="UnknownId"
+        android:layout_alignParentRight="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/house_name"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="충무로 자이"
+                android:textSize="14dp"/>
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="중구 필동 3가"
+                android:textSize="10dp"/>
+
+            <TextView
+            android:id="@+id/house_size"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="55㎡"
+            android:textSize="10dp"/>
+
+            <TextView
+                android:id="@+id/address_detail"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="102동 1402호"
+                android:textSize="10dp"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
