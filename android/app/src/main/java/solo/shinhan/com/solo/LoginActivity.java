@@ -21,7 +21,7 @@ public class LoginActivity  extends Activity{
         mSolLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                Intent intent = new Intent(getBaseContext(), SelectActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0,0);
                 finish();
