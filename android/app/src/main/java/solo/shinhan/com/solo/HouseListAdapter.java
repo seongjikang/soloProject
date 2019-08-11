@@ -12,12 +12,12 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListAdapter extends BaseAdapter {
+public class HouseListAdapter extends BaseAdapter {
     LayoutInflater inflater = null;
     private List<HouseInfo> m_oData = null;
     private int nListCnt = 0;
 
-    public ListAdapter(List<HouseInfo> _oData) {
+    public HouseListAdapter(List<HouseInfo> _oData) {
         m_oData = _oData;
         nListCnt = m_oData.size();
     }
