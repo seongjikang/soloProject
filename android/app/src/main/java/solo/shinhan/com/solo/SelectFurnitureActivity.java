@@ -32,9 +32,9 @@ public class SelectFurnitureActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_furniture);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-
         mCurrentPosition = 0;
+
+        final int houseNo = getIntent().getIntExtra("houseNo", -1);
 
         final String[] furnitureCategory = {"소파", "테이블", "침대"};
 
@@ -123,6 +123,17 @@ public class SelectFurnitureActivity extends Activity {
                 mBrand.setText("브랜드 "+ mFurnitureList.get(i).getBrand());
                 mModel.setText("모델명 " + mFurnitureList.get(i).getModel());
                 mPrice.setText("가격 " + mFurnitureList.get(i).getPrice()+"원");
+            }
+        });
+
+        mCollocateFurniture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), CollocateFurnitureActivity.class);
+                intent.putExtra("houseNo",houseNo);
+                startActivity(intent);
+                overridePendingTransition(0,0);
+                finish();
             }
         });
     }

@@ -48,7 +48,7 @@ public class HouseDetailActivity extends Activity {
         mCollocateFurnitureBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getBaseContext(), SelectFurnitureActivity.class);
+                Intent intent = new Intent(getBaseContext(), CollocateFurnitureActivity.class);
                 intent.putExtra("houseNo", houseNo);
                 startActivity(intent);
                 overridePendingTransition(0,0);
