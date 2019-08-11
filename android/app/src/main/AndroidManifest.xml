@@ -20,6 +20,7 @@
         <activity android:name=".LoginActivity"/>
         <activity android:name=".SelectActivity"/>
         <activity android:name=".HouseDetailActivity"/>
+        <activity android:name=".SelectFurnitureActivity"/>
     </application>
 
 </manifest>
