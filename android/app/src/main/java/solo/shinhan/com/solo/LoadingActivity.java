@@ -44,12 +44,18 @@ public class LoadingActivity extends Activity {
         for(int i =0; i<3;i++) {
             houseInfo = new HouseInfo();
             houseInfo.setHouseNo(i);
-            houseInfo.setHouseName("집 이름");
-            houseInfo.setAddress("집 주소");
-            houseInfo.setAddressDetail("집 세부 주소");
+            houseInfo.setHouseName("충무로 자이");
+            houseInfo.setAddress("필동 3가");
+            houseInfo.setAddressDetail("102동 1402호");
             houseInfo.setHouseSize(55);
             houseInfo.setHouseView(BitmapFactory.decodeResource(getResources(), R.drawable.default_house));
-
+            houseInfo.setHouseFloorPlan(BitmapFactory.decodeResource(getResources(), R.drawable.default_floor_plan));
+            houseInfo.setBedroom(3);
+            houseInfo.setRestroom(1);
+            houseInfo.setBalcony(1);
+            houseInfo.setKitchen(1);
+            houseInfo.setLivingroom(1);
+            houseInfo.setHall(1);
             houseInfos.add(houseInfo);
         }
 

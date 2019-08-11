@@ -10,11 +10,17 @@ class HouseInfo {
     private String addressDetail;
     private Bitmap houseView;
     private Bitmap houseFloorPlan;
+    private int bedroom;
+    private int restroom;
+    private int balcony;
+    private int kitchen;
+    private int livingroom;
+    private int hall;
 
     public HouseInfo() {
     }
 
-    public HouseInfo(int houseNo, String houseName, String address, double houseSize, String addressDetail, Bitmap houseView, Bitmap houseFloorPlan) {
+    public HouseInfo(int houseNo, String houseName, String address, double houseSize, String addressDetail, Bitmap houseView, Bitmap houseFloorPlan, int bedroom, int restroom, int balcony, int kitchen, int livingroom, int hall) {
         this.houseNo = houseNo;
         this.houseName = houseName;
         this.address = address;
@@ -22,6 +28,12 @@ class HouseInfo {
         this.addressDetail = addressDetail;
         this.houseView = houseView;
         this.houseFloorPlan = houseFloorPlan;
+        this.bedroom = bedroom;
+        this.restroom = restroom;
+        this.balcony = balcony;
+        this.kitchen = kitchen;
+        this.livingroom = livingroom;
+        this.hall = hall;
     }
 
     public int getHouseNo() {
@@ -78,5 +90,53 @@ class HouseInfo {
 
     public void setHouseFloorPlan(Bitmap houseFloorPlan) {
         this.houseFloorPlan = houseFloorPlan;
+    }
+
+    public int getBedroom() {
+        return bedroom;
+    }
+
+    public void setBedroom(int bedroom) {
+        this.bedroom = bedroom;
+    }
+
+    public int getRestroom() {
+        return restroom;
+    }
+
+    public void setRestroom(int restroom) {
+        this.restroom = restroom;
+    }
+
+    public int getBalcony() {
+        return balcony;
+    }
+
+    public void setBalcony(int balcony) {
+        this.balcony = balcony;
+    }
+
+    public int getKitchen() {
+        return kitchen;
+    }
+
+    public void setKitchen(int kitchen) {
+        this.kitchen = kitchen;
+    }
+
+    public int getLivingroom() {
+        return livingroom;
+    }
+
+    public void setLivingroom(int livingroom) {
+        this.livingroom = livingroom;
+    }
+
+    public int getHall() {
+        return hall;
+    }
+
+    public void setHall(int hall) {
+        this.hall = hall;
     }
 }
