@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/floor_plan_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/default_floor_plan2"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_margin="7dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/back_btn"/>
+
+    <ImageView
+        android:id="@+id/plus_btn"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_margin="7dp"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/plus_btn"
+        android:layout_alignParentRight="true" />
+
+    <LinearLayout
+        android:id="@+id/collocate_menu"
+        android:layout_width="170dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="#ED7D31">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:src="@drawable/solo_logo2"/>
+
+        <TextView
+            android:id="@+id/all_price"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="200000원"
+            android:textSize="20dp"
+            android:textColor="#000000" />
+
+        <ImageView
+            android:id="@+id/select_furniture_btn"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:src="@drawable/select_furniture_btn"/>
+
+        <ImageView
+            android:id="@+id/lend_btn"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:src="@drawable/lend_btn"/>
+
+        <ImageView
+            android:id="@+id/back_collocate_btn"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:src="@drawable/back_collocate_btn"/>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -20,7 +20,12 @@
         <activity android:name=".LoginActivity"/>
         <activity android:name=".SelectActivity"/>
         <activity android:name=".HouseDetailActivity"/>
-        <activity android:name=".SelectFurnitureActivity"/>
+        <activity android:name=".SelectFurnitureActivity"
+            android:configChanges="screenSize|orientation|layoutDirection"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".CollocateFurnitureActivity"
+            android:configChanges="screenSize|orientation|layoutDirection"
+            android:screenOrientation="landscape"/>
     </application>
 
 </manifest>
