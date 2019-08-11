@@ -1,6 +1,7 @@
 package solo.shinhan.com.solo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,13 +9,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class HouseDetailActivity extends Activity {
-
     private RelativeLayout mCollocateFurnitureBtn;
     private RelativeLayout mBackBtn;
     private ImageView mFloorPlanView;
     private TextView mHouseName, mHouseSize, mBedroom, mRestroom, mBalcony, mKitchen, mLivingroom,mHall;
+    int houseNo;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +33,7 @@ public class HouseDetailActivity extends Activity {
         mLivingroom = (TextView) findViewById(R.id.livingroom);
         mHall = (TextView) findViewById(R.id.hall);
 
-        int houseNo = getIntent().getIntExtra("houseNo",-1);
+        houseNo = getIntent().getIntExtra("houseNo",-1);
 
         mFloorPlanView.setImageBitmap(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseFloorPlan());
         mHouseName.setText(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseName()+ " " + SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getAddressDetail());
@@ -46,16 +48,31 @@ public class HouseDetailActivity extends Activity {
         mCollocateFurnitureBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getBaseContext(), SelectFurnitureActivity.class);
+                intent.putExtra("houseNo", houseNo);
+                startActivity(intent);
+                overridePendingTransition(0,0);
+                finish();
             }
         });
 
         mBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0,0);
+                finish();
             }
         });
+    }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(getBaseContext(), MainActivity.class);
+        intent.putExtra("houseNo", houseNo);
+        startActivity(intent);
+        overridePendingTransition(0,0);
+        finish();
     }
 }
