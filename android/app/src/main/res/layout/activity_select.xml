@@ -42,7 +42,7 @@
         android:layout_height="142dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="81dp"
+        android:layout_marginBottom="73dp"
         android:src="@drawable/loaddata" />
 
 </RelativeLayout>

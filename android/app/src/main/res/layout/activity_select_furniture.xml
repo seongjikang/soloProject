@@ -23,10 +23,18 @@
 
         </LinearLayout>
 
+        <ImageView
+            android:id="@+id/line5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/line1" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#ED7D31">
+            android:background="#FFFFFF">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -66,7 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_alignParentBottom="true"
-                android:background="#FFFFFF">
+                android:background="#ED7D31">
 
                 <LinearLayout
                     android:id="@+id/detail_furniture_info"
@@ -79,7 +87,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="상세정보"
-                        android:textSize="16dp"/>
+                        android:textSize="16dp"
+                        android:textColor="#FFFFFF"/>
 
                 </LinearLayout>
 
@@ -101,7 +110,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="가구배치"
-                        android:textSize="16dp"/>
+                        android:textSize="16dp"
+                        android:textColor="#FFFFFF"/>
 
                 </LinearLayout>
 
@@ -184,7 +194,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#ED7D31">
+            android:background="#FFFFFF">
 
             <ListView
                 android:id="@+id/furniture_list_view"

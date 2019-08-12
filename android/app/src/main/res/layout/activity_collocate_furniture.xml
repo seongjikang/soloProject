@@ -6,21 +6,35 @@
     android:background="@drawable/default_floor_plan2"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <solo.shinhan.com.solo.CollocateFurnitureView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <ImageView
         android:id="@+id/back_btn"
-        android:layout_margin="7dp"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:src="@drawable/back_btn"/>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="13dp"
+        android:layout_marginStart="13dp"
+        android:src="@drawable/back_btn"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="13dp" />
+
+
 
     <ImageView
         android:id="@+id/plus_btn"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_margin="7dp"
         android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/back_btn"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="13dp"
         android:src="@drawable/plus_btn"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="13dp" />
 
     <LinearLayout
         android:id="@+id/collocate_menu"

@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" android:background="#ED7D31">>
+    android:layout_height="match_parent" android:background="#FFFFFF">>
 
     <ImageView
         android:id="@+id/solo_logo"
@@ -26,14 +26,25 @@
         android:layout_marginRight="35dp" />
 
     <ImageView
-        android:background="#FFFFFF"
-        android:id="@+id/floor_plan_view"
+        android:id="@+id/line3"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/solo_logo"
-        android:src="@drawable/default_floor_plan"
-        android:layout_alignParentLeft="true" />
+        android:layout_marginTop="10dp"
+        android:src="@drawable/line1" />
+
+    <ImageView
+        android:id="@+id/floor_plan_view"
+        android:layout_width="match_parent"
+        android:layout_height="186dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/solo_logo"
+        android:layout_marginTop="14dp"
+        android:background="#FFFFFF"
+        android:src="@drawable/default_floor_plan" />
 
     <RelativeLayout
         android:id="@+id/line_layout"
@@ -167,15 +178,16 @@
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true">
+        android:layout_alignParentLeft="true"
+        android:background="#ED7D31">
 
         <RelativeLayout
-            android:id="@+id/collocate_furniture_btn"
+            android:id="@+id/back_btn"
             android:layout_width="157dp"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/collocate_furniture_txt"
+                android:id="@+id/back_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -183,7 +195,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="38dp"
                 android:layout_marginStart="38dp"
-                android:text="가구배치"
+                android:text="뒤로가기"
                 android:textColor="#FFFFFF"
                 android:textSize="20dp" />
         </RelativeLayout>
@@ -198,7 +210,7 @@
             android:src="@drawable/line2" />
 
         <RelativeLayout
-            android:id="@+id/back_btn"
+            android:id="@+id/collocate_furniture_btn"
             android:layout_width="157dp"
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
@@ -206,11 +218,11 @@
             android:layout_alignParentRight="true">
 
             <TextView
-                android:id="@+id/back_txt"
+                android:id="@+id/collocate_furniture_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="뒤로가기"
+                android:text="가구배치"
                 android:textColor="#FFFFFF"
                 android:textSize="20dp" />
         </RelativeLayout>

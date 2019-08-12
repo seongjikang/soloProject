@@ -2,9 +2,11 @@ package solo.shinhan.com.solo;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -18,8 +20,11 @@ public class CollocateFurnitureActivity extends Activity {
     private LinearLayout mCollocateMenu;
     private TextView mAllPrice;
     private ImageView mSelectFurnitureBtn,mLendBtn,mBackCollocateBtn;
+    private CollocateFurnitureView mCollocateFurnitureView;
 
     private boolean mOpenMenu;
+
+    private int x,y;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,6 +43,8 @@ public class CollocateFurnitureActivity extends Activity {
         mBackCollocateBtn = (ImageView) findViewById(R.id.back_collocate_btn);
 
         mFloorPlanLayout.setBackground(new BitmapDrawable(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseFloorPlan()));
+        Log.i("category", getIntent().getStringExtra("category"));
+        mCollocateFurnitureView = new CollocateFurnitureView(getApplicationContext(), getIntent().getStringExtra("category"),getIntent().getIntExtra("furnitureType",-1));
 
         mPlusBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +99,5 @@ public class CollocateFurnitureActivity extends Activity {
             overridePendingTransition(0,0);
             finish();
         }
-
     }
 }
