@@ -27,6 +27,9 @@ public class SelectFurnitureActivity extends Activity {
     private FurnitureListAdapter mFurnitureListAdapter;
     private ArrayList<FurnitureInfo> mFurnitureList;
 
+    private String mCategory;
+    private int mFurnitureType;
+
     private int mCurrentPosition;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,6 +40,8 @@ public class SelectFurnitureActivity extends Activity {
         final int houseNo = getIntent().getIntExtra("houseNo", -1);
 
         final String[] furnitureCategory = {"소파", "테이블", "침대"};
+        mCategory = furnitureCategory[0];
+        mFurnitureType = 0;
 
         mFurnitureImage = (ImageView) findViewById(R.id.furniture_item);
         mBrand = (TextView)findViewById(R.id.brand);
@@ -65,7 +70,8 @@ public class SelectFurnitureActivity extends Activity {
             public void onClick(View view) {
                 if(mCurrentPosition == 2 ){
                     mCurrentPosition=0;
-                    mFurnitureCategory.setText(furnitureCategory[mCurrentPosition]);
+                    mCategory = furnitureCategory[mCurrentPosition];
+                    mFurnitureCategory.setText(mCategory);
                     mFurnitureList = SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]);
                     mFurnitureImage.setImageBitmap(mFurnitureList.get(0).getFurnitureImage());
                     mBrand.setText("브랜드 "+ mFurnitureList.get(0).getBrand());
@@ -75,7 +81,8 @@ public class SelectFurnitureActivity extends Activity {
                     mFurnitureListView.setAdapter(mFurnitureListAdapter);
                 } else {
                     mCurrentPosition++;
-                    mFurnitureCategory.setText(furnitureCategory[mCurrentPosition]);
+                    mCategory = furnitureCategory[mCurrentPosition];
+                    mFurnitureCategory.setText(mCategory);
                     mFurnitureList = SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]);
                     mFurnitureImage.setImageBitmap(mFurnitureList.get(0).getFurnitureImage());
                     mBrand.setText("브랜드 "+ mFurnitureList.get(0).getBrand());
@@ -84,6 +91,7 @@ public class SelectFurnitureActivity extends Activity {
                     mFurnitureListAdapter = new FurnitureListAdapter(mFurnitureList);
                     mFurnitureListView.setAdapter(mFurnitureListAdapter);
                 }
+
             }
         });
 
@@ -92,7 +100,8 @@ public class SelectFurnitureActivity extends Activity {
             public void onClick(View view) {
                 if(mCurrentPosition == 0 ){
                     mCurrentPosition=2;
-                    mFurnitureCategory.setText(furnitureCategory[mCurrentPosition]);
+                    mCategory = furnitureCategory[mCurrentPosition];
+                    mFurnitureCategory.setText(mCategory);
                     mFurnitureList = SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]);
                     mFurnitureImage.setImageBitmap(mFurnitureList.get(0).getFurnitureImage());
                     mBrand.setText("브랜드 "+ mFurnitureList.get(0).getBrand());
@@ -102,7 +111,8 @@ public class SelectFurnitureActivity extends Activity {
                     mFurnitureListView.setAdapter(mFurnitureListAdapter);
                 } else {
                     mCurrentPosition--;
-                    mFurnitureCategory.setText(furnitureCategory[mCurrentPosition]);
+                    mCategory = furnitureCategory[mCurrentPosition];
+                    mFurnitureCategory.setText(mCategory);
                     mFurnitureList = SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]);
                     mFurnitureImage.setImageBitmap(mFurnitureList.get(0).getFurnitureImage());
                     mBrand.setText("브랜드 "+ mFurnitureList.get(0).getBrand());
@@ -123,6 +133,7 @@ public class SelectFurnitureActivity extends Activity {
                 mBrand.setText("브랜드 "+ mFurnitureList.get(i).getBrand());
                 mModel.setText("모델명 " + mFurnitureList.get(i).getModel());
                 mPrice.setText("가격 " + mFurnitureList.get(i).getPrice()+"원");
+                mFurnitureType = i;
             }
         });
 
@@ -131,6 +142,8 @@ public class SelectFurnitureActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent(getBaseContext(), CollocateFurnitureActivity.class);
                 intent.putExtra("houseNo",houseNo);
+                intent.putExtra("category",mCategory);
+                intent.putExtra("furnitureType",mFurnitureType);
                 startActivity(intent);
                 overridePendingTransition(0,0);
                 finish();

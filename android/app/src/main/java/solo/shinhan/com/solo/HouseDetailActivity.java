@@ -50,6 +50,8 @@ public class HouseDetailActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent(getBaseContext(), CollocateFurnitureActivity.class);
                 intent.putExtra("houseNo", houseNo);
+                intent.putExtra("category","not");
+                intent.putExtra("furnitureType",-1);
                 startActivity(intent);
                 overridePendingTransition(0,0);
                 finish();
