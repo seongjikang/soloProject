@@ -7,8 +7,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <solo.shinhan.com.solo.CollocateFurnitureView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:id="@+id/collocate_furniture_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_toStartOf="@+id/plus_btn"
+        android:layout_toEndOf="@+id/back_btn"
+        android:layout_toLeftOf="@+id/plus_btn"
+        android:layout_toRightOf="@+id/back_btn"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
 
     <ImageView
         android:id="@+id/back_btn"
@@ -22,7 +31,18 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="13dp" />
 
+    <ListView
+        android:id="@+id/item_list_view"
+        android:layout_width="64dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/plus_btn"
+        android:layout_alignParentRight="true"
+        android:stackFromBottom="true"
+        android:divider="#ffffff">
 
+    </ListView>
 
     <ImageView
         android:id="@+id/plus_btn"
@@ -54,8 +74,16 @@
             android:src="@drawable/solo_logo2"/>
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13dp"
+            android:textColor="#000000"
+            android:text="총액"/>
+
+        <TextView
             android:id="@+id/all_price"
-            android:layout_margin="10dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="200000원"
