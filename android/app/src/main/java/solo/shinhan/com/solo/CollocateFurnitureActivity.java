@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -21,17 +22,23 @@ public class CollocateFurnitureActivity extends Activity {
     private TextView mAllPrice;
     private ImageView mSelectFurnitureBtn,mLendBtn,mBackCollocateBtn;
     private CollocateFurnitureView mCollocateFurnitureView;
+    private ListView mItemList;
+    private ItemListAdapter mItemListAdapter;
 
     private boolean mOpenMenu;
-
-    private int x,y;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_collocate_furniture);
 
-        final int houseNo= getIntent().getIntExtra("houseNo",-1);
+        mItemListAdapter = new ItemListAdapter(SoloSingleton.getInstance().getMyCollocateFurnitureInfoList());
+
+        mItemList = (ListView) findViewById(R.id.item_list_view);
+
+        mItemList.setAdapter(mItemListAdapter);
+
+        final int houseNo= getIntent().getIntExtra("houseNo", -1);
 
         mFloorPlanLayout = (RelativeLayout) findViewById(R.id.floor_plan_layout);
         mBackBtn = (ImageView) findViewById(R.id.back_btn);
@@ -45,6 +52,17 @@ public class CollocateFurnitureActivity extends Activity {
         mFloorPlanLayout.setBackground(new BitmapDrawable(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseFloorPlan()));
         Log.i("category", getIntent().getStringExtra("category"));
         mCollocateFurnitureView = new CollocateFurnitureView(getApplicationContext(), getIntent().getStringExtra("category"),getIntent().getIntExtra("furnitureType",-1));
+
+        int priceSum = 0;
+
+        if(SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().size() == 0){
+            mAllPrice.setText("0원");
+        } else {
+            for(int i=0; i<SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().size(); i++) {
+                priceSum += SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(i).getFurnitureInfo().getPrice();
+            }
+            mAllPrice.setText(priceSum + "원");
+        }
 
         mPlusBtn.setOnClickListener(new View.OnClickListener() {
             @Override

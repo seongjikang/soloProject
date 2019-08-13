@@ -15,8 +15,11 @@ public class SoloSingleton {
     private Map<String,ArrayList<FurnitureInfo>> furnitureMap ;
     private String currentFurnitureCategory;
     private int currentFurnitureType;
+    private SoloUser soloUser;
+    private List<MyCollocateFurnitureInfo> myCollocateFurnitureInfoList;
 
     private SoloSingleton() {
+        myCollocateFurnitureInfoList = new ArrayList<MyCollocateFurnitureInfo>();
         houseInfoList = new ArrayList<HouseInfo>();
         furnitureMap = new HashMap<String, ArrayList<FurnitureInfo>>();
     }
@@ -59,5 +62,21 @@ public class SoloSingleton {
 
     public void setCurrentFurnitureType(int currentFurnitureType) {
         this.currentFurnitureType = currentFurnitureType;
+    }
+
+    public SoloUser getSoloUser() {
+        return soloUser;
+    }
+
+    public void setSoloUser(SoloUser soloUser) {
+        this.soloUser = soloUser;
+    }
+
+    public List<MyCollocateFurnitureInfo> getMyCollocateFurnitureInfoList() {
+        return myCollocateFurnitureInfoList;
+    }
+
+    public void setMyCollocateFurnitureInfoList(List<MyCollocateFurnitureInfo> myCollocateFurnitureInfoList) {
+        this.myCollocateFurnitureInfoList = myCollocateFurnitureInfoList;
     }
 }

@@ -13,8 +13,11 @@ import java.util.ArrayList;
 
 public class CollocateFurnitureView extends View {
     private Bitmap bitmap;
+    private Bitmap testBitmap;
     float x = 980;
     float y = 420;
+    float currentX;
+    float currentY;
 
     public CollocateFurnitureView(Context context, AttributeSet attrs) {
         super(context);
@@ -25,7 +28,12 @@ public class CollocateFurnitureView extends View {
         SoloSingleton.getInstance().setCurrentFurnitureCategory(category);
         SoloSingleton.getInstance().setCurrentFurnitureType(furnitureType);
 
-
+        if(!(SoloSingleton.getInstance().getCurrentFurnitureCategory().equals("not"))){
+            ArrayList<FurnitureInfo> furnitureInfos =  SoloSingleton.getInstance().getFurnitureMap().get(SoloSingleton.getInstance().getCurrentFurnitureCategory());
+            bitmap = furnitureInfos.get(SoloSingleton.getInstance().getCurrentFurnitureType()).getFurnitureImage();
+            bitmap = resizeBitmapImage(bitmap,150);
+        }
+        invalidate();
     }
 
     @Override
@@ -38,9 +46,11 @@ public class CollocateFurnitureView extends View {
         }
         switch(event.getAction()){
             case MotionEvent.ACTION_DOWN:
-                x = event.getX();
-                y = event.getY();
-                invalidate();
+                if(x-5< currentX&& x+5 >currentX &&y-5<currentY&& y+5>currentY){
+                    x = event.getX();
+                    y = event.getY();
+                    invalidate();
+                }
                 break;
             case MotionEvent.ACTION_MOVE:
                 x = event.getX();
@@ -48,8 +58,9 @@ public class CollocateFurnitureView extends View {
                 invalidate();
                 break;
             case MotionEvent.ACTION_UP:
-                x = event.getX();
-                y = event.getY();
+                currentX = event.getX();
+                currentY = event.getY();
+                testBitmap = bitmap;
                 invalidate();
                 break;
         }
@@ -62,6 +73,10 @@ public class CollocateFurnitureView extends View {
         super.onDraw(canvas);
         if(bitmap != null) {
             canvas.drawBitmap(bitmap, x, y, null);
+        }
+
+        if(testBitmap != null) {
+            canvas.drawBitmap(testBitmap,currentX,currentY,null);
         }
     }
 

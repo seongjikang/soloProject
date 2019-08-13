@@ -144,6 +144,9 @@ public class SelectFurnitureActivity extends Activity {
                 intent.putExtra("houseNo",houseNo);
                 intent.putExtra("category",mCategory);
                 intent.putExtra("furnitureType",mFurnitureType);
+
+                SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().add(new MyCollocateFurnitureInfo(houseNo, SoloSingleton.getInstance().getFurnitureMap().get(mCategory).get(mFurnitureType)));
+
                 startActivity(intent);
                 overridePendingTransition(0,0);
                 finish();
