@@ -13,11 +13,11 @@ import java.util.ArrayList;
 
 public class CollocateFurnitureView extends View {
     private Bitmap bitmap;
-    private Bitmap testBitmap;
     float x = 980;
     float y = 420;
-    float currentX;
-    float currentY;
+
+
+    int currentFurniture =-1;
 
     public CollocateFurnitureView(Context context, AttributeSet attrs) {
         super(context);
@@ -28,40 +28,38 @@ public class CollocateFurnitureView extends View {
         SoloSingleton.getInstance().setCurrentFurnitureCategory(category);
         SoloSingleton.getInstance().setCurrentFurnitureType(furnitureType);
 
-        if(!(SoloSingleton.getInstance().getCurrentFurnitureCategory().equals("not"))){
-            ArrayList<FurnitureInfo> furnitureInfos =  SoloSingleton.getInstance().getFurnitureMap().get(SoloSingleton.getInstance().getCurrentFurnitureCategory());
-            bitmap = furnitureInfos.get(SoloSingleton.getInstance().getCurrentFurnitureType()).getFurnitureImage();
-            bitmap = resizeBitmapImage(bitmap,150);
-        }
         invalidate();
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        // TODO Auto-generated method stub
-        if(!(SoloSingleton.getInstance().getCurrentFurnitureCategory().equals("not"))){
-            ArrayList<FurnitureInfo> furnitureInfos =  SoloSingleton.getInstance().getFurnitureMap().get(SoloSingleton.getInstance().getCurrentFurnitureCategory());
-            bitmap = furnitureInfos.get(SoloSingleton.getInstance().getCurrentFurnitureType()).getFurnitureImage();
-            bitmap = resizeBitmapImage(bitmap,150);
+        for(int i=0; i<SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().size(); i++) {
+            if (SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(i).isSelectFurniture()) {
+                    currentFurniture = i;
+            }
         }
+
         switch(event.getAction()){
             case MotionEvent.ACTION_DOWN:
-                if(x-5< currentX&& x+5 >currentX &&y-5<currentY&& y+5>currentY){
-                    x = event.getX();
-                    y = event.getY();
+                x = event.getX();
+                y = event.getY();
+                if( currentFurniture != -1) {
+                    SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(currentFurniture).setX(x);
+                    SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(currentFurniture).setY(y);
+                    Log.i("fx",SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(currentFurniture).getX()+"");
+                    Log.i("fy",SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(currentFurniture).getY()+"");
                     invalidate();
                 }
+
                 break;
             case MotionEvent.ACTION_MOVE:
                 x = event.getX();
                 y = event.getY();
-                invalidate();
-                break;
-            case MotionEvent.ACTION_UP:
-                currentX = event.getX();
-                currentY = event.getY();
-                testBitmap = bitmap;
-                invalidate();
+                if( currentFurniture != -1) {
+                    SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(currentFurniture).setX(x);
+                    SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(currentFurniture).setY(y);
+                    invalidate();
+                }
                 break;
         }
         return true;
@@ -71,12 +69,10 @@ public class CollocateFurnitureView extends View {
     protected void onDraw(Canvas canvas) {
         // TODO Auto-generated method stub
         super.onDraw(canvas);
-        if(bitmap != null) {
-            canvas.drawBitmap(bitmap, x, y, null);
-        }
-
-        if(testBitmap != null) {
-            canvas.drawBitmap(testBitmap,currentX,currentY,null);
+        if(SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().size() > 0 ) {
+            for(int i = 0 ; i<SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().size(); i++) {
+                canvas.drawBitmap( resizeBitmapImage(SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(i).getFurnitureInfo().getFurnitureImage(),150),SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(i).getX(),SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(i).getY(),null);
+            }
         }
     }
 
@@ -94,19 +90,15 @@ public class CollocateFurnitureView extends View {
         int newHeight = height;
         float rate = 0.0f;
 
-        if(width > height)
-        {
-            if(maxResolution < width)
-            {
+        if(width > height) {
+            if(maxResolution < width) {
                 rate = maxResolution / (float) width;
                 newHeight = (int) (height * rate);
                 newWidth = maxResolution;
             }
         }
-        else
-        {
-            if(maxResolution < height)
-            {
+        else {
+            if(maxResolution < height) {
                 rate = maxResolution / (float) height;
                 newWidth = (int) (width * rate);
                 newHeight = maxResolution;

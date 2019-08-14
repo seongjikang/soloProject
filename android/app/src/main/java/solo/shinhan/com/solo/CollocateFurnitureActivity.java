@@ -8,11 +8,14 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class CollocateFurnitureActivity extends Activity {
 
@@ -88,6 +91,21 @@ public class CollocateFurnitureActivity extends Activity {
             public void onClick(View view) {
                 mOpenMenu = false;
                 mCollocateMenu.setVisibility(View.GONE);
+            }
+        });
+
+        mItemList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                for(int j=0; j< SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().size();j++) {
+                   if ( j == i){
+                       SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(j).setSelectFurniture(true);
+                   } else {
+                       SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(j).setSelectFurniture(false);
+                   }
+
+                }
+
             }
         });
 
