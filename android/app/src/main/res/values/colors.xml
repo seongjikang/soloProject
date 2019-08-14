@@ -6,4 +6,5 @@
     <drawable name="pressed_color">#8b4513</drawable>
     <drawable name="selected_color">#ED7D31</drawable>
 
+    <color name="blue_common">#3895d3</color>
 </resources>

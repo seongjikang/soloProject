@@ -7,12 +7,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class SelectActivity extends Activity {
 
-    private ImageView mTakePicture;
-    private ImageView mLoadData;
+    private LinearLayout mTakePicture;
+    private LinearLayout mLoadData;
 
     long pressedTime =0;
 
@@ -23,8 +24,8 @@ public class SelectActivity extends Activity {
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        mTakePicture = (ImageView)findViewById(R.id.select_take_picture);
-        mLoadData = (ImageView)findViewById(R.id.select_load_data);
+        mTakePicture = (LinearLayout)findViewById(R.id.select_take_picture);
+        mLoadData = (LinearLayout)findViewById(R.id.select_load_data);
 
         mTakePicture.setOnClickListener(new View.OnClickListener() {
             @Override
