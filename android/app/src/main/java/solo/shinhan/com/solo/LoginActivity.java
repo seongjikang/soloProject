@@ -6,12 +6,13 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class LoginActivity  extends Activity{
     private long pressedTime=0;
 
-    private Button mSolLoginBtn;
+    private LinearLayout mSolLoginBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +20,7 @@ public class LoginActivity  extends Activity{
         setContentView(R.layout.activity_login);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        mSolLoginBtn = (Button) findViewById(R.id.sol_login_btn);
+        mSolLoginBtn = (LinearLayout) findViewById(R.id.sol_login_btn);
 
         mSolLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -3,8 +3,23 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" android:background="@drawable/loading">
+    android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_text_logo"
+            android:src="@drawable/logo_soltal_background"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
