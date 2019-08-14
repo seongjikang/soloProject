@@ -12,10 +12,8 @@ import android.view.View;
 import java.util.ArrayList;
 
 public class CollocateFurnitureView extends View {
-    private Bitmap bitmap;
     float x = 980;
     float y = 420;
-
 
     int currentFurniture =-1;
 
@@ -23,11 +21,8 @@ public class CollocateFurnitureView extends View {
         super(context);
     }
 
-    public CollocateFurnitureView(Context context, String category, int furnitureType) {
+    public CollocateFurnitureView(Context context) {
         super(context);
-        SoloSingleton.getInstance().setCurrentFurnitureCategory(category);
-        SoloSingleton.getInstance().setCurrentFurnitureType(furnitureType);
-
         invalidate();
     }
 
@@ -46,8 +41,6 @@ public class CollocateFurnitureView extends View {
                 if( currentFurniture != -1) {
                     SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(currentFurniture).setX(x);
                     SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(currentFurniture).setY(y);
-                    Log.i("fx",SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(currentFurniture).getX()+"");
-                    Log.i("fy",SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(currentFurniture).getY()+"");
                     invalidate();
                 }
 
