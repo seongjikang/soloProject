@@ -1,12 +1,14 @@
 package solo.shinhan.com.solo;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -15,10 +17,9 @@ public class ItemListAdapter extends BaseAdapter {
     LayoutInflater inflater = null;
     private List<MyCollocateFurnitureInfo> m_oData = null;
     private int nListCnt = 0;
-
     public ItemListAdapter(List<MyCollocateFurnitureInfo> _oData) {
-        m_oData = _oData;
-        nListCnt = m_oData.size();
+        this.m_oData = _oData;
+        this.nListCnt = m_oData.size();
     }
 
     @Override
@@ -50,7 +51,17 @@ public class ItemListAdapter extends BaseAdapter {
         }
 
         ImageView mFurnitureView = (ImageView) convertView.findViewById(R.id.furniture_view);
+        RelativeLayout mFurnitureLayout = (RelativeLayout) convertView.findViewById(R.id.furniture_layout);
+        ImageView mDelete = (ImageView) convertView.findViewById(R.id.delete);
         mFurnitureView.setImageBitmap(m_oData.get(position).getFurnitureInfo().getFurnitureImage());
+        if(!SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(position).isSelectFurniture()) {
+            mFurnitureLayout.setBackgroundColor(Color.WHITE);
+        }
+        if(SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(position).isDeleteMode()) {
+            mDelete.setVisibility(View.VISIBLE);
+        } else {
+            mDelete.setVisibility(View.GONE);
+        }
 
         return convertView;
     }
