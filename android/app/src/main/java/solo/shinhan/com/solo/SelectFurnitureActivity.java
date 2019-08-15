@@ -148,9 +148,9 @@ public class SelectFurnitureActivity extends Activity {
                     for(int i =0;i< SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().size(); i++) {
                         SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(i).setSelectFurniture(false);
                     }
-                    SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().add(new MyCollocateFurnitureInfo(houseNo, SoloSingleton.getInstance().getFurnitureMap().get(mCategory).get(mFurnitureType),-1,-1,true,false));
+                    SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().add(new MyCollocateFurnitureInfo(houseNo, SoloSingleton.getInstance().getFurnitureMap().get(mCategory).get(mFurnitureType),-1,-1,true));
                 } else {
-                    SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().add(new MyCollocateFurnitureInfo(houseNo, SoloSingleton.getInstance().getFurnitureMap().get(mCategory).get(mFurnitureType),-1,-1,true,false));
+                    SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().add(new MyCollocateFurnitureInfo(houseNo, SoloSingleton.getInstance().getFurnitureMap().get(mCategory).get(mFurnitureType),-1,-1,true));
                 }
 
                 startActivity(intent);

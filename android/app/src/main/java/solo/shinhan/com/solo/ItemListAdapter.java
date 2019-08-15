@@ -30,7 +30,6 @@ public class ItemListAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int i) {
-
         return null;
     }
 
@@ -52,15 +51,9 @@ public class ItemListAdapter extends BaseAdapter {
 
         ImageView mFurnitureView = (ImageView) convertView.findViewById(R.id.furniture_view);
         RelativeLayout mFurnitureLayout = (RelativeLayout) convertView.findViewById(R.id.furniture_layout);
-        ImageView mDelete = (ImageView) convertView.findViewById(R.id.delete);
         mFurnitureView.setImageBitmap(m_oData.get(position).getFurnitureInfo().getFurnitureImage());
         if(!SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(position).isSelectFurniture()) {
             mFurnitureLayout.setBackgroundColor(Color.WHITE);
-        }
-        if(SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(position).isDeleteMode()) {
-            mDelete.setVisibility(View.VISIBLE);
-        } else {
-            mDelete.setVisibility(View.GONE);
         }
 
         return convertView;
