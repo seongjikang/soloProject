@@ -10,11 +10,12 @@ public class FurnitureInfo {
     private int price;
     private String furnitureName;
     private Bitmap furnitureImage;
+    private int direction;
 
     public FurnitureInfo() {
     }
 
-    public FurnitureInfo(int furnitureNo, String category, String brand, String model,int price, String furnitureName, Bitmap furnitureImage) {
+    public FurnitureInfo(int furnitureNo, String category, String brand, String model,int price, String furnitureName, Bitmap furnitureImage, int direction) {
         this.furnitureNo = furnitureNo;
         this.category = category;
         this.brand = brand;
@@ -22,6 +23,7 @@ public class FurnitureInfo {
         this.price = price;
         this.furnitureName = furnitureName;
         this.furnitureImage = furnitureImage;
+        this.direction =direction;
     }
 
     public int getFurnitureNo() {
@@ -78,5 +80,13 @@ public class FurnitureInfo {
 
     public void setFurnitureImage(Bitmap furnitureImage) {
         this.furnitureImage = furnitureImage;
+    }
+
+    public int getDirection() {
+        return direction;
+    }
+
+    public void setDirection(int direction) {
+        this.direction = direction;
     }
 }

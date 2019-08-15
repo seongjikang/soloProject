@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -27,6 +28,9 @@ public class CollocateFurnitureActivity extends Activity {
 
     private boolean mOpenMenu;
 
+    private int mCurrentPosition ;
+    private int mDirection = 1;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +41,6 @@ public class CollocateFurnitureActivity extends Activity {
         mItemList = (ListView) findViewById(R.id.item_list_view) ;
 
         mItemList.setAdapter(mItemListAdapter);
-
-        mFurnitureManagerDialog = new FurnitureManagerDialog(this, rotateListener, deleteListener, cancelListener);
 
         final int houseNo= getIntent().getIntExtra("houseNo", -1);
 
@@ -51,8 +53,15 @@ public class CollocateFurnitureActivity extends Activity {
         mLendBtn = (ImageView) findViewById(R.id.lend_btn);
         mBackCollocateBtn = (ImageView) findViewById(R.id.back_collocate_btn);
 
+        mFurnitureManagerDialog = new FurnitureManagerDialog(CollocateFurnitureActivity.this, rotateListener, deleteListener, cancelListener);
+
         mFloorPlanLayout.setBackground(new BitmapDrawable(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseFloorPlan()));
         mCollocateFurnitureView = new CollocateFurnitureView(getApplicationContext());
+
+        if (getIntent().getIntExtra("currentDirection",-1) != -1) {
+            mDirection = getIntent().getIntExtra("currentDirection",-1);
+            Log.i("mDirection", mDirection+"");
+        }
 
         int priceSum = 0;
 
@@ -97,13 +106,20 @@ public class CollocateFurnitureActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
 
-                for(int j=0; j< SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().size();j++) {
-                    if ( j == i){
-                        SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(j).setSelectFurniture(true);
-                    } else {
-                        SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(j).setSelectFurniture(false);
+                if(SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(i).isSelectFurniture()){
+                    SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(i).setSelectFurniture(false);
+                } else {
+                    for(int j=0; j< SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().size();j++) {
+                        if ( j == i){
+                            Log.i("들어오셈1",i+"");
+                            SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(i).setSelectFurniture(true);
+                        } else {
+                            Log.i("들어오셈2",j+"");
+                            SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(j).setSelectFurniture(false);
+                        }
                     }
                 }
+
                 mItemListAdapter = new ItemListAdapter(SoloSingleton.getInstance().getMyCollocateFurnitureInfoList());
                 mItemList.setAdapter(mItemListAdapter);
 
@@ -113,6 +129,9 @@ public class CollocateFurnitureActivity extends Activity {
         mItemList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                mCurrentPosition = i;
+                mFurnitureManagerDialog = new FurnitureManagerDialog(CollocateFurnitureActivity.this, rotateListener, deleteListener, cancelListener);
+                mFurnitureManagerDialog.setCurrentPosition(mCurrentPosition);
                 mFurnitureManagerDialog.show();
                 return true;
             }
@@ -123,6 +142,7 @@ public class CollocateFurnitureActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent(getBaseContext(), HouseDetailActivity.class);
                 intent.putExtra("houseNo",houseNo);
+
                 startActivity(intent);
                 overridePendingTransition(0,0);
                 finish();
@@ -155,13 +175,49 @@ public class CollocateFurnitureActivity extends Activity {
     private View.OnClickListener rotateListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            if(mDirection ==4) {
+                mDirection =1;
+            } else {
+                mDirection++;
+            }
+            mFurnitureManagerDialog.setDirection(mDirection);
+            //mFurnitureManagerDialog.settingFurnitureView();
+
+            SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(mCurrentPosition).setDirection(mDirection);
+            String category  =SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(mCurrentPosition).getFurnitureInfo().getCategory();
+            int furnitureNo = SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(mCurrentPosition).getFurnitureInfo().getFurnitureNo();
+            for(int i=0;i <SoloSingleton.getInstance().getFurnitureMap().get(category).size(); i++) {
+                if(SoloSingleton.getInstance().getFurnitureMap().get(category).get(i).getFurnitureNo() == furnitureNo) {
+                    if(mDirection == SoloSingleton.getInstance().getFurnitureMap().get(category).get(i).getDirection()) {
+                        SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(mCurrentPosition).setFurnitureInfo(SoloSingleton.getInstance().getFurnitureMap().get(category).get(i));
+                    }
+                }
+            }
+
             mFurnitureManagerDialog.dismiss();
+
+            mFurnitureManagerDialog = new FurnitureManagerDialog(CollocateFurnitureActivity.this, rotateListener, deleteListener, cancelListener);
+            mFurnitureManagerDialog.setCurrentPosition(mCurrentPosition);
+
+            Intent intent = new Intent(getBaseContext(), CollocateFurnitureActivity.class);
+            intent.putExtra("houseNo",getIntent().getIntExtra("houseNo", -1));
+            intent.putExtra("currentDirection",mDirection);
+            startActivity(intent);
+            overridePendingTransition(0,0);
+
+
+
         }
     };
 
     private View.OnClickListener deleteListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().remove(mCurrentPosition);
+            Intent intent = new Intent(getBaseContext(), CollocateFurnitureActivity.class);
+            intent.putExtra("houseNo",getIntent().getIntExtra("houseNo", -1));
+            startActivity(intent);
+            overridePendingTransition(0,0);
             mFurnitureManagerDialog.dismiss();
         }
     };

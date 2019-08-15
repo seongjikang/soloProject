@@ -5,17 +5,19 @@ public class MyCollocateFurnitureInfo {
     private FurnitureInfo furnitureInfo;
     private float x;
     private float y;
+    private int direction;
 
     private boolean selectFurniture;
 
     public MyCollocateFurnitureInfo() {
     }
 
-    public MyCollocateFurnitureInfo(int houseNo, FurnitureInfo furnitureInfo, float x, float y, boolean selectFurniture) {
+    public MyCollocateFurnitureInfo(int houseNo, FurnitureInfo furnitureInfo, float x, float y, boolean selectFurniture, int direction) {
         this.houseNo = houseNo;
         this.furnitureInfo = furnitureInfo;
         this.x = x;
         this.y = y;
+        this.direction = direction;
         this.selectFurniture = selectFurniture;
     }
 
@@ -59,4 +61,11 @@ public class MyCollocateFurnitureInfo {
         this.selectFurniture = selectFurniture;
     }
 
+    public int getDirection() {
+        return direction;
+    }
+
+    public void setDirection(int direction) {
+        this.direction = direction;
+    }
 }
