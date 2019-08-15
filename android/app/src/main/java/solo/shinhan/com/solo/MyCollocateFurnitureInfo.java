@@ -5,20 +5,18 @@ public class MyCollocateFurnitureInfo {
     private FurnitureInfo furnitureInfo;
     private float x;
     private float y;
-    private boolean deleteMode;
 
     private boolean selectFurniture;
 
     public MyCollocateFurnitureInfo() {
     }
 
-    public MyCollocateFurnitureInfo(int houseNo, FurnitureInfo furnitureInfo, float x, float y, boolean selectFurniture, boolean deleteMode) {
+    public MyCollocateFurnitureInfo(int houseNo, FurnitureInfo furnitureInfo, float x, float y, boolean selectFurniture) {
         this.houseNo = houseNo;
         this.furnitureInfo = furnitureInfo;
         this.x = x;
         this.y = y;
         this.selectFurniture = selectFurniture;
-        this.deleteMode = deleteMode;
     }
 
     public int getHouseNo() {
@@ -61,11 +59,4 @@ public class MyCollocateFurnitureInfo {
         this.selectFurniture = selectFurniture;
     }
 
-    public boolean isDeleteMode() {
-        return deleteMode;
-    }
-
-    public void setDeleteMode(boolean deleteMode) {
-        this.deleteMode = deleteMode;
-    }
 }
