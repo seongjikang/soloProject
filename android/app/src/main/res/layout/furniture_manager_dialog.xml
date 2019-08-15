@@ -31,7 +31,7 @@
             android:layout_margin="20dp"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/table1" />
+            android:src="@drawable/table1_1" />
     </LinearLayout>
 
     <LinearLayout

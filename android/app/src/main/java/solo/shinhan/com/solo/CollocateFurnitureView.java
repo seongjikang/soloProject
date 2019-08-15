@@ -30,7 +30,10 @@ public class CollocateFurnitureView extends View {
     public boolean onTouchEvent(MotionEvent event) {
         for(int i=0; i<SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().size(); i++) {
             if (SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(i).isSelectFurniture()) {
-                    currentFurniture = i;
+                currentFurniture = i;
+                break;
+            } else {
+                currentFurniture = -1;
             }
         }
 

@@ -2,7 +2,7 @@ package solo.shinhan.com.solo;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -26,16 +26,17 @@ public class SelectFurnitureActivity extends Activity {
     private ListView mFurnitureListView;
     private FurnitureListAdapter mFurnitureListAdapter;
     private ArrayList<FurnitureInfo> mFurnitureList;
-
     private String mCategory;
     private int mFurnitureType;
 
+    private int mFurniturePostion;
     private int mCurrentPosition;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_furniture);
         mCurrentPosition = 0;
+
 
         final int houseNo = getIntent().getIntExtra("houseNo", -1);
 
@@ -54,9 +55,16 @@ public class SelectFurnitureActivity extends Activity {
         mFurnitureCategory = (TextView)findViewById(R.id.furniture_category);
         mFurnitureListView = (ListView)findViewById(R.id.furniture_list_view);
 
+
         mFurnitureCategory.setText(furnitureCategory[mCurrentPosition]);
 
-        mFurnitureList = SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]);
+        mFurnitureList = new ArrayList<FurnitureInfo>();
+        for(int i =0 ;i < SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]).size();i++) {
+            if (SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]).get(i).getDirection() == 1) {
+                mFurnitureList.add(SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]).get(i));
+            }
+        }
+       // mFurnitureList = SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]);
         mFurnitureListAdapter = new FurnitureListAdapter(mFurnitureList);
         mFurnitureListView.setAdapter(mFurnitureListAdapter);
 
@@ -72,7 +80,14 @@ public class SelectFurnitureActivity extends Activity {
                     mCurrentPosition=0;
                     mCategory = furnitureCategory[mCurrentPosition];
                     mFurnitureCategory.setText(mCategory);
-                    mFurnitureList = SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]);
+                    mFurnitureCategory.setText(furnitureCategory[mCurrentPosition]);
+
+                    mFurnitureList = new ArrayList<FurnitureInfo>();
+                    for(int i =0 ;i < SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]).size();i++) {
+                        if (SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]).get(i).getDirection() == 1) {
+                            mFurnitureList.add(SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]).get(i));
+                        }
+                    }
                     mFurnitureImage.setImageBitmap(mFurnitureList.get(0).getFurnitureImage());
                     mBrand.setText("브랜드 "+ mFurnitureList.get(0).getBrand());
                     mModel.setText("모델명 " + mFurnitureList.get(0).getModel());
@@ -83,7 +98,14 @@ public class SelectFurnitureActivity extends Activity {
                     mCurrentPosition++;
                     mCategory = furnitureCategory[mCurrentPosition];
                     mFurnitureCategory.setText(mCategory);
-                    mFurnitureList = SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]);
+                    mFurnitureCategory.setText(furnitureCategory[mCurrentPosition]);
+
+                    mFurnitureList = new ArrayList<FurnitureInfo>();
+                    for(int i =0 ;i < SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]).size();i++) {
+                        if (SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]).get(i).getDirection() == 1) {
+                            mFurnitureList.add(SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]).get(i));
+                        }
+                    }
                     mFurnitureImage.setImageBitmap(mFurnitureList.get(0).getFurnitureImage());
                     mBrand.setText("브랜드 "+ mFurnitureList.get(0).getBrand());
                     mModel.setText("모델명 " + mFurnitureList.get(0).getModel());
@@ -102,7 +124,14 @@ public class SelectFurnitureActivity extends Activity {
                     mCurrentPosition=2;
                     mCategory = furnitureCategory[mCurrentPosition];
                     mFurnitureCategory.setText(mCategory);
-                    mFurnitureList = SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]);
+                    mFurnitureCategory.setText(furnitureCategory[mCurrentPosition]);
+
+                    mFurnitureList = new ArrayList<FurnitureInfo>();
+                    for(int i =0 ;i < SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]).size();i++) {
+                        if (SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]).get(i).getDirection() == 1) {
+                            mFurnitureList.add(SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]).get(i));
+                        }
+                    }
                     mFurnitureImage.setImageBitmap(mFurnitureList.get(0).getFurnitureImage());
                     mBrand.setText("브랜드 "+ mFurnitureList.get(0).getBrand());
                     mModel.setText("모델명 " + mFurnitureList.get(0).getModel());
@@ -113,8 +142,16 @@ public class SelectFurnitureActivity extends Activity {
                     mCurrentPosition--;
                     mCategory = furnitureCategory[mCurrentPosition];
                     mFurnitureCategory.setText(mCategory);
-                    mFurnitureList = SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]);
+                    mFurnitureCategory.setText(furnitureCategory[mCurrentPosition]);
+
+                    mFurnitureList = new ArrayList<FurnitureInfo>();
+                    for(int i =0 ;i < SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]).size();i++) {
+                        if (SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]).get(i).getDirection() == 1) {
+                            mFurnitureList.add(SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]).get(i));
+                        }
+                    }
                     mFurnitureImage.setImageBitmap(mFurnitureList.get(0).getFurnitureImage());
+                    mFurniturePostion =0;
                     mBrand.setText("브랜드 "+ mFurnitureList.get(0).getBrand());
                     mModel.setText("모델명 " + mFurnitureList.get(0).getModel());
                     mPrice.setText("가격 " + mFurnitureList.get(0).getPrice()+"원");
@@ -130,6 +167,7 @@ public class SelectFurnitureActivity extends Activity {
                 view.setSelected(true);
                 view.setPressed(true);
                 mFurnitureImage.setImageBitmap(mFurnitureList.get(i).getFurnitureImage());
+                mFurniturePostion = i;
                 mBrand.setText("브랜드 "+ mFurnitureList.get(i).getBrand());
                 mModel.setText("모델명 " + mFurnitureList.get(i).getModel());
                 mPrice.setText("가격 " + mFurnitureList.get(i).getPrice()+"원");
@@ -148,9 +186,19 @@ public class SelectFurnitureActivity extends Activity {
                     for(int i =0;i< SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().size(); i++) {
                         SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(i).setSelectFurniture(false);
                     }
-                    SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().add(new MyCollocateFurnitureInfo(houseNo, SoloSingleton.getInstance().getFurnitureMap().get(mCategory).get(mFurnitureType),-1,-1,true));
+                    ArrayList<FurnitureInfo> tempFurnitureArrayList = SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]);
+                    for(int i =0; i<tempFurnitureArrayList.size();i++) {
+                        if (tempFurnitureArrayList.get(i).getDirection() == 1 && tempFurnitureArrayList.get(i).getFurnitureNo() == mFurniturePostion ) {
+                             SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().add(new MyCollocateFurnitureInfo(houseNo, tempFurnitureArrayList.get(i),-1,-1,true,1));
+                        }
+                    }
                 } else {
-                    SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().add(new MyCollocateFurnitureInfo(houseNo, SoloSingleton.getInstance().getFurnitureMap().get(mCategory).get(mFurnitureType),-1,-1,true));
+                    ArrayList<FurnitureInfo> tempFurnitureArrayList = SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]);
+                    for(int i =0; i<tempFurnitureArrayList.size();i++) {
+                        if (tempFurnitureArrayList.get(i).getDirection() == 1 && tempFurnitureArrayList.get(i).getFurnitureNo() == mFurniturePostion ) {
+                            SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().add(new MyCollocateFurnitureInfo(houseNo, tempFurnitureArrayList.get(i),-1,-1,true,1));
+                        }
+                    }
                 }
 
                 startActivity(intent);

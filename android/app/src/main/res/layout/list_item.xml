@@ -16,7 +16,7 @@
         android:layout_margin="3dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/table1"/>
+        android:src="@drawable/table1_1"/>
     </RelativeLayout>
 
 </LinearLayout>
