@@ -16,6 +16,7 @@ public class MainActivity extends Activity {
 
     private EditText mSearchHouse;
     private ImageView mSettingBtn;
+    private ImageView mBackBtn;
     private ListView mHouseList;
     //private HouseInfoAdapter mAdapter;
     private HouseListAdapter mHouseListAdapter;
@@ -31,6 +32,7 @@ public class MainActivity extends Activity {
         mHouseListAdapter = new HouseListAdapter(SoloSingleton.getInstance().getHouseInfoList());
        // mAdapter = new HouseInfoAdapter(getApplicationContext(),R.id.root_layout,oData);
         mHouseList = (ListView) findViewById(R.id.house_list_view);
+        mBackBtn = (ImageView) findViewById(R.id.back_btn);
 
         Log.i("size",SoloSingleton.getInstance().getHouseInfoList().size()+"");
 
@@ -43,28 +45,20 @@ public class MainActivity extends Activity {
                 intent.putExtra("houseNo",i);
                 startActivity(intent);
                 overridePendingTransition(0,0);
-                finish();
+//                finish();
+            }
+        });
+        mBackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
             }
         });
     }
 
     @Override
-    public void onBackPressed() {
-        if ( pressedTime == 0 ) {
-            Toast.makeText(MainActivity.this, " 한 번 더 누르면 종료됩니다." , Toast.LENGTH_LONG).show();
-            pressedTime = System.currentTimeMillis();
-        }
-        else {
-            int seconds = (int) (System.currentTimeMillis() - pressedTime);
-
-            if ( seconds > 2000 ) {
-                Toast.makeText(MainActivity.this, " 한 번 더 누르면 종료됩니다." , Toast.LENGTH_LONG).show();
-                pressedTime = 0 ;
-            }
-            else {
-                super.onBackPressed();
-                finish();
-            }
-        }
+    protected void onPause() {
+        super.onPause();
+        overridePendingTransition(0,0);
     }
 }

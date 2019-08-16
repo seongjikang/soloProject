@@ -1,71 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" android:background="#FFFFFF">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:background="#FFFFFF"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp">
 
     <ImageView
         android:id="@+id/house_view"
         android:layout_width="100dp"
         android:layout_height="70dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginTop="25dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="16dp"
         android:background="#ffffff"
         android:src="@drawable/default_house" />
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/house_info_layout"
-        android:layout_width="202dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="25dp"
-        android:layout_marginTop="25dp"
-        tools:ignore="UnknownId"
-        android:layout_alignParentRight="true">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/house_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/house_name"
-                android:layout_marginLeft="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="충무로 자이"
-                android:textSize="14dp"/>
-
-            <TextView
-                android:id="@+id/address"
-                android:layout_marginTop="3dp"
-                android:layout_marginLeft="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="중구 필동 3가"
-                android:textSize="10dp"/>
-
-            <TextView
-            android:id="@+id/house_size"
-            android:layout_marginTop="3dp"
             android:layout_marginLeft="10dp"
+            android:text="충무로 자이"
+            android:textColor="#858585"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            android:text="중구 필동 3가"
+            android:textColor="#333333"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/house_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
             android:text="55㎡"
-            android:textSize="10dp"/>
+            android:textColor="#333333"
+            android:textSize="10dp" />
 
-            <TextView
-                android:id="@+id/address_detail"
-                android:layout_marginTop="3dp"
-                android:layout_marginLeft="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="102동 1402호"
-                android:textSize="10dp"/>
-
-        </LinearLayout>
-
-    </RelativeLayout>
-
-</RelativeLayout>
+        <TextView
+            android:id="@+id/address_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            android:text="102동 1402호"
+            android:textColor="#333333"
+            android:textSize="10dp" />
+    </LinearLayout>
+</LinearLayout>

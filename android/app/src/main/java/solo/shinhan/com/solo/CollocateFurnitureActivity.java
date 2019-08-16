@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -20,7 +21,8 @@ public class CollocateFurnitureActivity extends Activity {
     private ImageView mBackBtn,mPlusBtn;
     private LinearLayout mCollocateMenu;
     private TextView mAllPrice;
-    private ImageView mSelectFurnitureBtn,mLendBtn,mBackCollocateBtn;
+    private Button mSelectFurnitureBtn,mLendBtn;
+    private ImageView mBackCollocateBtn;
     private CollocateFurnitureView mCollocateFurnitureView;
     private ListView mItemList;
     private ItemListAdapter mItemListAdapter;
@@ -49,8 +51,8 @@ public class CollocateFurnitureActivity extends Activity {
         mPlusBtn = (ImageView) findViewById(R.id.plus_btn);
         mCollocateMenu = (LinearLayout) findViewById(R.id.collocate_menu);
         mAllPrice = (TextView) findViewById(R.id.all_price);
-        mSelectFurnitureBtn = (ImageView) findViewById(R.id.select_furniture_btn);
-        mLendBtn = (ImageView) findViewById(R.id.lend_btn);
+        mSelectFurnitureBtn = (Button) findViewById(R.id.select_furniture_btn);
+        mLendBtn = (Button) findViewById(R.id.lend_btn);
         mBackCollocateBtn = (ImageView) findViewById(R.id.back_collocate_btn);
 
         mFurnitureManagerDialog = new FurnitureManagerDialog(CollocateFurnitureActivity.this, rotateListener, deleteListener, cancelListener);

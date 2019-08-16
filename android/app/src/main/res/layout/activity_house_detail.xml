@@ -1,232 +1,268 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" android:background="#FFFFFF">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/solo_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="38dp"
-        android:layout_alignTop="@+id/setting_btn"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/solo_logo"></ImageView>
-
-    <ImageView
-        android:id="@+id/setting_btn"
-        android:layout_width="28dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="35dp"
-        android:layout_marginTop="14dp"
-        android:src="@drawable/top_menu"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="35dp" />
-
-    <ImageView
-        android:id="@+id/line3"
+    <!--toptitle-->
+    <LinearLayout
+        android:id="@+id/ll_title_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/solo_logo"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/line1" />
-
-    <ImageView
-        android:id="@+id/floor_plan_view"
-        android:layout_width="match_parent"
-        android:layout_height="186dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/solo_logo"
-        android:layout_marginTop="14dp"
-        android:background="#FFFFFF"
-        android:src="@drawable/default_floor_plan" />
-
-    <RelativeLayout
-        android:id="@+id/line_layout"
-        android:layout_width="match_parent"
-        android:layout_height="14dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/floor_plan_view"
-        android:background="#BBBBBB"
-        android:layout_alignParentLeft="true"></RelativeLayout>
-
-        <TextView
-            android:id="@+id/house_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/line_layout"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:text="집 이름 + 집 디테일 주소"
-            android:textSize="20dp" />
-
-        <TextView
-            android:id="@+id/house_size"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/house_name"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="3dp"
-            android:text="집 크기"
-            android:textSize="20dp" />
+        android:layout_height="60dp"
+        android:background="@color/blue_common"
+        android:gravity="center_vertical">
 
         <ImageView
-            android:id="@+id/line1"
+            android:id="@+id/back_btn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/top_back" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/house_size"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/line1" />
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="66dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo_soltal_text_white" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/setting_btn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/top_menu" />
+    </LinearLayout>
+    <!--toptitle-->
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/line1"
-        android:layout_marginBottom="74dp">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/bedroom"
-                android:layout_width="wrap_content"
+            <ImageView
+                android:layout_marginTop="16dp"
+                android:id="@+id/floor_plan_view"
+                android:layout_width="match_parent"
+                android:layout_height="186dp"
+                android:src="@drawable/default_floor_plan" />
+
+            <!--도면 이름-->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/line1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="침실  1"
-                android:textSize="14dp"
-                tools:ignore="NotSibling" />
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/restroom"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/house_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="집 이름 + 집 디테일 주소"
+                    android:textColor="#333333"
+                    android:textSize="18dp" />
+            </LinearLayout>
+            <!--도면 이름-->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#e9e9e9" />
+
+            <!--도면 상세 정보-->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/bedroom"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="2dp"
-                android:text="화장실  1"
-                android:textSize="14dp" />
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/balcony"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/restroom"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="2dp"
-                android:text="발코니  1"
-                android:textSize="14dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp">
 
-            <TextView
-                android:id="@+id/kitchen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/balcony"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="2dp"
-                android:text="주방/식당  1"
-                android:textSize="14dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:text="공급 면적"
+                        android:textColor="#858585"
+                        android:textSize="15dp" />
 
-            <TextView
-                android:id="@+id/livingroom"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/kitchen"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="2dp"
-                android:text="거실  1"
-                android:textSize="14dp" />
+                    <TextView
+                        android:id="@+id/house_size"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="집 크기"
+                        android:textColor="#333333"
+                        android:textSize="17dp" />
+                </LinearLayout>
 
-            <TextView
-                android:id="@+id/hall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/livingroom"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="2dp"
-                android:text="홀  1"
-                android:textSize="14dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp">
 
-        </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:text="평면도 상세정보"
+                        android:textColor="#858585"
+                        android:textSize="15dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:text="침실 "
+                                android:textColor="#333333"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:id="@+id/bedroom"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1"
+                                android:textColor="@color/blue_common"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:text="화장실 "
+                                android:textColor="#333333"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:id="@+id/restroom"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1"
+                                android:textColor="@color/blue_common"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:text="발코니 "
+                                android:textColor="#333333"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:id="@+id/balcony"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1"
+                                android:textColor="@color/blue_common"
+                                android:textSize="17dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:text="주방/식당 "
+                                android:textColor="#333333"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:id="@+id/kitchen"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1"
+                                android:textColor="@color/blue_common"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:text="거실 "
+                                android:textColor="#333333"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:id="@+id/livingroom"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1"
+                                android:textColor="@color/blue_common"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:text="홀 "
+                                android:textColor="#333333"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:id="@+id/hall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1"
+                                android:textColor="@color/blue_common"
+                                android:textSize="17dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+            <!--도면 상세 정보-->
+        </LinearLayout>
     </ScrollView>
 
-    <RelativeLayout
-        android:id="@+id/line_layout2"
+    <Button
+        android:id="@+id/collocate_furniture_btn"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:layout_width="match_parent"
-        android:layout_height="14dp"
-        android:layout_above="@+id/btn_layout"
-        android:layout_alignParentStart="true"
-        android:background="#BBBBBB"
-        android:layout_alignParentLeft="true"></RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/btn_layout"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:background="#ED7D31">
-
-        <RelativeLayout
-            android:id="@+id/back_btn"
-            android:layout_width="157dp"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/back_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="38dp"
-                android:layout_marginStart="38dp"
-                android:text="뒤로가기"
-                android:textColor="#FFFFFF"
-                android:textSize="20dp" />
-        </RelativeLayout>
-
-        <ImageView
-            android:layout_margin="10dp"
-            android:id="@+id/line2"
-            android:layout_width="10dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/line2" />
-
-        <RelativeLayout
-            android:id="@+id/collocate_furniture_btn"
-            android:layout_width="157dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true">
-
-            <TextView
-                android:id="@+id/collocate_furniture_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="가구배치"
-                android:textColor="#FFFFFF"
-                android:textSize="20dp" />
-        </RelativeLayout>
-
-    </RelativeLayout>
+        android:background="@drawable/btn_light_gray"
+        android:text="가구배치"
+        android:textSize="17dp"
+        android:textColor="#333333" />
 
 </RelativeLayout>
