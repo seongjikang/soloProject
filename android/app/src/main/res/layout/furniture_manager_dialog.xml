@@ -44,7 +44,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="50"
-            android:background="#ED7D31"
+            android:background="@color/blue_common"
             android:text="회전하기"
             android:textColor="#ffffff"/>
 
@@ -58,7 +58,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="50"
-            android:background="#ED7D31"
+            android:background="@color/blue_common"
             android:text="삭제하기"
             android:textColor="#ffffff"/>
     </LinearLayout>

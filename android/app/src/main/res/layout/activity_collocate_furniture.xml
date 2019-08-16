@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@+id/floor_plan_layout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/floor_plan_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/default_floor_plan2"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@drawable/default_floor_plan2">
 
     <solo.shinhan.com.solo.CollocateFurnitureView
         android:id="@+id/collocate_furniture_view"
@@ -12,35 +12,35 @@
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_toStartOf="@+id/plus_btn"
-        android:layout_toEndOf="@+id/back_btn"
-        android:layout_toLeftOf="@+id/plus_btn"
-        android:layout_toRightOf="@+id/back_btn"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"/>
+        android:layout_marginRight="15dp"
+        android:layout_toStartOf="@+id/plus_btn"
+        android:layout_toLeftOf="@+id/plus_btn"
+        android:layout_toEndOf="@+id/back_btn"
+        android:layout_toRightOf="@+id/back_btn" />
 
     <ImageView
         android:id="@+id/back_btn"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="13dp"
-        android:layout_marginStart="13dp"
-        android:src="@drawable/back_btn"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="13dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginBottom="13dp"
+        android:src="@drawable/btn_go_back_blue" />
 
     <ListView
         android:id="@+id/item_list_view"
         android:layout_width="64dp"
         android:layout_height="match_parent"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
         android:layout_above="@+id/plus_btn"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:stackFromBottom="true"
-        android:divider="#ffffff">
+        android:divider="#ffffff"
+        android:stackFromBottom="true">
 
     </ListView>
 
@@ -48,67 +48,78 @@
         android:id="@+id/plus_btn"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/back_btn"
-        android:layout_marginEnd="13dp"
-        android:layout_marginBottom="13dp"
-        android:src="@drawable/plus_btn"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="13dp" />
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginBottom="13dp"
+        android:src="@drawable/btn_plus_blue" />
 
     <LinearLayout
         android:id="@+id/collocate_menu"
         android:layout_width="170dp"
         android:layout_height="match_parent"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:background="#80000000"
         android:gravity="center"
-        android:orientation="vertical"
-        android:visibility="gone"
-        android:background="#ED7D31">
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="70dp"
-            android:src="@drawable/solo_logo2"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="13dp"
-            android:textColor="#000000"
-            android:text="총액"/>
-
-        <TextView
-            android:id="@+id/all_price"
-            android:layout_marginTop="7dp"
-            android:layout_marginBottom="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="200000원"
-            android:textSize="20dp"
-            android:textColor="#000000" />
-
-        <ImageView
-            android:id="@+id/select_furniture_btn"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:src="@drawable/select_furniture_btn"/>
-
-        <ImageView
-            android:id="@+id/lend_btn"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:src="@drawable/lend_btn"/>
+        android:visibility="visible">
 
         <ImageView
             android:id="@+id/back_collocate_btn"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:src="@drawable/back_collocate_btn"/>
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="4dp"
+            android:src="@drawable/btn_fold_white" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
 
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:src="@drawable/logo_soltal_text_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="총액"
+                android:textColor="#FFFFFF"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/all_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="10dp"
+                android:text="200000원"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/select_furniture_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/btn_white_stroke"
+                android:text="가구선택"
+                android:textColor="#55000000" />
+
+            <Button
+                android:id="@+id/lend_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_white_stroke"
+                android:text="대출하기"
+                android:textColor="#55000000" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
