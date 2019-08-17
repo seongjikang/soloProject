@@ -1,0 +1,755 @@
+create table furniture_tb (
+ furniture_no INT(11) unsigned NOT NULL,
+ category VARCHAR(32) NOT NULL,
+ model VARCHAR(100) NOT NULL,
+ price INT(11) NOT NULL,
+ furniture_name VARCHAR(32) NOT NULL,
+ furniture_url VARCHAR(80) NOT NULL,
+ direction INT NOT NULL,
+ brand VARCHAR(32) NOT NULL,
+ PRIMARY KEY (furniture_no, direction, category)
+);
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '소파', 'IK0001S', 200000, '이케아 1인용 초록 소파', 'http://13.125.12.186/image/furniture/icon/sofa/type1/1/item.png', 1, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '소파', 'IK0001S', 200000, '이케아 1인용 초록 소파', 'http://13.125.12.186/image/furniture/icon/sofa/type1/2/item.png', 2, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '소파', 'IK0001S', 200000, '이케아 1인용 초록 소파', 'http://13.125.12.186/image/furniture/icon/sofa/type1/3/item.png', 3, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '소파', 'IK0001S', 200000, '이케아 1인용 초록 소파', 'http://13.125.12.186/image/furniture/icon/sofa/type1/4/item.png', 4, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '소파', 'IK0002S', 310000, '이케아 2인용 초록 소파', 'http://13.125.12.186/image/furniture/icon/sofa/type2/1/item.png', 1, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '소파', 'IK0002S', 310000, '이케아 2인용 초록 소파', 'http://13.125.12.186/image/furniture/icon/sofa/type2/2/item.png', 2, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '소파', 'IK0002S', 310000, '이케아 2인용 초록 소파', 'http://13.125.12.186/image/furniture/icon/sofa/type2/3/item.png', 3, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '소파', 'IK0002S', 310000, '이케아 2인용 초록 소파', 'http://13.125.12.186/image/furniture/icon/sofa/type2/4/item.png', 4, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '소파', 'SE0001S', 400000, '세움 디자인 고급 가죽 소파', 'http://13.125.12.186/image/furniture/icon/sofa/type3/1/item.png', 1, '세움디자인');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '소파', 'SE0001S', 400000, '세움 디자인 고급 가죽 소파', 'http://13.125.12.186/image/furniture/icon/sofa/type3/2/item.png', 2, '세움디자인');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '소파', 'SE0001S', 400000, '세움 디자인 고급 가죽 소파', 'http://13.125.12.186/image/furniture/icon/sofa/type3/3/item.png', 3, '세움디자인');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '소파', 'SE0001S', 400000, '세움 디자인 고급 가죽 소파', 'http://13.125.12.186/image/furniture/icon/sofa/type3/4/item.png', 4, '세움디자인');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '소파', 'SE0002S', 400000, '세움 디자인 대형 소파', 'http://13.125.12.186/image/furniture/icon/sofa/type4/1/item.png', 1, '세움디자인');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '소파', 'SE0002S', 400000, '세움 디자인 대형 소파', 'http://13.125.12.186/image/furniture/icon/sofa/type4/2/item.png', 2, '세움디자인');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '소파', 'SE0002S', 400000, '세움 디자인 대형 소파', 'http://13.125.12.186/image/furniture/icon/sofa/type4/3/item.png', 3, '세움디자인');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '소파', 'SE0002S', 400000, '세움 디자인 대형 소파', 'http://13.125.12.186/image/furniture/icon/sofa/type4/4/item.png', 4, '세움디자인');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '소파', 'HA0001S', 190000, '한샘 예쁜 원형 소파', 'http://13.125.12.186/image/furniture/icon/sofa/type5/1/item.png', 1, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '소파', 'HA0001S', 190000, '한샘 예쁜 원형 소파', 'http://13.125.12.186/image/furniture/icon/sofa/type5/2/item.png', 2, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '소파', 'HA0001S', 190000, '한샘 예쁜 원형 소파', 'http://13.125.12.186/image/furniture/icon/sofa/type5/3/item.png', 3, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '소파', 'HA0001S', 190000, '한샘 예쁜 원형 소파', 'http://13.125.12.186/image/furniture/icon/sofa/type5/4/item.png', 4, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '소파', 'IK0003S', 500000, '이케아 초록 소파 세트', 'http://13.125.12.186/image/furniture/icon/sofa/type6/1/item.png', 1, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '소파', 'IK0003S', 500000, '이케아 초록 소파 세트', 'http://13.125.12.186/image/furniture/icon/sofa/type6/2/item.png', 2, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '소파', 'IK0003S', 500000, '이케아 초록 소파 세트', 'http://13.125.12.186/image/furniture/icon/sofa/type6/3/item.png', 3, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '소파', 'IK0003S', 500000, '이케아 초록 소파 세트', 'http://13.125.12.186/image/furniture/icon/sofa/type6/4/item.png', 4, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '테이블', 'IK0001T', 140000, '이케아 멋진 원형 테이블', 'http://13.125.12.186/image/furniture/icon/table/type1/1/item.png', 1, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '테이블', 'IK0001T', 140000, '이케아 멋진 원형 테이블', 'http://13.125.12.186/image/furniture/icon/table/type1/2/item.png', 2, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '테이블', 'IK0001T', 140000, '이케아 멋진 원형 테이블', 'http://13.125.12.186/image/furniture/icon/table/type1/3/item.png', 3, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '테이블', 'IK0001T', 140000, '이케아 멋진 원형 테이블', 'http://13.125.12.186/image/furniture/icon/table/type1/4/item.png', 4, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '테이블', 'IK0002T', 170000, '이케아 예쁜 사각 테이블', 'http://13.125.12.186/image/furniture/icon/table/type2/1/item.png', 1, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '테이블', 'IK0002T', 170000, '이케아 예쁜 사각 테이블', 'http://13.125.12.186/image/furniture/icon/table/type2/2/item.png', 2, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '테이블', 'IK0002T', 170000, '이케아 예쁜 사각 테이블', 'http://13.125.12.186/image/furniture/icon/table/type2/3/item.png', 3, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '테이블', 'IK0002T', 170000, '이케아 예쁜 사각 테이블', 'http://13.125.12.186/image/furniture/icon/table/type2/4/item.png', 4, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '테이블', 'HA0001T', 210000, '한샘 고급 사각 테이블', 'http://13.125.12.186/image/furniture/icon/table/type3/1/item.png', 1, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '테이블', 'HA0001T', 210000, '한샘 고급 사각 테이블', 'http://13.125.12.186/image/furniture/icon/table/type3/2/item.png', 2, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '테이블', 'HA0001T', 210000, '한샘 고급 사각 테이블', 'http://13.125.12.186/image/furniture/icon/table/type3/3/item.png', 3, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '테이블', 'HA0001T', 210000, '한샘 고급 사각 테이블', 'http://13.125.12.186/image/furniture/icon/table/type3/4/item.png', 4, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '테이블', 'HA0002T', 410000, '한샘 가성비 식탁 세트', 'http://13.125.12.186/image/furniture/icon/table/type4/1/item.png', 1, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '테이블', 'HA0002T', 410000, '한샘 가성비 식탁 세트', 'http://13.125.12.186/image/furniture/icon/table/type4/2/item.png', 2, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '테이블', 'HA0002T', 410000, '한샘 가성비 식탁 세트', 'http://13.125.12.186/image/furniture/icon/table/type4/3/item.png', 3, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '테이블', 'HA0002T', 410000, '한샘 가성비 식탁 세트', 'http://13.125.12.186/image/furniture/icon/table/type4/4/item.png', 4, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '테이블', 'YE0001T', 330000, '예일가구 2인용 식탁 세트', 'http://13.125.12.186/image/furniture/icon/table/type5/1/item.png', 1, '예일가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '테이블', 'YE0001T', 330000, '예일가구 2인용 식탁 세트', 'http://13.125.12.186/image/furniture/icon/table/type5/2/item.png', 2, '예일가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '테이블', 'YE0001T', 330000, '예일가구 2인용 식탁 세트', 'http://13.125.12.186/image/furniture/icon/table/type5/3/item.png', 3, '예일가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '테이블', 'YE0001T', 330000, '예일가구 2인용 식탁 세트', 'http://13.125.12.186/image/furniture/icon/table/type5/4/item.png', 4, '예일가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '테이블', 'YE0002T', 330000, '예일가구 고급 식탁 세트', 'http://13.125.12.186/image/furniture/icon/table/type6/1/item.png', 1, '예일가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '테이블', 'YE0002T', 330000, '예일가구 고급 식탁 세트', 'http://13.125.12.186/image/furniture/icon/table/type6/2/item.png', 2, '예일가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '테이블',' YE0002T', 330000, '예일가구 고급 식탁 세트', 'http://13.125.12.186/image/furniture/icon/table/type6/3/item.png', 3, '예일가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '테이블', 'YE0002T', 330000, '예일가구 고급 식탁 세트', 'http://13.125.12.186/image/furniture/icon/table/type6/4/item.png', 4, '예일가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '테이블', 'SA0001T', 330000, '삼익가구 깔끔 식탁 세트', 'http://13.125.12.186/image/furniture/icon/table/type7/1/item.png', 1, '삼익가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '테이블', 'SA0001T', 330000, '삼익가구 깔끔 식탁 세트', 'http://13.125.12.186/image/furniture/icon/table/type7/2/item.png', 2, '삼익가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '테이블', 'SA0001T', 330000, '삼익가구 깔끔 식탁 세트', 'http://13.125.12.186/image/furniture/icon/table/type7/3/item.png', 3, '삼익가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '테이블', 'SA0001T', 330000, '삼익가구 깔끔 식탁 세트', 'http://13.125.12.186/image/furniture/icon/table/type7/4/item.png', 4, '삼익가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '침대', 'AC0001B', 280000, '에이스 꿀잠 침대', 'http://13.125.12.186/image/furniture/icon/bed/type1/1/item.png', 1, '에이스침대');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '침대', 'AC0001B', 280000, '에이스 꿀잠 침대', 'http://13.125.12.186/image/furniture/icon/bed/type1/2/item.png', 2, '에이스침대');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '침대', 'AC0001B', 280000, '에이스 꿀잠 침대', 'http://13.125.12.186/image/furniture/icon/bed/type1/3/item.png', 3,  '에이스침대');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '침대', 'AC0001B', 280000, '에이스 꿀잠 침대', 'http://13.125.12.186/image/furniture/icon/bed/type1/4/item.png', 4, '에이스침대');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '침대', 'AC0002B', 640000, '에이스 고급 대형 침대', 'http://13.125.12.186/image/furniture/icon/bed/type2/1/item.png', 1, '에이스침대');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '침대', 'AC0002B', 640000, '에이스 고급 대형 침대', 'http://13.125.12.186/image/furniture/icon/bed/type2/2/item.png', 2, '에이스침대');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '침대', 'AC0002B', 640000, '에이스 고급 대형 침대', 'http://13.125.12.186/image/furniture/icon/bed/type2/3/item.png', 3, '에이스침대');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '침대', 'AC0002B', 640000, '에이스 고급 대형 침대', 'http://13.125.12.186/image/furniture/icon/bed/type2/4/item.png', 4, '에이스침대');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '침대', 'AC0003B', 190000, '에이스 아동 소형 침대', 'http://13.125.12.186/image/furniture/icon/bed/type3/1/item.png', 1, '에이스침대');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '침대', 'AC0003B', 190000, '에이스 아동 소형 침대', 'http://13.125.12.186/image/furniture/icon/bed/type3/2/item.png', 2, '에이스침대');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '침대', 'AC0003B', 190000, '에이스 아동 소형 침대', 'http://13.125.12.186/image/furniture/icon/bed/type3/3/item.png', 3, '에이스침대');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '침대', 'AC0003B', 190000, '에이스 아동 소형 침대', 'http://13.125.12.186/image/furniture/icon/bed/type3/4/item.png', 4, '에이스침대');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '침대', 'IK0001B', 160000, '이케아 이쁜 침대 싱글 사이즈', 'http://13.125.12.186/image/furniture/icon/bed/type4/1/item.png', 1, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '침대', 'IK0001B', 160000, '이케아 이쁜 침대 싱글 사이즈', 'http://13.125.12.186/image/furniture/icon/bed/type4/2/item.png', 2, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '침대', 'IK0001B', 160000, '이케아 이쁜 침대 싱글 사이즈', 'http://13.125.12.186/image/furniture/icon/bed/type4/3/item.png', 3, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '침대', 'IK0001B', 160000, '이케아 이쁜 침대 싱글 사이즈', 'http://13.125.12.186/image/furniture/icon/bed/type4/4/item.png', 4, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '침대', 'IK0002B', 180000, '이케아 아동 소형 침대', 'http://13.125.12.186/image/furniture/icon/bed/type5/1/item.png', 1, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '침대', 'IK0002B', 180000, '이케아 아동 소형 침대', 'http://13.125.12.186/image/furniture/icon/bed/type5/2/item.png', 2, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '침대', 'IK0002B', 180000, '이케아 아동 소형 침대', 'http://13.125.12.186/image/furniture/icon/bed/type5/3/item.png', 3, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '침대', 'IK0002B', 180000, '이케아 아동 소형 침대', 'http://13.125.12.186/image/furniture/icon/bed/type5/4/item.png', 4, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '침대', 'DS0001B', 220000, '동서가구 헤르본 침대', 'http://13.125.12.186/image/furniture/icon/bed/type6/1/item.png', 1, '동서가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '침대', 'DS0001B', 220000, '동서가구 헤르본 침대', 'http://13.125.12.186/image/furniture/icon/bed/type6/2/item.png', 2, '동서가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '침대', 'DS0001B', 220000, '동서가구 헤르본 침대', 'http://13.125.12.186/image/furniture/icon/bed/type6/3/item.png', 3, '동서가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '침대', 'DS0001B', 220000, '동서가구 헤르본 침대', 'http://13.125.12.186/image/furniture/icon/bed/type6/4/item.png', 4, '동서가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '침대', 'DS0002B', 350000, '동서가구 원목 침대', 'http://13.125.12.186/image/furniture/icon/bed/type7/1/item.png', 1, '동서가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '침대', 'DS0002B', 350000, '동서가구 원목 침대', 'http://13.125.12.186/image/furniture/icon/bed/type7/2/item.png', 2, '동서가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '침대', 'DS0002B', 350000, '동서가구 원목 침대', 'http://13.125.12.186/image/furniture/icon/bed/type7/3/item.png', 3, '동서가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '침대', 'DS0002B', 350000, '동서가구 원목 침대', 'http://13.125.12.186/image/furniture/icon/bed/type7/4/item.png', 4, '동서가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '화장실', 'TR0001BA', 140000, '트레비조 고급 세면대', 'http://13.125.12.186/image/furniture/icon/bathroom/type1/1/item.png', 1, '트레비조');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '화장실', 'TR0001BA', 140000, '트레비조 고급 세면대', 'http://13.125.12.186/image/furniture/icon/bathroom/type1/2/item.png', 2, '트레비조');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '화장실', 'TR0001BA', 140000, '트레비조 고급 세면대', 'http://13.125.12.186/image/furniture/icon/bathroom/type1/3/item.png', 3, '트레비조');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '화장실', 'TR0001BA', 140000, '트레비조 고급 세면대', 'http://13.125.12.186/image/furniture/icon/bathroom/type1/4/item.png', 4, '트레비조');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '화장실', 'HS0001BA', 175000, '한사 원형 세면대', 'http://13.125.12.186/image/furniture/icon/bathroom/type2/1/item.png', 1, '한사');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '화장실', 'HS0001BA', 175000, '한사 원형 세면대', 'http://13.125.12.186/image/furniture/icon/bathroom/type2/2/item.png', 2, '한사');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '화장실', 'HS0001BA', 175000, '한사 원형 세면대', 'http://13.125.12.186/image/furniture/icon/bathroom/type2/3/item.png', 3, '한사');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '화장실', 'HS0001BA', 175000, '한사 원형 세면대', 'http://13.125.12.186/image/furniture/icon/bathroom/type2/4/item.png', 4, '한사');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '화장실', 'PT0001BA', 175000, '폰테 쾌변 변기', 'http://13.125.12.186/image/furniture/icon/bathroom/type3/1/item.png', 1, '폰테');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '화장실', 'PT0001BA', 175000, '폰테 쾌변 변기', 'http://13.125.12.186/image/furniture/icon/bathroom/type3/2/item.png', 2, '폰테');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '화장실', 'PT0001BA', 175000, '폰테 쾌변 변기', 'http://13.125.12.186/image/furniture/icon/bathroom/type3/3/item.png', 3, '폰테');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '화장실', 'PT0001BA', 175000, '폰테 쾌변 변기', 'http://13.125.12.186/image/furniture/icon/bathroom/type3/4/item.png', 4, '폰테');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '화장실', 'DE0001BA', 185000, '데코텍 세련된 변기', 'http://13.125.12.186/image/furniture/icon/bathroom/type4/1/item.png', 1, '데코텍');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '화장실', 'DE0001BA', 185000, '데코텍 세련된 변기', 'http://13.125.12.186/image/furniture/icon/bathroom/type4/2/item.png', 2, '데코텍');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '화장실', 'DE0001BA', 185000, '데코텍 세련된 변기', 'http://13.125.12.186/image/furniture/icon/bathroom/type4/3/item.png', 3, '데코텍');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '화장실', 'DE0001BA', 185000, '데코텍 세련된 변기', 'http://13.125.12.186/image/furniture/icon/bathroom/type4/4/item.png', 4, '데코텍');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '화장실', 'TR0002BA', 280000, '트레비조 일인용 욕조', 'http://13.125.12.186/image/furniture/icon/bathroom/type5/1/item.png', 1, '트레비조');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '화장실', 'TR0002BA', 280000, '트레비조 일인용 욕조', 'http://13.125.12.186/image/furniture/icon/bathroom/type5/2/item.png', 2, '트레비조');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '화장실', 'TR0002BA', 280000, '트레비조 일인용 욕조', 'http://13.125.12.186/image/furniture/icon/bathroom/type5/3/item.png', 3, '트레비조');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '화장실', 'TR0002BA', 280000, '트레비조 일인용 욕조', 'http://13.125.12.186/image/furniture/icon/bathroom/type5/4/item.png', 4, '트레비조');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '화장실', 'IK0001BA', 330000, '이케아 일인용 욕조', 'http://13.125.12.186/image/furniture/icon/bathroom/type6/1/item.png', 1, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '화장실', 'IK0001BA', 330000, '이케아 일인용 욕조', 'http://13.125.12.186/image/furniture/icon/bathroom/type6/2/item.png', 2, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '화장실', 'IK0001BA', 330000, '이케아 일인용 욕조', 'http://13.125.12.186/image/furniture/icon/bathroom/type6/3/item.png', 3, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '화장실', 'IK0001BA', 330000, '이케아 일인용 욕조', 'http://13.125.12.186/image/furniture/icon/bathroom/type6/4/item.png', 4, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '화장실', 'RI0001BA', 190000, '레인 고급 샤워대', 'http://13.125.12.186/image/furniture/icon/bathroom/type7/1/item.png', 1, '레인');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '화장실', 'RI0001BA', 190000, '레인 고급 샤워대', 'http://13.125.12.186/image/furniture/icon/bathroom/type7/2/item.png', 2, '레인');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '화장실', 'RI0001BA', 190000, '레인 고급 샤워대', 'http://13.125.12.186/image/furniture/icon/bathroom/type7/3/item.png', 3, '레인');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '화장실', 'RI0001BA', 190000, '레인 고급 샤워대', 'http://13.125.12.186/image/furniture/icon/bathroom/type7/4/item.png', 4, '레인');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '캐비넷', 'IK0001C', 80000, '이케아 잡지대', 'http://13.125.12.186/image/furniture/icon/cabinet/type1/1/item.png', 1, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '캐비넷', 'IK0001C', 80000, '이케아 잡지대', 'http://13.125.12.186/image/furniture/icon/cabinet/type1/2/item.png', 2, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '캐비넷', 'IK0001C', 80000, '이케아 잡지대', 'http://13.125.12.186/image/furniture/icon/cabinet/type1/3/item.png', 3, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '캐비넷', 'IK0001C', 80000, '이케아 잡지대', 'http://13.125.12.186/image/furniture/icon/cabinet/type1/4/item.png', 4, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '캐비넷', 'IK0002C', 90000, '이케아 신발 보관함', 'http://13.125.12.186/image/furniture/icon/cabinet/type2/1/item.png', 1, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '캐비넷', 'IK0002C', 90000, '이케아 신발 보관함', 'http://13.125.12.186/image/furniture/icon/cabinet/type2/2/item.png', 2, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '캐비넷', 'IK0002C', 90000, '이케아 신발 보관함', 'http://13.125.12.186/image/furniture/icon/cabinet/type2/3/item.png', 3, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '캐비넷', 'IK0002C', 90000, '이케아 신발 보관함', 'http://13.125.12.186/image/furniture/icon/cabinet/type2/4/item.png', 4, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '캐비넷', 'HA0001C', 210000, '한샘 대형 수납장', 'http://13.125.12.186/image/furniture/icon/cabinet/type3/1/item.png', 1, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '캐비넷', 'HA0001C', 210000, '한샘 대형 수납장', 'http://13.125.12.186/image/furniture/icon/cabinet/type3/2/item.png', 2, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '캐비넷', 'HA0001C', 210000, '한샘 대형 수납장', 'http://13.125.12.186/image/furniture/icon/cabinet/type3/3/item.png', 3, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '캐비넷', 'HA0001C', 210000, '한샘 대형 수납장', 'http://13.125.12.186/image/furniture/icon/cabinet/type3/4/item.png', 4, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '캐비넷', 'SE0001C', 180000, '세움 원목 수납장', 'http://13.125.12.186/image/furniture/icon/cabinet/type4/1/item.png', 1, '세움디자인');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '캐비넷', 'SE0001C', 180000, '세움 원목 수납장', 'http://13.125.12.186/image/furniture/icon/cabinet/type4/2/item.png', 2, '세움디자인');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '캐비넷', 'SE0001C', 180000, '세움 원목 수납장', 'http://13.125.12.186/image/furniture/icon/cabinet/type4/3/item.png', 3, '세움디자인');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '캐비넷', 'SE0001C', 180000, '세움 원목 수납장', 'http://13.125.12.186/image/furniture/icon/cabinet/type4/4/item.png', 4, '세움디자인');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '캐비넷', 'SE0002C', 115000, '세움 재료 보관함', 'http://13.125.12.186/image/furniture/icon/cabinet/type5/1/item.png', 1, '세움디자인');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '캐비넷', 'SE0002C', 115000, '세움 재료 보관함', 'http://13.125.12.186/image/furniture/icon/cabinet/type5/2/item.png', 2, '세움디자인');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '캐비넷', 'SE0002C', 115000, '세움 재료 보관함', 'http://13.125.12.186/image/furniture/icon/cabinet/type5/3/item.png', 3, '세움디자인');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '캐비넷', 'SE0002C', 115000, '세움 재료 보관함', 'http://13.125.12.186/image/furniture/icon/cabinet/type5/4/item.png', 4, '세움디자인');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '캐비넷', 'HAU0001C', 95000, '하우디 5단 책장', 'http://13.125.12.186/image/furniture/icon/cabinet/type6/1/item.png', 1, '하우디');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '캐비넷', 'HAU0001C', 95000, '하우디 5단 책장', 'http://13.125.12.186/image/furniture/icon/cabinet/type6/2/item.png', 2, '하우디');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '캐비넷', 'HAU0001C', 95000, '하우디 5단 책장', 'http://13.125.12.186/image/furniture/icon/cabinet/type6/3/item.png', 3, '하우디');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '캐비넷', 'HAU0001C', 95000, '하우디 5단 책장', 'http://13.125.12.186/image/furniture/icon/cabinet/type6/4/item.png', 4, '하우디');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '캐비넷', 'IK0003C', 130000, '이케아 고급 화장대', 'http://13.125.12.186/image/furniture/icon/cabinet/type7/1/item.png', 1, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '캐비넷', 'IK0003C', 130000, '이케아 고급 화장대', 'http://13.125.12.186/image/furniture/icon/cabinet/type7/2/item.png', 2, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '캐비넷', 'IK0003C', 130000, '이케아 고급 화장대', 'http://13.125.12.186/image/furniture/icon/cabinet/type7/3/item.png', 3, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '캐비넷', 'IK0003C', 130000, '이케아 고급 화장대', 'http://13.125.12.186/image/furniture/icon/cabinet/type7/4/item.png', 4, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '카페트', 'HI0001CA', 55000, '한일 장미 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type1/1/item.png', 1, '한일');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '카페트', 'HI0001CA', 55000, '한일 장미 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type1/2/item.png', 2, '한일');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '카페트', 'HI0001CA', 55000, '한일 장미 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type1/3/item.png', 3, '한일');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '카페트', 'HI0001CA', 55000, '한일 장미 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type1/4/item.png', 4, '한일');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '카페트', 'HI0002CA', 60000, '한일 가죽 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type2/1/item.png', 1, '한일');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '카페트', 'HI0002CA', 60000, '한일 가죽 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type2/2/item.png', 2, '한일');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '카페트', 'HI0002CA', 60000, '한일 가죽 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type2/3/item.png', 3, '한일');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '카페트', 'HI0002CA', 60000, '한일 가죽 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type2/4/item.png', 4, '한일');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '카페트', 'HI0003CA', 75000, '한일 화이트 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type3/1/item.png', 1, '한일');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '카페트', 'HI0003CA', 75000, '한일 화이트 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type3/2/item.png', 2, '한일');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '카페트', 'HI0003CA', 75000, '한일 화이트 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type3/3/item.png', 3, '한일');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '카페트', 'HI0003CA', 75000, '한일 화이트 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type3/4/item.png', 4, '한일');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '카페트', 'HS0001CA', 100000, '효성 여름 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type4/1/item.png', 1, '효성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '카페트', 'HS0001CA', 100000, '효성 여름 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type4/2/item.png', 2, '효성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '카페트', 'HS0001CA', 100000, '효성 여름 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type4/3/item.png', 3, '효성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '카페트', 'HS0001CA', 100000, '효성 여름 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type4/4/item.png', 4, '효성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '카페트', 'HS0002CA', 38000, '효성 이쁜 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type5/1/item.png', 1, '효성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '카페트', 'HS0002CA', 38000, '효성 이쁜 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type5/2/item.png', 2, '효성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '카페트', 'HS0002CA', 38000, '효성 이쁜 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type5/3/item.png', 3, '효성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '카페트', 'HS0002CA', 38000, '효성 이쁜 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type5/4/item.png', 4, '효성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '카페트', 'HS0003CA', 52000, '효성 초록 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type6/1/item.png', 1, '효성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '카페트', 'HS0003CA', 52000, '효성 초록 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type6/2/item.png', 2, '효성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '카페트', 'HS0003CA', 52000, '효성 초록  카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type6/3/item.png', 3, '효성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '카페트', 'HS0003CA', 52000, '효성 초록 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type6/4/item.png', 4, '효성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '카페트', 'RG0001CA', 32000, '러그랜드 가성비 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type7/1/item.png', 1, '러그랜드');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '카페트', 'RG0001CA', 32000, '러그랜드 가성비 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type7/2/item.png', 2, '러그랜드');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '카페트', 'RG0001CA', 32000, '러그랜드 가성비 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type7/3/item.png', 3, '러그랜드');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '카페트', 'RG0001CA', 32000, '러그랜드 가성비 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type7/4/item.png', 4, '러그랜드');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (7, '카페트', 'RG0002CA', 114000, '러그랜드 대형 고급 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type8/1/item.png', 1, '러그랜드');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (7, '카페트', 'RG0002CA', 114000, '러그랜드 대형 고급 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type8/2/item.png', 2, '러그랜드');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (7, '카페트', 'RG0002CA', 114000, '러그랜드 대형 고급 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type8/3/item.png', 3, '러그랜드');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (7, '카페트', 'RG0002CA', 114000, '러그랜드 대형 고급 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type8/4/item.png', 4, '러그랜드');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '의자', 'IK0001CH', 63000, '이케아 원목 의자', 'http://13.125.12.186/image/furniture/icon/chair/type1/1/item.png', 1, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '의자', 'IK0001CH', 63000, '이케아 원목 의자', 'http://13.125.12.186/image/furniture/icon/chair/type1/2/item.png', 2, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '의자', 'IK0001CH', 63000, '이케아 원목 의자', 'http://13.125.12.186/image/furniture/icon/chair/type1/3/item.png', 3, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '의자', 'IK0001CH', 63000, '이케아 원목 의자', 'http://13.125.12.186/image/furniture/icon/chair/type1/4/item.png', 4, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '의자', 'IK0002CH', 54000, '이케아 초록 원형 의자', 'http://13.125.12.186/image/furniture/icon/chair/type2/1/item.png', 1, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '의자', 'IK0002CH', 54000, '이케아 초록 원형 의자', 'http://13.125.12.186/image/furniture/icon/chair/type2/2/item.png', 2, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '의자', 'IK0002CH', 54000, '이케아 초록 원형 의자', 'http://13.125.12.186/image/furniture/icon/chair/type2/3/item.png', 3, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '의자', 'IK0002CH', 54000, '이케아 초록 원형 의자', 'http://13.125.12.186/image/furniture/icon/chair/type2/4/item.png', 4, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '의자', 'IK0003CH', 34000, '이케아 가성비 의자', 'http://13.125.12.186/image/furniture/icon/chair/type3/1/item.png', 1, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '의자', 'IK0003CH', 34000, '이케아 가성비 의자', 'http://13.125.12.186/image/furniture/icon/chair/type3/2/item.png', 2, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '의자', 'IK0003CH', 34000, '이케아 가성비 의자', 'http://13.125.12.186/image/furniture/icon/chair/type3/3/item.png', 3, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '의자', 'IK0003CH', 34000, '이케아 가성비 의자', 'http://13.125.12.186/image/furniture/icon/chair/type3/4/item.png', 4, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '의자', 'YE0001CH', 60000, '예일가구 고급 식탁의자', 'http://13.125.12.186/image/furniture/icon/chair/type4/1/item.png', 1, '예일가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '의자', 'YE0001CH', 60000, '예일가구 고급 식탁의자', 'http://13.125.12.186/image/furniture/icon/chair/type4/2/item.png', 2, '예일가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '의자', 'YE0001CH', 60000, '예일가구 고급 식탁의자', 'http://13.125.12.186/image/furniture/icon/chair/type4/3/item.png', 3, '예일가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '의자', 'YE0001CH', 60000, '예일가구 고급 식탁의자', 'http://13.125.12.186/image/furniture/icon/chair/type4/4/item.png', 4, '예일가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '의자', 'YE0002CH', 20000, '예일가구 접이식 의자', 'http://13.125.12.186/image/furniture/icon/chair/type5/1/item.png', 1, '예일가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '의자', 'YE0002CH', 20000, '예일가구 접이식 의자', 'http://13.125.12.186/image/furniture/icon/chair/type5/2/item.png', 2, '예일가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '의자', 'YE0002CH', 20000, '예일가구 접이식 의자', 'http://13.125.12.186/image/furniture/icon/chair/type5/3/item.png', 3, '예일가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '의자', 'YE0002CH', 20000, '예일가구 접이식 의자', 'http://13.125.12.186/image/furniture/icon/chair/type5/5/item.png', 4, '예일가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '의자', 'YE0003CH', 49000, '예일가구 필기 의자', 'http://13.125.12.186/image/furniture/icon/chair/type6/1/item.png', 1, '예일가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '의자', 'YE0003CH', 49000, '예일가구 필기 의자', 'http://13.125.12.186/image/furniture/icon/chair/type6/2/item.png', 2, '예일가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '의자', 'YE0003CH', 49000, '예일가구 필기 의자', 'http://13.125.12.186/image/furniture/icon/chair/type6/3/item.png', 3, '예일가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '의자', 'YE0003CH', 49000, '예일가구 필기 의자', 'http://13.125.12.186/image/furniture/icon/chair/type6/4/item.png', 4, '예일가구');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '의자', 'HS0001CH', 49000, '효성 완전 편한 의자', 'http://13.125.12.186/image/furniture/icon/chair/type7/1/item.png', 1, '효성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '의자', 'HS0001CH', 49000, '효성 완전 편한 의자', 'http://13.125.12.186/image/furniture/icon/chair/type7/2/item.png', 2, '효성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '의자', 'HS0001CH', 49000, '효성 완전 편한 의자', 'http://13.125.12.186/image/furniture/icon/chair/type7/3/item.png', 3, '효성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (6, '의자', 'HS0001CH', 49000, '효성 완전 편한 의자', 'http://13.125.12.186/image/furniture/icon/chair/type7/4/item.png', 4, '효성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (7, '의자', 'HS0002CH', 142000, '효성 푹신한 책상 의자', 'http://13.125.12.186/image/furniture/icon/chair/type8/1/item.png', 1, '효성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (7, '의자', 'HS0002CH', 142000, '효성 푹신한 책상 의자', 'http://13.125.12.186/image/furniture/icon/chair/type8/2/item.png', 2, '효성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (7, '의자', 'HS0002CH', 142000, '효성 푹신한 책상 의자', 'http://13.125.12.186/image/furniture/icon/chair/type8/3/item.png', 3, '효성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (7, '의자', 'HS0002CH', 142000, '효성 푹신한 책상 의자', 'http://13.125.12.186/image/furniture/icon/chair/type8/4/item.png', 4, '효성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (8, '의자', 'FL0001CH', 110000, '플렉스 책상 의자', 'http://13.125.12.186/image/furniture/icon/chair/type9/1/item.png', 1, '플렉스');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (8, '의자', 'FL0001CH', 110000, '플렉스 책상 의자', 'http://13.125.12.186/image/furniture/icon/chair/type9/2/item.png', 2, '플렉스');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (8, '의자', 'FL0001CH', 110000, '플렉스 책상 의자', 'http://13.125.12.186/image/furniture/icon/chair/type9/3/item.png', 3, '플렉스');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (8, '의자', 'FL0001CH', 110000, '플렉스 책상 의자', 'http://13.125.12.186/image/furniture/icon/chair/type9/1/item.png', 4, '플렉스');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '책상', 'IK0001DE', 950000, '이케아 가성비 책상 세트', 'http://13.125.12.186/image/furniture/icon/desk/type1/1/item.png', 1, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '책상', 'IK0001DE', 950000, '이케아 가성비 책상 세트', 'http://13.125.12.186/image/furniture/icon/desk/type1/2/item.png', 2, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '책상', 'IK0001DE', 950000, '이케아 가성비 책상 세트', 'http://13.125.12.186/image/furniture/icon/desk/type1/3/item.png', 3, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '책상', 'IK0001DE', 950000, '이케아 가성비 책상 세트', 'http://13.125.12.186/image/furniture/icon/desk/type1/4/item.png', 4, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '책상', 'HA0002DE', 1200000, '한샘 집중력 향상 책상세트', 'http://13.125.12.186/image/furniture/icon/desk/type2/1/item.png', 1, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '책상', 'HA0002DE', 1200000, '한샘 집중력 향상 책상세트', 'http://13.125.12.186/image/furniture/icon/desk/type2/2/item.png', 2, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '책상', 'HA0002DE', 1200000, '한샘 집중력 향상 책상세트', 'http://13.125.12.186/image/furniture/icon/desk/type2/3/item.png', 3, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '책상', 'HA0002DE', 1200000, '한샘 집중력 향상 책상세트', 'http://13.125.12.186/image/furniture/icon/desk/type2/4/item.png', 4, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '주방', 'IK0001KI', 200000, '이케아 고급 싱크대', 'http://13.125.12.186/image/furniture/icon/kitchen/type1/1/item.png', 1, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '주방', 'IK0001KI', 200000, '이케아 고급 싱크대', 'http://13.125.12.186/image/furniture/icon/kitchen/type1/2/item.png', 2, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '주방', 'IK0001KI', 200000, '이케아 고급 싱크대', 'http://13.125.12.186/image/furniture/icon/kitchen/type1/3/item.png', 3, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '주방', 'IK0001KI', 200000, '이케아 고급 싱크대', 'http://13.125.12.186/image/furniture/icon/kitchen/type1/4/item.png', 4, '이케아');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '주방', 'HA0001KI', 180000, '한샘 예쁜 싱크대', 'http://13.125.12.186/image/furniture/icon/kitchen/type2/1/item.png', 1, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '주방', 'HA0001KI', 180000, '한샘 예쁜 싱크대', 'http://13.125.12.186/image/furniture/icon/kitchen/type2/2/item.png', 2, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '주방', 'HA0001KI', 180000, '한샘 예쁜 싱크대', 'http://13.125.12.186/image/furniture/icon/kitchen/type2/3/item.png', 3, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '주방', 'HA0001KI', 180000, '한샘 예쁜 싱크대', 'http://13.125.12.186/image/furniture/icon/kitchen/type2/4/item.png', 4, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '주방', 'LG0001KI', 1000000, 'LG 가스레인지', 'http://13.125.12.186/image/furniture/icon/kitchen/type3/1/item.png', 1, 'LG');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '주방', 'LG0001KI', 1000000, 'LG 가스레인지', 'http://13.125.12.186/image/furniture/icon/kitchen/type3/2/item.png', 2, 'LG');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '주방', 'LG0001KI', 1000000, 'LG 가스레인지', 'http://13.125.12.186/image/furniture/icon/kitchen/type3/3/item.png', 3, 'LG');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (2, '주방', 'LG0001KI', 1000000, 'LG 가스레인지', 'http://13.125.12.186/image/furniture/icon/kitchen/type3/4/item.png', 4, 'LG');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '주방', 'HA0002KI', 1000000, '한샘 주방 수납장', 'http://13.125.12.186/image/furniture/icon/kitchen/type4/1/item.png', 1, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '주방', 'HA0002KI', 1000000, '한샘 주방 수납장', 'http://13.125.12.186/image/furniture/icon/kitchen/type4/2/item.png', 2, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '주방', 'HA0002KI', 1000000, '한샘 주방 수납장', 'http://13.125.12.186/image/furniture/icon/kitchen/type4/3/item.png', 3, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (3, '주방', 'HA0002KI', 1000000, '한샘 주방 수납장', 'http://13.125.12.186/image/furniture/icon/kitchen/type4/4/item.png', 4, '한샘');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '주방', 'SAM0001KI', 1150000, '삼성 가스레인지', 'http://13.125.12.186/image/furniture/icon/kitchen/type5/1/item.png', 1, '삼성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '주방', 'SAM0001KI', 1150000, '삼성 가스레인지', 'http://13.125.12.186/image/furniture/icon/kitchen/type5/2/item.png', 2, '삼성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '주방', 'SAM0001KI', 1150000, '삼성 가스레인지', 'http://13.125.12.186/image/furniture/icon/kitchen/type5/3/item.png', 3, '삼성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (4, '주방', 'SAM0001KI', 1150000, '삼성 가스레인지', 'http://13.125.12.186/image/furniture/icon/kitchen/type5/4/item.png', 4, '삼성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '주방', 'SAM0002KI', 2050000, '삼성 엄청 좋은 냉장고', 'http://13.125.12.186/image/furniture/icon/kitchen/type6/1/item.png', 1, '삼성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '주방', 'SAM0002KI', 2050000, '삼성 엄청 좋은 냉장고', 'http://13.125.12.186/image/furniture/icon/kitchen/type6/2/item.png', 2, '삼성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '주방', 'SAM0002KI', 2050000, '삼성 엄청 좋은 냉장고', 'http://13.125.12.186/image/furniture/icon/kitchen/type6/3/item.png', 3, '삼성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (5, '주방', 'SAM0002KI', 2050000, '삼성 엄청 좋은 냉장고', 'http://13.125.12.186/image/furniture/icon/kitchen/type6/4/item.png', 4, '삼성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '세탁기', 'SAM0001WA', 850000, '삼성 20KG 세탁기', 'http://13.125.12.186/image/furniture/icon/washer/type1/1/item.png', 1, '삼성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '세탁기', 'SAM0001WA', 850000, '삼성 20KG 세탁기', 'http://13.125.12.186/image/furniture/icon/washer/type1/2/item.png', 2, '삼성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '세탁기', 'SAM0001WA', 850000, '삼성 20KG 세탁기', 'http://13.125.12.186/image/furniture/icon/washer/type1/3/item.png', 3, '삼성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '세탁기', 'SAM0001WA', 850000, '삼성 20KG 세탁기', 'http://13.125.12.186/image/furniture/icon/washer/type1/4/item.png', 4, '삼성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '세탁기', 'LG0001WA', 1700000, 'LG 드럼 세탁기', 'http://13.125.12.186/image/furniture/icon/washer/type2/1/item.png', 1, 'LG');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '세탁기', 'LG0001WA', 1700000, 'LG 드럼 세탁기', 'http://13.125.12.186/image/furniture/icon/washer/type2/2/item.png', 2, 'LG');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '세탁기', 'LG0001WA', 1700000, 'LG 드럼 세탁기', 'http://13.125.12.186/image/furniture/icon/washer/type2/3/item.png', 3, 'LG');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (1, '세탁기', 'LG0001WA', 1700000, 'LG 드럼 세탁기', 'http://13.125.12.186/image/furniture/icon/washer/type2/4/item.png', 4, 'LG');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '기타', 'SAM0001TV', 2120000, '삼성 60인치 TV', 'http://13.125.12.186/image/furniture/icon/etc/type1/1/item.png', 1, '삼성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '기타', 'SAM0001TV', 2120000, '삼성 60인치 TV', 'http://13.125.12.186/image/furniture/icon/etc/type1/2/item.png', 2, '삼성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '기타', 'SAM0001TV', 2120000, '삼성 60인치 TV', 'http://13.125.12.186/image/furniture/icon/etc/type1/3/item.png', 3, '삼성');
+
+INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
+VALUES (0, '기타', 'SAM0001TV', 2120000, '삼성 60인치 TV', 'http://13.125.12.186/image/furniture/icon/etc/type1/4/item.png', 4, '삼성');
