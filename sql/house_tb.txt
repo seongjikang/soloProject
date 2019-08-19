@@ -1,0 +1,49 @@
+create table house_tb (
+ house_no INT(11) unsigned NOT NULL,
+ house_name VARCHAR(50) NOT NULL,
+ house_size DECIMAL(11,2) NOT NULL,
+ address VARCHAR(80) NOT NULL,
+ address_detail VARCHAR(80) NOT NULL,
+ house_view_url VARCHAR(80) NOT NULL,
+ house_floor_plan_url VARCHAR(80) NOT NULL,
+ bedroom INT(2) NOT NULL,
+ restroom INT(2) NOT NULL,
+ balcony INT(2) NOT NULL,
+ kitchen INT(2) NOT NULL,
+ livingroom INT(2) NOT NULL,
+ hall INT(2) NOT NULL,
+PRIMARY KEY (house_no)
+) DEFAULT CHARSET=utf8;
+
+insert into house_tb (house_no, house_name, house_size, address, address_detail, house_view_url, house_floor_plan_url, bedroom, restroom, balcony, kitchen, livingroom, hall)
+values (0, '충무로 자이', 55.00, '중구 필동 3가', '102동 1402호',  'http://13.125.12.186/image/house/house1/houseview/item.png', 'http://13.125.12.186/image/house/house1/floorplan/item.png', 1, 1, 0, 1, 1, 0);
+
+insert into house_tb (house_no, house_name, house_size, address, address_detail, house_view_url, house_floor_plan_url, bedroom, restroom, balcony, kitchen, livingroom, hall)
+values (1, '고양 햇빛마을 19단지', 67.20, '고양시 덕양구 성신로 77', '1902동 1202호',  'http://13.125.12.186/image/house/house2/houseview/item.png', 'http://13.125.12.186/image/house/house2/floorplan/item.png', 3, 1, 1, 1, 1, 1);
+
+insert into house_tb (house_no, house_name, house_size, address, address_detail, house_view_url, house_floor_plan_url, bedroom, restroom, balcony, kitchen, livingroom, hall)
+values (2, '개나리 아파트', 81.00, '창원시 성산구 가양로 97', '102동 1101호',  'http://13.125.12.186/image/house/house3/houseview/item.png', 'http://13.125.12.186/image/house/house3/floorplan/item.png', 3, 2, 1, 1, 1, 1);
+
+insert into house_tb (house_no, house_name, house_size, address, address_detail, house_view_url, house_floor_plan_url, bedroom, restroom, balcony, kitchen, livingroom, hall)
+values (3, '용산 더프라임', 54.00, '용산구 원효로 1가 41', '301동 708호',  'http://13.125.12.186/image/house/house4/houseview/item.png', 'http://13.125.12.186/image/house/house4/floorplan/item.png', 3, 2, 4, 1, 1, 1);
+
+insert into house_tb (house_no, house_name, house_size, address, address_detail, house_view_url, house_floor_plan_url, bedroom, restroom, balcony, kitchen, livingroom, hall)
+values (4, '은평 e편한 세상', 71.00, '은평구 중산동', '303동 1202호',  'http://13.125.12.186/image/house/house5/houseview/item.png', 'http://13.125.12.186/image/house/house5/floorplan/item.png', 4, 2, 4, 1, 1, 0);
+
+insert into house_tb (house_no, house_name, house_size, address, address_detail, house_view_url, house_floor_plan_url, bedroom, restroom, balcony, kitchen, livingroom, hall)
+values (5, '삼송 두산 위브', 58.00, '고양시 신도동', '208동 301호',  'http://13.125.12.186/image/house/house6/houseview/item.png', 'http://13.125.12.186/image/house/house6/floorplan/item.png', 3, 2, 0, 1, 1, 0);
+
+insert into house_tb (house_no, house_name, house_size, address, address_detail, house_view_url, house_floor_plan_url, bedroom, restroom, balcony, kitchen, livingroom, hall)
+values (6, '용산 프루지오', 62.00, '마포구 공덕동 237-8', '102동 1708호',  'http://13.125.12.186/image/house/house7/houseview/item.png', 'http://13.125.12.186/image/house/house7/floorplan/item.png', 3, 2, 3, 1, 1, 0);
+
+insert into house_tb (house_no, house_name, house_size, address, address_detail, house_view_url, house_floor_plan_url, bedroom, restroom, balcony, kitchen, livingroom, hall)
+values (7, '공덕 래미안 5차', 84.00, '마포구 공덕동 112-190', '502동 2101호',  'http://13.125.12.186/image/house/house8/houseview/item.png', 'http://13.125.12.186/image/house/house8/floorplan/item.png', 3, 2, 3, 1, 1, 0);
+
+insert into house_tb (house_no, house_name, house_size, address, address_detail, house_view_url, house_floor_plan_url, bedroom, restroom, balcony, kitchen, livingroom, hall)
+values (8, '공덕 래미안 4차', 74.00, '마포구 공덕동 112-192', '408동 1106호',  'http://13.125.12.186/image/house/house9/houseview/item.png', 'http://13.125.12.186/image/house/house9/floorplan/item.png', 3, 2, 3, 1, 1, 0);
+
+insert into house_tb (house_no, house_name, house_size, address, address_detail, house_view_url, house_floor_plan_url, bedroom, restroom, balcony, kitchen, livingroom, hall)
+values (8, '공덕 래미안 4차', 74.00, '마포구 공덕동 112-192', '408동 1106호',  'http://13.125.12.186/image/house/house9/houseview/item.png', 'http://13.125.12.186/image/house/house9/floorplan/item.png', 3, 2, 3, 1, 1, 0);
+
+insert into house_tb (house_no, house_name, house_size, address, address_detail, house_view_url, house_floor_plan_url, bedroom, restroom, balcony, kitchen, livingroom, hall)
+values (9, '신촌숲아이파크', 85.00, '마포구 신수동 93-102', '101동 206호',  'http://13.125.12.186/image/house/house10/houseview/item.png', 'http://13.125.12.186/image/house/house10/floorplan/item.png', 3, 1, 1, 1, 1, 0);
