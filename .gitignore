@@ -25,3 +25,11 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+#Server
+server/.metadata/*
+server/apache-tomcat-7.0.96/logs/*
+*/server/.metadata/*
+*/server/apache-tomcat-7.0.96/logs/*
+
+
