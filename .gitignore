@@ -32,4 +32,10 @@ server/apache-tomcat-7.0.96/logs/*
 */server/.metadata/*
 */server/apache-tomcat-7.0.96/logs/*
 
-
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
