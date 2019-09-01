@@ -33,3 +33,8 @@ hs_err_pid*
 .project
 .settings
 .springBeans
+
+server/.metadata/
+server/apache-tomcat-7.0.96/logs/
+*/server/.metadata/*
+*/server/apache-tomcat-7.0.96/logs/*
