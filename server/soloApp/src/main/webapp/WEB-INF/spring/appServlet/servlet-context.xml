@@ -23,6 +23,7 @@
 	
 	<context:component-scan base-package="com.shinhan.solo" />
 	
+	<!--  <beans:bean id="service" class="com.shinhan.solo.member.solo.MemberService"></beans:bean>-->
 	
 	
 </beans:beans>
