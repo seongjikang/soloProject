@@ -1,10 +1,12 @@
 package com.shinhan.solo.member.dao;
 
+import java.util.Map;
+
 import com.shinhan.solo.member.Member;
 
 public interface IMemberDao {
-	void memberInsert(String memId, String memPw, String memMail, String memPhone1, String memPhone2, String memPhone3);
-	Member memberSelect(String memId, String memPw);
-	void memberUpdate();
-	void membeDelete();
+	Map<String, Member> memberInsert(Member member);
+	Member memberSelect(Member member);
+	Member memberUpdate(Member member);
+	Map<String, Member> memberDelete(Member member);
 }

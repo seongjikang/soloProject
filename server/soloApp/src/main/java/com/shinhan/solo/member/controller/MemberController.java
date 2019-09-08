@@ -1,55 +1,85 @@
 package com.shinhan.solo.member.controller;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.shinhan.solo.member.Member;
 import com.shinhan.solo.member.service.MemberService;
 
 @Controller
+@RequestMapping("/v1")
 public class MemberController {
 	
 	@Autowired
 	MemberService service;
 	
-	@RequestMapping(value="/memJoin.do", method=RequestMethod.POST)
-	public String memJoin(Model model, HttpServletRequest request) {
-		String memId = request.getParameter("memId");
-		String memPw = request.getParameter("memPw");
-		String memMail = request.getParameter("memMail");
-		String memPhone1 = request.getParameter("memPhone1");
-		String memPhone2 = request.getParameter("memPhone2");
-		String memPhone3 = request.getParameter("memPhone3");
+	@ModelAttribute("serverTime")
+	public String getServerTime(Locale locale) {
 		
-		service.memberRegister(memId, memPw, memMail, memPhone1, memPhone2, memPhone3);
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		
-		model.addAttribute("memId",memId);
-		model.addAttribute("memPw", memPw);
-		model.addAttribute("memPhone", memPhone1 + " - " + memPhone2 + " - " + memPhone3);
-		
-		return "memJoinOk";		
+		return dateFormat.format(date);
 	}
 	
-	public String memLogin(Model model, HttpServletRequest request) {
-		String memId = request.getParameter("memId");
-		String memPw = request.getParameter("memPw");
+	@RequestMapping(value = "/memJoin", method = RequestMethod.POST)
+	public String memJoin(Member member) {
 		
-		Member member = service.memberSearch(memId, memPw);
+		service.memberRegister(member);
 		
-		try {
-			model.addAttribute("memId", member.getMemId());
-			model.addAttribute("memPw", member.getMemPw());
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
+		return "memberJoinOK";
+	}
+	
+	@RequestMapping(value = "/memLogin", method = RequestMethod.POST)
+	public String memLogin(Member member) {
 		
-		return "memLoginOK";
+		service.memberSearch(member);
+		
+		return "memberLoginOK";
+	}
+	
+	@RequestMapping(value = "/memRemove", method = RequestMethod.POST)
+	public String memRemove(@ModelAttribute("mem") Member member) {
+		
+		service.memberRemove(member);
+		
+		return "memberRemoveOK";
+	}
+	
+	/*
+	@RequestMapping(value = "/memModify", method = RequestMethod.POST)
+	public String memModify(Model model, Member member) {
+		
+		Member[] members = service.memberModify(member);
+		
+		model.addAttribute("memBef", members[0]);
+		model.addAttribute("memAft", members[1]);
+		
+		return "memModifyOk";
+	}
+	*/
+	
+	@RequestMapping(value = "/memModify", method = RequestMethod.POST)
+	public ModelAndView memModify(Member member) {
+		
+		Member[] members = service.memberModify(member);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("memBef", members[0]);
+		mav.addObject("memAft", members[1]);
+		
+		mav.setViewName("memberModifyOK");
+		
+		return mav;
 	}
 }
