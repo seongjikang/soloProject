@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class LoginController {
 	
-	@RequestMapping(value="/login.do", method=RequestMethod.GET)
+	@RequestMapping(value="/v1/login", method=RequestMethod.GET)
 	public String login(Model model) {
 		model.addAttribute("loginKey","loginValue");
 		

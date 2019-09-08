@@ -5,13 +5,10 @@
 	<title>Home</title>
 </head>
 <body>
-	<h1> memLoginOk </h1>
+	<h1>memRemoveOk</h1>
+	ID : ${mem.memId} <br />
 	
-	ID : ${member.memId}<br />
-	PW : ${member.memPw}<br />
-	
-	<P>  The time on the server is ${serverTime}. </P>
-	
+	<p> The time on the server is ${serverTime} . </p>
 	<a href="/solo/resources/html/index.html"> Go Main </a>
 </body>
 </html>
