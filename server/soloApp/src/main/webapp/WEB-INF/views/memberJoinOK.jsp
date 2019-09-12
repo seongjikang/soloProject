@@ -22,6 +22,7 @@
 	
 	<P>  The time on the server is ${serverTime}. </P>
 	
-	<a href="/solo/resources/html/memJoin.html"> Go MemberJoin </a>
+	<!--   <a href="/solo/resources/html/memJoin.html"> Go MemberJoin </a> -->
+	<a href="http://13.125.12.186/html/memJoin.html"> Go MemberJoin </a>
 </body>
 </html>
