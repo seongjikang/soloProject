@@ -9,6 +9,7 @@
 	ID : ${mem.memId} <br />
 	
 	<p> The time on the server is ${serverTime} . </p>
-	<a href="/solo/resources/html/index.html"> Go Main </a>
+	<!--  <a href="/solo/resources/html/index.html"> Go Main </a> -->
+	<a href="http://13.125.12.186/index.html">
 </body>
 </html>

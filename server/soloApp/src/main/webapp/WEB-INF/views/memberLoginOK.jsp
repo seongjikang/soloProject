@@ -12,6 +12,7 @@
 	
 	<P>  The time on the server is ${serverTime}. </P>
 	
-	<a href="/solo/resources/html/index.html"> Go Main </a>
+	<!--  <a href="/solo/resources/html/index.html"> Go Main </a> -->
+	<a href="http://13.125.12.186/index.html"> Go Main </a>
 </body>
 </html>
