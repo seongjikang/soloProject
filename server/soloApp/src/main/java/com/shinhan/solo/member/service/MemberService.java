@@ -27,10 +27,12 @@ public class MemberService implements IMemberService{
 	}
 
 	@Override
-	public void memberSearch(Member member) {
+	public Member memberSearch(Member member) {
 		printMember(dao.memberSelect(member));
+		return dao.memberSelect(member);
 	}
 
+/*
 	@Override
 	public Member[] memberModify(Member member) {
 		
@@ -40,7 +42,17 @@ public class MemberService implements IMemberService{
 		
 		return new Member[]{memBef, memAft};
 	}
-
+*/
+	@Override
+	public Member memberModify(Member member) {
+		
+		Member memAft = dao.memberUpdate(member);
+		printMember(memAft);
+		
+		return memAft;
+	}
+	
+	
 	@Override
 	public void memberRemove(Member member) {
 		printMembers(dao.memberDelete(member));

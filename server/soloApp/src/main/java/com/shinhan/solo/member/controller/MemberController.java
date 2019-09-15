@@ -4,13 +4,14 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.shinhan.solo.member.Member;
@@ -41,17 +42,21 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "/memLogin", method = RequestMethod.POST)
-	public String memLogin(Member member) {
+	public String memLogin(Member member, HttpServletRequest request) {
 		
-		service.memberSearch(member);
+		Member mem = service.memberSearch(member);
+		HttpSession session = request.getSession();
+		session.setAttribute("member", mem);
 		
 		return "memberLoginOK";
 	}
 	
 	@RequestMapping(value = "/memRemove", method = RequestMethod.POST)
-	public String memRemove(@ModelAttribute("mem") Member member) {
+	public String memRemove(@ModelAttribute("mem") Member member, HttpServletRequest request) {
 		
 		service.memberRemove(member);
+		HttpSession session = request.getSession();
+		session.invalidate();
 		
 		return "memberRemoveOK";
 	}
@@ -70,13 +75,18 @@ public class MemberController {
 	*/
 	
 	@RequestMapping(value = "/memModify", method = RequestMethod.POST)
-	public ModelAndView memModify(Member member) {
+	public ModelAndView memModify(Member member, HttpServletRequest request) {
 		
-		Member[] members = service.memberModify(member);
+		HttpSession session = request.getSession();
+		Member befMem =(Member) session.getAttribute("member");		
+		Member aftMem = service.memberModify(member);
+		
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("memBef", members[0]);
-		mav.addObject("memAft", members[1]);
+		mav.addObject("memBef", befMem);
+		mav.addObject("memAft", aftMem);
+		
+		session.setAttribute("member", aftMem);
 		
 		mav.setViewName("memberModifyOK");
 		
