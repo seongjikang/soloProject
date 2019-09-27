@@ -1,18 +1,15 @@
 package com.shinhan.solo.member.dao;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.shinhan.solo.member.Member;
 
 //@Component
 @Repository
-public class MemberDao implements IMemberDao{
+public class MemberDao implements IMemberDao {
 
 	private HashMap<String, Member> dbMap;
 	
@@ -51,5 +48,5 @@ public class MemberDao implements IMemberDao{
 		return dbMap;
 		
 	}
-	
+
 }
