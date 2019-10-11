@@ -15,6 +15,9 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import solo.shinhan.com.solo.loan.LoanInfoActivity;
+import solo.shinhan.com.solo.loan.LoanTermsActivity;
+
 public class CollocateFurnitureActivity extends Activity {
 
     private RelativeLayout mFloorPlanLayout;
@@ -151,6 +154,13 @@ public class CollocateFurnitureActivity extends Activity {
             }
         });
 
+        mLendBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LoanInfoActivity.class);
+                startActivity(intent); // TODO : 값 넘기기
+            }
+        });
 
     }
 
