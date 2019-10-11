@@ -5,12 +5,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>로그인 페이지</title>
 <link rel="stylesheet" type="text/css" href="http://13.125.12.186/css/normal.css" />
 </head>
 <body>
 	
-	<h1>MEMBER LOGIN</h1>
+	<h1>로그인</h1>
 	
 	<form:form action="http://13.125.12.186/v1/login" method="post" commandName="member">
 		<table>
@@ -23,7 +23,7 @@
 				<td><form:password path="memPw" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="Login" ></td>
+				<td colspan="2"><input type="submit" value="로그인" ></td>
 			</tr>
 		</table>
 	</form:form>

@@ -6,11 +6,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>회원가입 페이지</title>
 <link rel="stylesheet" type="text/css" href="http://13.125.12.186/css/normal.css" />
 </head>
 <body>
-	<h1>MEMBER JOIN</h1>
+	<h1>회원가입</h1>
 	
 	<form:form action="http://13.125.12.186/v1/join" method="post" commandName="member">
 		<table>
@@ -28,13 +28,13 @@
 			</tr>
 			<tr>
 				<td colspan="2">
-					<input type="submit" value="Join" >
-					<input type="reset" value="Cancel" >
+					<input type="submit" value="가입하기" >
+					<input type="reset" value="취소하기" >
 				</td>
 			</tr>
 		</table>
 	</form:form>
 	
-	<a href="http://13.125.12.186/index.jsp">MAIN</a>
+	<a href="http://13.125.12.186/index.jsp">메인으로</a>
 </body>
 </html>

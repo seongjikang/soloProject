@@ -5,12 +5,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>회원 탈퇴 페이지</title>
 <link rel="stylesheet" type="text/css" href="http://13.125.12.186/css/normal.css" />
 </head>
 <body>
 	
-	<h1>MEMBER REMOVE</h1>
+	<h1>회원 탈퇴</h1>
 	
 	<form:form action="http://13.125.12.186/v1/remove" method="post" commandName="member">
 		<input type="hidden" name="memId" value="${member.memId}">
@@ -24,11 +24,11 @@
 				<td><form:password path="memPw" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="Remove" ></td>
+				<td colspan="2"><input type="submit" value="회원 탈퇴" ></td>
 			</tr>
 		</table>
 	</form:form>
 	
-	<a href="http://13.125.12.186/index.jsp">MAIN</a>
+	<a href="http://13.125.12.186/index.jsp">메인으로</a>
 </body>
 </html>

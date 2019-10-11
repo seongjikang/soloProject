@@ -18,13 +18,26 @@ public class MemberService implements IMemberService {
 	
 	@Override
 	public void memberRegister(Member member) {
-		printMembers(dao.memberInsert(member));
+		int result = dao.memberInsert(member);
+		
+		if (result == 0) {
+			System.out.println("Join Fail!!");
+		} else {
+			System.out.println("Join Success!!");
+		}
+		
 	}
 
 	@Override
 	public Member memberSearch(Member member) {
+		
 		Member mem = dao.memberSelect(member);
-		printMember(mem);
+		
+		if (mem == null) {
+			System.out.println("Login Fail!!");
+		} else {
+			System.out.println("Login Success!!");
+		}
 		
 		return mem;
 	}
@@ -32,36 +45,30 @@ public class MemberService implements IMemberService {
 	@Override
 	public Member memberModify(Member member) {
 		
-		Member memAft = dao.memberUpdate(member);
-		printMember(memAft);
+		int result = dao.memberUpdate(member);
 		
-		return memAft;
+		if(result == 0 ) {
+			System.out.println("Modify Fail!!");
+			return null;
+		} else {
+			System.out.println("Modify Success!!");
+		}
+		
+		return member;
 	}
 	
 	@Override
-	public void memberRemove(Member member) {
-		printMembers(dao.memberDelete(member));
-	}
-	
-	private void printMembers(Map<String, Member> map) {
+	public int memberRemove(Member member) {
 		
-		Set<String> keys = map.keySet();
-		Iterator<String> iterator = keys.iterator();
+		int result = dao.memberDelete(member);
 		
-		while (iterator.hasNext()) {
-			String key = iterator.next();
-			Member mem = map.get(key);
-			printMember(mem);
+		if(result == 0 ) {
+			System.out.println("Remove Fail!!");
+		} else {
+			System.out.println("Remove Success!!");
 		}
 		
-	}
-	
-	private void printMember(Member mem) {
-		
-		System.out.print("ID:" + mem.getMemId() + "\t");
-		System.out.print("|PW:" + mem.getMemPw() + "\t");
-		System.out.print("|MAIL:" + mem.getMemMail() + "\n");
-		
+		return result;
 	}
 
 }
