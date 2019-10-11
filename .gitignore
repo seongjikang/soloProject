@@ -1,5 +1,8 @@
 #android
 */.idea
+.idea
+.idea/*
+/.idea
 
 # Compiled class file
 *.class
@@ -38,7 +41,10 @@ server/.metadata/
 server/apache-tomcat-7.0.96/
 */server/.metadata/*
 */server/apache-tomcat-7.0.96/*
+
 server/soloApp/target/m2e-wtp/*
 */server/soloApp/target/m2e-wtp/
 server/.recommenders/
 */server/.recommenders/
+
+.DS_Store

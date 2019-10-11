@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="solo.shinhan.com.solo">
+
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,17 +13,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".loan.ShowResultActivity"></activity>
+        <activity android:name=".loan.LoanRegCompleteActivity" />
+        <activity android:name=".loan.InputRealInfoActivity" />
+        <activity android:name=".loan.ShowLimitActivity" />
+        <activity android:name=".loan.InputInfoActivity" />
+        <activity android:name=".loan.ConfirmIDActivity" />
+        <activity android:name=".loan.LoanTermsActivity" />
+        <activity android:name=".loan.LoanInfoActivity" />
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="solo.shinhan.com.solo"
             android:exported="false"
             android:grantUriPermissions="true">
-
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
-        <activity android:name=".RegistImageActivity"></activity>
+
+        <activity android:name=".RegistImageActivity" />
         <activity android:name=".LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context=".loan.InputInfoActivity">
+
+	<!--toptitle-->
+	<LinearLayout
+		android:id="@+id/ll_title_view"
+		android:layout_width="match_parent"
+		android:layout_height="60dp"
+		android:background="@color/blue_common"
+		android:gravity="center_vertical">
+
+		<ImageView
+			android:id="@+id/back_btn"
+			android:layout_width="20dp"
+			android:layout_height="20dp"
+			android:layout_marginLeft="16dp"
+			android:src="@drawable/top_back" />
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:gravity="center">
+
+			<TextView
+				android:layout_width="200dp"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:text="신용대출"
+				android:textColor="#FFFFFF"
+				android:textSize="18dp" />
+		</LinearLayout>
+
+		<ImageView
+			android:id="@+id/setting_btn"
+			android:layout_width="20dp"
+			android:layout_height="20dp"
+			android:layout_marginRight="16dp"
+			android:src="@drawable/top_menu" />
+	</LinearLayout>
+	<!--toptitle-->
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="직군" />
+
+			<TextView
+				android:layout_marginLeft="20dp"
+				android:layout_weight="1"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:text="대기업/중소기업/공공기관" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="직장명" />
+
+			<TextView
+				android:layout_marginLeft="20dp"
+				android:layout_weight="1"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:text="(주)신한은행" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="직위" />
+
+			<TextView
+				android:layout_marginLeft="20dp"
+				android:layout_weight="1"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:text="행원" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="고용형태" />
+
+			<TextView
+				android:layout_marginLeft="20dp"
+				android:layout_weight="1"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:text="정규직" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="입사년월" />
+
+			<TextView
+				android:layout_marginLeft="20dp"
+				android:layout_weight="1"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:text="2018년 09월" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="연소득" />
+
+
+			<EditText
+				android:id="@+id/et_name"
+				android:layout_width="match_parent"
+				android:layout_height="50dp"
+				android:layout_marginLeft="16dp"
+				android:layout_marginRight="16dp"
+				android:background="@drawable/et_search"
+				android:hint="연소득 입력"
+				android:maxLength="20"
+				android:inputType="number"
+				android:maxLines="1"
+				android:paddingLeft="20dp"
+				android:paddingRight="20dp"
+				android:textSize="12dp" />
+		</LinearLayout>
+
+		<Button
+			android:id="@+id/btn_next"
+			android:text="다음"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"/>
+	</LinearLayout>
+</LinearLayout>
