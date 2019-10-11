@@ -1,5 +1,7 @@
 package com.shinhan.solo.member.service;
 
+import java.util.List;
+
 import com.shinhan.solo.member.Member;
 
 public interface IMemberService {
@@ -7,4 +9,5 @@ public interface IMemberService {
 	Member memberSearch(Member member);
 	Member memberModify(Member member);
 	int memberRemove(Member member);
+	List<Member> memberAllSearch();
 }

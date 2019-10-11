@@ -2,17 +2,21 @@ package com.shinhan.solo.member.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.shinhan.solo.member.Member;
@@ -217,6 +221,26 @@ public class MemberController {
 		session.invalidate();
 		
 		return "/member/removeOk";
+	}
+	
+	@RequestMapping(value = "/listup", method = RequestMethod.POST, produces="application/json;charset=utf-8")
+	public @ResponseBody JSONObject memListUp() {
+		JSONObject jsonMain = new JSONObject();
+		
+		List<Member> members = service.memberAllSearch();
+		JSONArray jArray = new JSONArray();
+		for(int i=0 ; i<members.size(); i++) {
+			Member member = members.get(i);
+			JSONObject jObject = new JSONObject();
+			jObject.put("memId", member.getMemId());
+			jObject.put("memPw", member.getMemPw());
+			jObject.put("memMail", member.getMemMail());
+			jObject.put("memPurcNum", member.getMemPurcNum());
+			
+			jArray.add(i,jObject);
+		}
+		jsonMain.put("sendData", jArray);
+		return jsonMain;
 	}
 	
 }

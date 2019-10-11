@@ -1,8 +1,6 @@
 package com.shinhan.solo.member.service;
 
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -70,5 +68,20 @@ public class MemberService implements IMemberService {
 		
 		return result;
 	}
+
+	@Override
+	public List<Member> memberAllSearch() {
+		List<Member> members = dao.memberAllSelect();
+		
+		if (members == null || members.size() == 0) {
+			System.out.println("ListUp Fail!!");
+		} else {
+			System.out.println("ListUp Success!!");
+		}
+		
+		return members;
+	}
+	
+	
 
 }

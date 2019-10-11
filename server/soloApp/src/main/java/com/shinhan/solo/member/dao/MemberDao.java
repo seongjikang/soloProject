@@ -440,4 +440,30 @@ public class MemberDao implements IMemberDao {
 		*/
 	}
 
+	@Override
+	public List<Member> memberAllSelect() {
+		List<Member> members = null;
+		
+		final String sql = "SELECT * FROM member";
+		
+		members = template.query(sql, new RowMapper<Member>() {
+			@Override
+			public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Member mem = new Member();
+				mem.setMemId(rs.getString("memId"));
+				mem.setMemPw(rs.getString("memPw"));
+				mem.setMemMail(rs.getString("memMail"));
+				mem.setMemPurcNum(rs.getInt("memPurcNum"));
+				return mem;
+			}			
+		});
+		
+		if(members.isEmpty()) 
+			return null;
+		
+		return members;
+		
+	}
+	
+
 }
