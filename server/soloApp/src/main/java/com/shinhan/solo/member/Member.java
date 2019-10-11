@@ -5,6 +5,7 @@ public class Member {
 	private String memId;
 	private String memPw;
 	private String memMail;
+	private int memPurcNum;
 	
 	public String getMemId() {
 		return memId;
@@ -23,5 +24,11 @@ public class Member {
 	}
 	public void setMemMail(String memMail) {
 		this.memMail = memMail;
+	}
+	public int getMemPurcNum() {
+		return memPurcNum;
+	}
+	public void setMemPurcNum(int memPurcNum) {
+		this.memPurcNum = memPurcNum;
 	}
 }

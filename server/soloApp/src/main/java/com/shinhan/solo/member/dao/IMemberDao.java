@@ -5,8 +5,8 @@ import java.util.Map;
 import com.shinhan.solo.member.Member;
 
 public interface IMemberDao {
-	Map<String, Member> memberInsert(Member member);
+	int memberInsert(Member member);
 	Member memberSelect(Member member);
-	Member memberUpdate(Member member);
-	Map<String, Member> memberDelete(Member member);
+	int memberUpdate(Member member);
+	int memberDelete(Member member);
 }
