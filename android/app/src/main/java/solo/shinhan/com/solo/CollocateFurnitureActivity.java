@@ -58,6 +58,8 @@ public class CollocateFurnitureActivity extends Activity {
         mLendBtn = (Button) findViewById(R.id.lend_btn);
         mBackCollocateBtn = (ImageView) findViewById(R.id.back_collocate_btn);
 
+        mCollocateMenu.setVisibility(View.INVISIBLE);
+
         mFurnitureManagerDialog = new FurnitureManagerDialog(CollocateFurnitureActivity.this, rotateListener, deleteListener, cancelListener);
 
         mFloorPlanLayout.setBackground(new BitmapDrawable(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseFloorPlan()));
@@ -181,6 +183,7 @@ public class CollocateFurnitureActivity extends Activity {
         @Override
         public void onClick(View view) {
             mFurnitureManagerDialog.dismiss();
+            mCollocateMenu.setVisibility(View.INVISIBLE);
         }
     };
 
@@ -193,6 +196,7 @@ public class CollocateFurnitureActivity extends Activity {
                 mDirection++;
             }
             mFurnitureManagerDialog.setDirection(mDirection);
+
             //mFurnitureManagerDialog.settingFurnitureView();
 
             SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(mCurrentPosition).setDirection(mDirection);
