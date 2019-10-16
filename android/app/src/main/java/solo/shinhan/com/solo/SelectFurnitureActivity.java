@@ -30,7 +30,7 @@ public class SelectFurnitureActivity extends Activity {
 	private ArrayList<FurnitureInfo> mFurnitureList;
 	private String mCategory;
 	private int mFurnitureType;
-	private final String[] furnitureCategory = {"소파", "테이블", "침대"};
+	private final String[] furnitureCategory = {"소파", "테이블", "침대", "욕실", "캐비넷", "카페트", "의자", "책상", "주방", "세탁", "기타"};
 
 	private int mFurniturePostion;
 	private int mCurrentPosition;
@@ -102,10 +102,10 @@ public class SelectFurnitureActivity extends Activity {
 			}
 		});
 
-		mLeftArrow.setOnClickListener(new View.OnClickListener() {
+		mRightArrow.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				if (mCurrentPosition == 2) {
+				if (mCurrentPosition == 10) {
 					mCurrentPosition = 0;
 					getPositionInfo();
 				} else {
@@ -116,11 +116,11 @@ public class SelectFurnitureActivity extends Activity {
 			}
 		});
 
-		mRightArrow.setOnClickListener(new View.OnClickListener() {
+		mLeftArrow.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
 				if (mCurrentPosition == 0) {
-					mCurrentPosition = 2;
+					mCurrentPosition = 10;
 					getPositionInfo();
 				} else {
 					mCurrentPosition--;

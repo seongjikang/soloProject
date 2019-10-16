@@ -5,18 +5,42 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.util.Log;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class LoadingActivity extends Activity {
+
+	ProgressBar progress;
+
+	LoadingListCall task;
+
+	private final static String FURNITURE_LIST_URL = "http://13.125.12.186/v1/furniture/listup";
+	private final static String HOUSE_LIST_URL = "http://13.125.12.186/v1/house/listup";
+
 	private String[] permission_list = {
 			Manifest.permission.WRITE_EXTERNAL_STORAGE
 			, Manifest.permission.CAMERA
@@ -28,6 +52,8 @@ public class LoadingActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_loading);
+
+		progress = (ProgressBar)findViewById(R.id.progress);
 
 		checkPermission();
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -71,6 +97,7 @@ public class LoadingActivity extends Activity {
 	private void startLoading() {
 		Handler handler = new Handler();
 		loadData();
+		/*
 		handler.postDelayed(new Runnable() {
 			@Override
 			public void run() {
@@ -79,371 +106,193 @@ public class LoadingActivity extends Activity {
 				overridePendingTransition(0, 0);
 				finish();
 			}
-		}, 2000);
+		}, 2000);*/
 	}
 
 	private void loadData() {
 		Log.i("loaddata", "loaddata");
-		loadHouseInfo();
-		loadFurnitureInfo();
+		task = new LoadingListCall();
+
+		task.execute(FURNITURE_LIST_URL, HOUSE_LIST_URL);
 	}
 
-	private void loadFurnitureInfo() {
+
+	private void loadFurnitureInfo(String body) throws JSONException {
 		HashMap<String, ArrayList<FurnitureInfo>> furnitureMap = new HashMap<String, ArrayList<FurnitureInfo>>();
-		ArrayList<FurnitureInfo> furnitureInfos;
 		FurnitureInfo furnitureInfo;
 
-		furnitureInfos = new ArrayList<FurnitureInfo>();
+		ArrayList<FurnitureInfo> allFurnitureInfos = new ArrayList<FurnitureInfo>();
 
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("소파");
-		furnitureInfo.setBrand("이케아");
-		furnitureInfo.setModel("IK1SKSJSKSKJ");
-		furnitureInfo.setFurnitureNo(0);
-		furnitureInfo.setDirection(1);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.sofa1_1));
-		furnitureInfo.setFurnitureName("이케아 1인용 원형 소파");
-		furnitureInfo.setPrice(200000);
-		furnitureInfos.add(furnitureInfo);
+		ArrayList<FurnitureInfo> sofaInfos = new ArrayList<FurnitureInfo>();
+		ArrayList<FurnitureInfo> tableInfos = new ArrayList<FurnitureInfo>();
+		ArrayList<FurnitureInfo> bedInfos = new ArrayList<FurnitureInfo>();
+		ArrayList<FurnitureInfo> bathroomInfos = new ArrayList<FurnitureInfo>();
+		ArrayList<FurnitureInfo> cabinetInfos = new ArrayList<FurnitureInfo>();
+		ArrayList<FurnitureInfo> carpetInfos = new ArrayList<FurnitureInfo>();
+		ArrayList<FurnitureInfo> chairInfos = new ArrayList<FurnitureInfo>();
+		ArrayList<FurnitureInfo> deskInfos = new ArrayList<FurnitureInfo>();
+		ArrayList<FurnitureInfo> kitchenInfos = new ArrayList<FurnitureInfo>();
+		ArrayList<FurnitureInfo> washerInfos = new ArrayList<FurnitureInfo>();
+		ArrayList<FurnitureInfo> etcInfos = new ArrayList<FurnitureInfo>();
 
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("소파");
-		furnitureInfo.setBrand("이케아");
-		furnitureInfo.setModel("IK1SKSJSKSKJ");
-		furnitureInfo.setFurnitureNo(0);
-		furnitureInfo.setDirection(2);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.sofa1_2));
-		furnitureInfo.setFurnitureName("이케아 1인용 원형 소파");
-		furnitureInfo.setPrice(200000);
-		furnitureInfos.add(furnitureInfo);
+		JSONObject jObject = new JSONObject(body);
+		JSONArray jArray = (JSONArray)jObject.get("furnitureList");
 
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("소파");
-		furnitureInfo.setBrand("이케아");
-		furnitureInfo.setModel("IK1SKSJSKSKJ");
-		furnitureInfo.setFurnitureNo(0);
-		furnitureInfo.setDirection(3);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.sofa1_3));
-		furnitureInfo.setFurnitureName("이케아 1인용 원형 소파");
-		furnitureInfo.setPrice(200000);
-		furnitureInfos.add(furnitureInfo);
+		for(int i=0; i<jArray.length(); i++) {
+			JSONObject row = jArray.getJSONObject(i);
+			furnitureInfo = new FurnitureInfo();
+			furnitureInfo.setCategory(row.getString("category"));
+			furnitureInfo.setBrand(row.getString("brand"));
+			furnitureInfo.setModel(row.getString("model"));
+			furnitureInfo.setFurnitureNo(row.getInt("furnitureNo"));
+			furnitureInfo.setDirection(row.getInt("direction"));
+			furnitureInfo.setFurnitureImage(getBitmapFromURL(row.getString("furnitureUrl")));
+			furnitureInfo.setFurnitureName(row.getString("furnitureName"));
+			furnitureInfo.setPrice(row.getInt("price"));
+			allFurnitureInfos.add(furnitureInfo);
+		}
 
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("소파");
-		furnitureInfo.setBrand("이케아");
-		furnitureInfo.setModel("IK1SKSJSKSKJ");
-		furnitureInfo.setFurnitureNo(0);
-		furnitureInfo.setDirection(4);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.sofa1_4));
-		furnitureInfo.setFurnitureName("이케아 1인용 원형 소파");
-		furnitureInfo.setPrice(200000);
-		furnitureInfos.add(furnitureInfo);
+		for(int i=0; i<allFurnitureInfos.size(); i++) {
+			if(allFurnitureInfos.get(i).getCategory().equals("소파")) {
+				sofaInfos.add(allFurnitureInfos.get(i));
+			} else if (allFurnitureInfos.get(i).getCategory().equals("테이블")) {
+				tableInfos.add(allFurnitureInfos.get(i));
+			} else if (allFurnitureInfos.get(i).getCategory().equals("침대")) {
+				bedInfos.add(allFurnitureInfos.get(i));
+			} else if (allFurnitureInfos.get(i).getCategory().equals("화장실")) {
+				bathroomInfos.add(allFurnitureInfos.get(i));
+			} else if (allFurnitureInfos.get(i).getCategory().equals("캐비넷")) {
+				cabinetInfos.add(allFurnitureInfos.get(i));
+			} else if (allFurnitureInfos.get(i).getCategory().equals("카페트")) {
+				carpetInfos.add(allFurnitureInfos.get(i));
+			} else if (allFurnitureInfos.get(i).getCategory().equals("의자")) {
+				chairInfos.add(allFurnitureInfos.get(i));
+			} else if (allFurnitureInfos.get(i).getCategory().equals("책상")) {
+				deskInfos.add(allFurnitureInfos.get(i));
+			} else if (allFurnitureInfos.get(i).getCategory().equals("주방")) {
+				kitchenInfos.add(allFurnitureInfos.get(i));
+			} else if (allFurnitureInfos.get(i).getCategory().equals("세탁기")) {
+				washerInfos.add(allFurnitureInfos.get(i));
+			} else if (allFurnitureInfos.get(i).getCategory().equals("기타")) {
+				etcInfos.add(allFurnitureInfos.get(i));
+			}
+		}
 
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("소파");
-		furnitureInfo.setBrand("마티노 가구");
-		furnitureInfo.setModel("MT11KSJSK223");
-		furnitureInfo.setFurnitureNo(1);
-		furnitureInfo.setDirection(1);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.sofa2_1));
-		furnitureInfo.setFurnitureName("마티노가구 로코코 3인용 소파");
-		furnitureInfo.setPrice(310000);
-		furnitureInfos.add(furnitureInfo);
-
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("소파");
-		furnitureInfo.setBrand("마티노 가구");
-		furnitureInfo.setModel("MT11KSJSK223");
-		furnitureInfo.setFurnitureNo(1);
-		furnitureInfo.setDirection(2);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.sofa2_2));
-		furnitureInfo.setFurnitureName("마티노가구 로코코 3인용 소파");
-		furnitureInfo.setPrice(310000);
-		furnitureInfos.add(furnitureInfo);
-
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("소파");
-		furnitureInfo.setBrand("마티노 가구");
-		furnitureInfo.setModel("MT11KSJSK223");
-		furnitureInfo.setFurnitureNo(1);
-		furnitureInfo.setDirection(3);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.sofa2_3));
-		furnitureInfo.setFurnitureName("마티노가구 로코코 3인용 소파");
-		furnitureInfo.setPrice(310000);
-		furnitureInfos.add(furnitureInfo);
-
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("소파");
-		furnitureInfo.setBrand("마티노 가구");
-		furnitureInfo.setModel("MT11KSJSK223");
-		furnitureInfo.setFurnitureNo(1);
-		furnitureInfo.setDirection(4);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.sofa2_4));
-		furnitureInfo.setFurnitureName("마티노가구 로코코 3인용 소파");
-		furnitureInfo.setPrice(310000);
-		furnitureInfos.add(furnitureInfo);
-
-		furnitureMap.put("소파", furnitureInfos);
-
-		furnitureInfos = new ArrayList<FurnitureInfo>();
-
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("테이블");
-		furnitureInfo.setBrand("이케아");
-		furnitureInfo.setModel("IK1SI2ISIAOO");
-		furnitureInfo.setFurnitureNo(0);
-		furnitureInfo.setDirection(1);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.table1_1));
-		furnitureInfo.setFurnitureName("이케아 신상 원형 테이블");
-		furnitureInfo.setPrice(1000000);
-		furnitureInfos.add(furnitureInfo);
-
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("테이블");
-		furnitureInfo.setBrand("이케아");
-		furnitureInfo.setModel("IK1SI2ISIAOO");
-		furnitureInfo.setFurnitureNo(0);
-		furnitureInfo.setDirection(2);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.table1_2));
-		furnitureInfo.setFurnitureName("이케아 신상 원형 테이블");
-		furnitureInfo.setPrice(1000000);
-		furnitureInfos.add(furnitureInfo);
-
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("테이블");
-		furnitureInfo.setBrand("이케아");
-		furnitureInfo.setModel("IK1SI2ISIAOO");
-		furnitureInfo.setFurnitureNo(0);
-		furnitureInfo.setDirection(3);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.table1_3));
-		furnitureInfo.setFurnitureName("이케아 신상 원형 테이블");
-		furnitureInfo.setPrice(1000000);
-		furnitureInfos.add(furnitureInfo);
-
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("테이블");
-		furnitureInfo.setBrand("이케아");
-		furnitureInfo.setModel("IK1SI2ISIAOO");
-		furnitureInfo.setFurnitureNo(0);
-		furnitureInfo.setDirection(4);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.table1_4));
-		furnitureInfo.setFurnitureName("이케아 신상 원형 테이블");
-		furnitureInfo.setPrice(1000000);
-		furnitureInfos.add(furnitureInfo);
-
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("테이블");
-		furnitureInfo.setBrand("세움디자인");
-		furnitureInfo.setModel("SE12KSJS33KJ");
-		furnitureInfo.setFurnitureNo(1);
-		furnitureInfo.setDirection(1);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.table2_1));
-		furnitureInfo.setFurnitureName("이쁜 사각 테이블");
-		furnitureInfo.setPrice(800000);
-		furnitureInfos.add(furnitureInfo);
-
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("테이블");
-		furnitureInfo.setBrand("세움디자인");
-		furnitureInfo.setModel("SE12KSJS33KJ");
-		furnitureInfo.setFurnitureNo(1);
-		furnitureInfo.setDirection(2);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.table2_2));
-		furnitureInfo.setFurnitureName("이쁜 사각 테이블");
-		furnitureInfo.setPrice(800000);
-		furnitureInfos.add(furnitureInfo);
-
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("테이블");
-		furnitureInfo.setBrand("세움디자인");
-		furnitureInfo.setModel("SE12KSJS33KJ");
-		furnitureInfo.setFurnitureNo(1);
-		furnitureInfo.setDirection(3);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.table2_3));
-		furnitureInfo.setFurnitureName("이쁜 사각 테이블");
-		furnitureInfo.setPrice(800000);
-		furnitureInfos.add(furnitureInfo);
-
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("테이블");
-		furnitureInfo.setBrand("세움디자인");
-		furnitureInfo.setModel("SE12KSJS33KJ");
-		furnitureInfo.setFurnitureNo(1);
-		furnitureInfo.setDirection(4);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.table2_4));
-		furnitureInfo.setFurnitureName("이쁜 사각 테이블");
-		furnitureInfo.setPrice(800000);
-		furnitureInfos.add(furnitureInfo);
-
-		furnitureMap.put("테이블", furnitureInfos);
-
-		furnitureInfos = new ArrayList<FurnitureInfo>();
-
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("침대");
-		furnitureInfo.setBrand("에이스");
-		furnitureInfo.setModel("ACE1SKS22SKJ");
-		furnitureInfo.setFurnitureNo(0);
-		furnitureInfo.setDirection(1);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.bed1_1));
-		furnitureInfo.setFurnitureName("엄청 편한 침대 싱글");
-		furnitureInfo.setPrice(1300000);
-		furnitureInfos.add(furnitureInfo);
-
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("침대");
-		furnitureInfo.setBrand("에이스");
-		furnitureInfo.setModel("ACE1SKS22SKJ");
-		furnitureInfo.setFurnitureNo(0);
-		furnitureInfo.setDirection(2);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.bed1_2));
-		furnitureInfo.setFurnitureName("엄청 편한 침대 싱글");
-		furnitureInfo.setPrice(1300000);
-		furnitureInfos.add(furnitureInfo);
-
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("침대");
-		furnitureInfo.setBrand("에이스");
-		furnitureInfo.setModel("ACE1SKS22SKJ");
-		furnitureInfo.setFurnitureNo(0);
-		furnitureInfo.setDirection(3);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.bed1_3));
-		furnitureInfo.setFurnitureName("엄청 편한 침대 싱글");
-		furnitureInfo.setPrice(1300000);
-		furnitureInfos.add(furnitureInfo);
-
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("침대");
-		furnitureInfo.setBrand("에이스");
-		furnitureInfo.setModel("ACE1SKS22SKJ");
-		furnitureInfo.setFurnitureNo(0);
-		furnitureInfo.setDirection(4);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.bed1_4));
-		furnitureInfo.setFurnitureName("엄청 편한 침대 싱글");
-		furnitureInfo.setPrice(1300000);
-		furnitureInfos.add(furnitureInfo);
-
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("침대");
-		furnitureInfo.setBrand("장수돌침대");
-		furnitureInfo.setModel("JS1BBSJ4828");
-		furnitureInfo.setFurnitureNo(1);
-		furnitureInfo.setDirection(1);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.bed2_1));
-		furnitureInfo.setFurnitureName("장수돌침대 퀸");
-		furnitureInfo.setPrice(1800000);
-		furnitureInfos.add(furnitureInfo);
-
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("침대");
-		furnitureInfo.setBrand("장수돌침대");
-		furnitureInfo.setModel("JS1BBSJ4828");
-		furnitureInfo.setFurnitureNo(1);
-		furnitureInfo.setDirection(2);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.bed2_2));
-		furnitureInfo.setFurnitureName("장수돌침대 퀸");
-		furnitureInfo.setPrice(1800000);
-		furnitureInfos.add(furnitureInfo);
-
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("침대");
-		furnitureInfo.setBrand("장수돌침대");
-		furnitureInfo.setModel("JS1BBSJ4828");
-		furnitureInfo.setFurnitureNo(1);
-		furnitureInfo.setDirection(3);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.bed2_3));
-		furnitureInfo.setFurnitureName("장수돌침대 퀸");
-		furnitureInfo.setPrice(1800000);
-		furnitureInfos.add(furnitureInfo);
-
-		furnitureInfo = new FurnitureInfo();
-		furnitureInfo.setCategory("침대");
-		furnitureInfo.setBrand("장수돌침대");
-		furnitureInfo.setModel("JS1BBSJ4828");
-		furnitureInfo.setFurnitureNo(1);
-		furnitureInfo.setDirection(4);
-		furnitureInfo.setFurnitureImage(BitmapFactory.decodeResource(getResources(), R.drawable.bed2_4));
-		furnitureInfo.setFurnitureName("장수돌침대 퀸");
-		furnitureInfo.setPrice(1800000);
-		furnitureInfos.add(furnitureInfo);
-
-		furnitureMap.put("침대", furnitureInfos);
+		furnitureMap.put("소파", sofaInfos); furnitureMap.put("테이블", tableInfos); furnitureMap.put("침대", bedInfos);
+		furnitureMap.put("욕실", bathroomInfos); furnitureMap.put("캐비넷", cabinetInfos); furnitureMap.put("카페트", carpetInfos);
+		furnitureMap.put("의자", chairInfos); furnitureMap.put("책상", deskInfos); furnitureMap.put("주방", kitchenInfos);
+		furnitureMap.put("세탁", washerInfos); furnitureMap.put("기타", etcInfos);
 
 		SoloSingleton.getInstance().setFurnitureMap(furnitureMap);
 	}
 
-	private void loadHouseInfo() {
+	private Bitmap getBitmapFromURL(String strImageURL) {
+		Bitmap imgBitmap = null;
+
+		try {
+			URL url = new URL(strImageURL);
+			URLConnection conn = url.openConnection();
+			conn.connect();
+
+			int nSize = conn.getContentLength();
+			BufferedInputStream bis = new BufferedInputStream(conn.getInputStream(), nSize);
+			imgBitmap = BitmapFactory.decodeStream(bis);
+
+			bis.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return imgBitmap;
+	}
+
+
+	private void loadHouseInfo(String body) throws JSONException {
 		ArrayList<HouseInfo> houseInfos = new ArrayList<HouseInfo>();
 
 		HouseInfo houseInfo;
-        /*
-        for(int i =0; i<3;i++) {
 
-            houseInfo = new HouseInfo();
-            houseInfo.setHouseNo(i);
-            houseInfo.setHouseName("충무로 자이");
-            houseInfo.setAddress("필동 3가");
-            houseInfo.setAddressDetail("102동 1402호");
-            houseInfo.setHouseSize(55);
-            houseInfo.setHouseView(BitmapFactory.decodeResource(getResources(), R.drawable.default_house));
-            houseInfo.setHouseFloorPlan(BitmapFactory.decodeResource(getResources(), R.drawable.default_floor_plan));
-            houseInfo.setBedroom(3);
-            houseInfo.setRestroom(1);
-            houseInfo.setBalcony(1);
-            houseInfo.setKitchen(1);
-            houseInfo.setLivingroom(1);
-            houseInfo.setHall(1);
-            houseInfos.add(houseInfo);
-        }*/
+		JSONObject jObject = new JSONObject(body);
+		JSONArray jArray = (JSONArray)jObject.get("houseList");
 
-		houseInfo = new HouseInfo();
-		houseInfo.setHouseNo(0);
-		houseInfo.setHouseName("충무로 자이");
-		houseInfo.setAddress("필동 3가");
-		houseInfo.setAddressDetail("102동 1402호");
-		houseInfo.setHouseSize(55);
-		houseInfo.setHouseView(BitmapFactory.decodeResource(getResources(), R.drawable.house_view1));
-		houseInfo.setHouseFloorPlan(BitmapFactory.decodeResource(getResources(), R.drawable.default_floor_plan));
-		houseInfo.setBedroom(3);
-		houseInfo.setRestroom(1);
-		houseInfo.setBalcony(1);
-		houseInfo.setKitchen(1);
-		houseInfo.setLivingroom(1);
-		houseInfo.setHall(1);
-		houseInfos.add(houseInfo);
+		for(int i=0; i<jArray.length(); i++) {
+			JSONObject row = jArray.getJSONObject(i);
+			houseInfo = new HouseInfo();
+			houseInfo.setHouseNo(row.getInt("houseNo"));
+			houseInfo.setHouseName(row.getString("houseName"));
+			houseInfo.setAddress(row.getString("address"));
+			houseInfo.setAddressDetail(row.getString("addressDetail"));
+			houseInfo.setHouseSize(row.getDouble("houseSize"));
+			houseInfo.setHouseView(getBitmapFromURL(row.getString("houseViewUrl")));
+			houseInfo.setHouseFloorPlan(getBitmapFromURL(row.getString("houseFloorPlanUrl")));
+			houseInfo.setBedroom(row.getInt("bedroom"));
+			houseInfo.setRestroom(row.getInt("restroom"));
+			houseInfo.setBalcony(row.getInt("balcony"));
+			houseInfo.setKitchen(row.getInt("kitchen"));
+			houseInfo.setLivingroom(row.getInt("livingroom"));
+			houseInfo.setHall(row.getInt("hall"));
+			houseInfos.add(houseInfo);
 
-		houseInfo = new HouseInfo();
-		houseInfo.setHouseNo(1);
-		houseInfo.setHouseName("마산 e 편한세상");
-		houseInfo.setAddress("마산시 산호동");
-		houseInfo.setAddressDetail("201동 306호");
-		houseInfo.setHouseSize(76.2);
-		houseInfo.setHouseView(BitmapFactory.decodeResource(getResources(), R.drawable.house_view2));
-		houseInfo.setHouseFloorPlan(BitmapFactory.decodeResource(getResources(), R.drawable.default_floor_plan2));
-		houseInfo.setBedroom(2);
-		houseInfo.setRestroom(1);
-		houseInfo.setBalcony(1);
-		houseInfo.setKitchen(1);
-		houseInfo.setLivingroom(1);
-		houseInfo.setHall(1);
-		houseInfos.add(houseInfo);
-
-		houseInfo = new HouseInfo();
-		houseInfo.setHouseNo(2);
-		houseInfo.setHouseName("삼송 두산 위브");
-		houseInfo.setAddress("고양시 덕양구");
-		houseInfo.setAddressDetail("107동 1101호");
-		houseInfo.setHouseSize(65.4);
-		houseInfo.setHouseView(BitmapFactory.decodeResource(getResources(), R.drawable.house_view3));
-		houseInfo.setHouseFloorPlan(BitmapFactory.decodeResource(getResources(), R.drawable.default_floor_plan3));
-		houseInfo.setBedroom(3);
-		houseInfo.setRestroom(2);
-		houseInfo.setBalcony(1);
-		houseInfo.setKitchen(1);
-		houseInfo.setLivingroom(1);
-		houseInfo.setHall(1);
-		houseInfos.add(houseInfo);
+		}
 
 		SoloSingleton.getInstance().setHouseInfoList(houseInfos);
+	}
+
+	private class LoadingListCall extends AsyncTask<String, Void, String> {
+
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+		}
+
+		@Override
+		protected void onPostExecute(String s) {
+			super.onPostExecute(s);
+			Intent intent = new Intent(getBaseContext(), LoginActivity.class);
+			startActivity(intent);
+			overridePendingTransition(0, 0);
+			finish();
+		}
+
+		@Override
+		protected String doInBackground(String... strings) {
+
+			try {
+				String furniture_url = strings[0];
+				String house_url = strings[1];
+
+				HttpClient http = new DefaultHttpClient();
+
+				HttpPost httpPost = new HttpPost(furniture_url);
+
+				HttpResponse response = http.execute(httpPost);
+
+				String body = EntityUtils.toString(response.getEntity());
+				Log.i("body", "body :" + body);
+				loadFurnitureInfo(body);
+
+				httpPost = new HttpPost(house_url);
+				response = http.execute(httpPost);
+				body = EntityUtils.toString(response.getEntity());
+
+				loadHouseInfo(body);
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+
+			return null;
+		}
+
+		@Override
+		protected void onProgressUpdate(Void... values) {
+			super.onProgressUpdate(values);
+		}
+
+		@Override
+		protected void onCancelled() {
+			super.onCancelled();
+		}
 	}
 }
