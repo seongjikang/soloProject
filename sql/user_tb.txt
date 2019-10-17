@@ -1,0 +1,5 @@
+create table user_tb (
+ uuid VARCHAR(50) NOT NULL,
+ pattern VARCHAR(50) NOT NULL,
+ PRIMARY KEY (uuid)
+) DEFAULT CHARSET=utf8;

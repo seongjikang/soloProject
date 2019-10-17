@@ -19,6 +19,7 @@ public class MyCollocateFurnitureInfo {
         this.y = y;
         this.direction = direction;
         this.selectFurniture = selectFurniture;
+
     }
 
     public int getHouseNo() {
