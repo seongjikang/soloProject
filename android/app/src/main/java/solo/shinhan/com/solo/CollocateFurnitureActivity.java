@@ -172,6 +172,7 @@ public class CollocateFurnitureActivity extends Activity {
             mCollocateMenu.setVisibility(View.GONE);
             mOpenMenu = false;
         } else {
+            SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().clear();
             Intent intent = new Intent(getBaseContext(), HouseDetailActivity.class);
             intent.putExtra("houseNo",getIntent().getIntExtra("houseNo",-1));
             startActivity(intent);

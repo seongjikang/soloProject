@@ -80,6 +80,7 @@ public class CollocateFurnitureView extends View {
 
     public Bitmap resizeBitmapImage(Bitmap source, int maxResolution)
     {
+        /*
         int width = source.getWidth();
         int height = source.getHeight();
         int newWidth = width;
@@ -100,7 +101,7 @@ public class CollocateFurnitureView extends View {
                 newHeight = maxResolution;
             }
         }
-
-        return Bitmap.createScaledBitmap(source, newWidth, newHeight, true);
+        */
+        return Bitmap.createScaledBitmap(source, 110, 110, true);
     }
 }

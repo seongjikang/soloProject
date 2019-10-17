@@ -97,16 +97,7 @@ public class LoadingActivity extends Activity {
 	private void startLoading() {
 		Handler handler = new Handler();
 		loadData();
-		/*
-		handler.postDelayed(new Runnable() {
-			@Override
-			public void run() {
-				Intent intent = new Intent(getBaseContext(), LoginActivity.class);
-				startActivity(intent);
-				overridePendingTransition(0, 0);
-				finish();
-			}
-		}, 2000);*/
+		SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().clear();
 	}
 
 	private void loadData() {
@@ -179,9 +170,9 @@ public class LoadingActivity extends Activity {
 		}
 
 		furnitureMap.put("소파", sofaInfos); furnitureMap.put("테이블", tableInfos); furnitureMap.put("침대", bedInfos);
-		furnitureMap.put("욕실", bathroomInfos); furnitureMap.put("캐비넷", cabinetInfos); furnitureMap.put("카페트", carpetInfos);
+		furnitureMap.put("화장실", bathroomInfos); furnitureMap.put("캐비넷", cabinetInfos); furnitureMap.put("카페트", carpetInfos);
 		furnitureMap.put("의자", chairInfos); furnitureMap.put("책상", deskInfos); furnitureMap.put("주방", kitchenInfos);
-		furnitureMap.put("세탁", washerInfos); furnitureMap.put("기타", etcInfos);
+		furnitureMap.put("세탁기", washerInfos); furnitureMap.put("기타", etcInfos);
 
 		SoloSingleton.getInstance().setFurnitureMap(furnitureMap);
 	}

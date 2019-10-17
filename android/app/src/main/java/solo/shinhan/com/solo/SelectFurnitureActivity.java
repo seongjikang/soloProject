@@ -30,7 +30,7 @@ public class SelectFurnitureActivity extends Activity {
 	private ArrayList<FurnitureInfo> mFurnitureList;
 	private String mCategory;
 	private int mFurnitureType;
-	private final String[] furnitureCategory = {"소파", "테이블", "침대", "욕실", "캐비넷", "카페트", "의자", "책상", "주방", "세탁", "기타"};
+	private final String[] furnitureCategory = {"소파", "테이블", "침대", "화장실", "캐비넷", "카페트", "의자", "책상", "주방", "세탁기", "기타"};
 
 	private int mFurniturePostion;
 	private int mCurrentPosition;
