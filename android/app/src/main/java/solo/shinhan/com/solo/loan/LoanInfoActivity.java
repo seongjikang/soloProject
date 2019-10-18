@@ -2,6 +2,8 @@ package solo.shinhan.com.solo.loan;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +21,9 @@ public class LoanInfoActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_loan_info);
 
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+			getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.blue_common));
+		}
 		initView();
 		setTopTitleView();
 	}

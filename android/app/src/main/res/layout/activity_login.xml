@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:background="#FFFFFF">
+	android:background="@color/blue_common"
+	android:orientation="vertical">
 
 	<!--<ImageView
 		android:layout_width="wrap_content"
@@ -11,41 +12,105 @@
 		android:layout_centerInParent="true"
 		android:src="@drawable/soltal_together_midmid" />-->
 
-	<RelativeLayout
+	<LinearLayout
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_alignParentLeft="true"
-		android:layout_alignParentTop="true"
-		android:layout_alignParentRight="true"
-		android:layout_alignParentBottom="true"
-		android:gravity="center">
+		android:gravity="center"
+		android:orientation="vertical">
 
 		<ImageView
 			android:id="@+id/iv_text_logo"
-			android:layout_width="240dp"
-			android:layout_height="wrap_content"
-			android:src="@drawable/logo_soltal_background" />
+			android:layout_width="match_parent"
+			android:layout_height="250dp"
+			android:layout_marginTop="100dp"
+			android:src="@drawable/solo_modern_white" />
 
-	</RelativeLayout>
+
+	</LinearLayout>
 
 	<LinearLayout
+		android:layout_marginTop="200dp"
 		android:id="@+id/sol_login_btn"
 		android:layout_width="match_parent"
 		android:layout_height="60dp"
-		android:layout_alignParentBottom="true"
-		android:layout_marginLeft="60dp"
-		android:layout_marginRight="60dp"
-		android:layout_marginBottom="108dp"
+		android:layout_marginLeft="28dp"
+		android:layout_marginRight="28dp"
+		android:layout_marginBottom="08dp"
+		android:visibility="visible"
 		android:background="@drawable/btn_login"
 		android:gravity="center">
 
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="SOL로 로그인하기"
-			android:textColor="#FFFFFF"
-			android:textSize="20dp" />
+			android:background="#FFFFFF"
+			android:text="SOL로 LOGIN"
+			android:textColor="@color/blue_common"
+			android:textSize="16dp" />
 
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/ll_no_uuid"
+		android:visibility="gone"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="24dp"
+			android:orientation="vertical">
+
+			<EditText
+				android:id="@+id/et_name"
+				android:hint="이름 입력"
+				android:padding="14dp"
+				android:textSize="16dp"
+				android:textColor="#FFFFFF"
+				android:maxLength="15"
+				android:maxLines="1"
+				android:inputType="text"
+				android:textColorHint="#FFFFFF"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="20dp"
+				android:backgroundTint="#FFFFFF"></EditText>
+
+			<EditText
+				android:id="@+id/et_id_num"
+				android:hint="주민등록번호 입력"
+				android:padding="14dp"
+				android:textSize="16dp"
+				android:textColor="#FFFFFF"
+				android:maxLength="15"
+				android:maxLines="1"
+				android:inputType="number"
+				android:textColorHint="#FFFFFF"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:backgroundTint="#FFFFFF"></EditText>
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/sign_up_btn"
+			android:layout_width="match_parent"
+			android:layout_height="60dp"
+			android:layout_marginLeft="28dp"
+			android:layout_marginRight="28dp"
+			android:background="@drawable/btn_login_dark"
+			android:gravity="center">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="@color/blue_dark"
+				android:text="SIGN UP"
+				android:textColor="#FFFFFF"
+				android:textSize="16dp" />
+
+		</LinearLayout>
 	</LinearLayout>
 	<!--<Button
 		android:id="@+id/sol_login_btn"
@@ -62,4 +127,4 @@
 		tools:layout_editor_absoluteX="136dp"
 		tools:layout_editor_absoluteY="207dp" />-->
 
-</RelativeLayout>
+</LinearLayout>

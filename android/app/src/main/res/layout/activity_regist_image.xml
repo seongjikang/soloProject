@@ -1,404 +1,404 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
-    android:orientation="vertical">
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:focusable="true"
+	android:focusableInTouchMode="true"
+	android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/blue_common"
-        android:gravity="center_vertical">
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="60dp"
+		android:background="@color/blue_common"
+		android:gravity="center_vertical">
 
-        <ImageView
-            android:id="@+id/back_btn"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="16dp"
-            android:src="@drawable/top_back" />
+		<ImageView
+			android:id="@+id/back_btn"
+			android:layout_width="20dp"
+			android:layout_height="20dp"
+			android:layout_marginLeft="16dp"
+			android:src="@drawable/top_back" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center">
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:gravity="center">
 
-            <ImageView
-                android:layout_width="66dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/logo_soltal_text_white" />
-        </LinearLayout>
+			<ImageView
+				android:layout_width="200dp"
+				android:layout_height="wrap_content"
+				android:src="@drawable/solo_modern_text_only" />
+		</LinearLayout>
 
-        <ImageView
-            android:id="@+id/setting_btn"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginRight="16dp"
-            android:src="@drawable/top_menu" />
-    </LinearLayout>
+		<ImageView
+			android:id="@+id/setting_btn"
+			android:layout_width="20dp"
+			android:layout_height="20dp"
+			android:layout_marginRight="16dp"
+			android:src="@drawable/top_menu" />
+	</LinearLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#55000000"
-                android:padding="16dp"
-                android:text="선택한 사진에 가구를 배치하기 위해서는 집 상세정보를 등록해야 합니다."
-                android:textColor="#FFFFFF" />
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="#55000000"
+				android:padding="16dp"
+				android:text="선택한 사진에 가구를 배치하기 위해서는 집 상세정보를 등록해야 합니다."
+				android:textColor="#FFFFFF" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="16dp"
-                android:orientation="vertical">
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="16dp"
+				android:layout_marginTop="16dp"
+				android:layout_marginRight="16dp"
+				android:layout_marginBottom="16dp"
+				android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:orientation="vertical">
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="4dp"
+					android:layout_marginBottom="4dp"
+					android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="4dp"
-                        android:text="집 이름"
-                        android:textColor="#858585"
-                        android:textSize="15dp" />
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="4dp"
+						android:text="집 이름"
+						android:textColor="#858585"
+						android:textSize="15dp" />
 
-                    <EditText
-                        android:id="@+id/et_house_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text"
-                        android:maxLength="30"
-                        android:maxLines="1" />
+					<EditText
+						android:id="@+id/et_house_name"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:inputType="text"
+						android:maxLength="30"
+						android:maxLines="1" />
 
-                    <TextView
-                        android:id="@+id/tv_alert_house_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="집 이름을 입력해주세요."
-                        android:textColor="#e63c3c"
-                        android:visibility="gone" />
-                </LinearLayout>
+					<TextView
+						android:id="@+id/tv_alert_house_name"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="집 이름을 입력해주세요."
+						android:textColor="#e63c3c"
+						android:visibility="gone" />
+				</LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:orientation="vertical">
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="4dp"
+					android:layout_marginBottom="4dp"
+					android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="4dp"
-                        android:text="주소"
-                        android:textColor="#858585"
-                        android:textSize="15dp" />
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="4dp"
+						android:text="주소"
+						android:textColor="#858585"
+						android:textSize="15dp" />
 
-                    <EditText
-                        android:id="@+id/et_house_address"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text"
-                        android:maxLength="50"
-                        android:maxLines="1" />
+					<EditText
+						android:id="@+id/et_house_address"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:inputType="text"
+						android:maxLength="50"
+						android:maxLines="1" />
 
-                    <TextView
-                        android:id="@+id/tv_alert_address"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="주소를 입력해주세요."
-                        android:textColor="#e63c3c"
-                        android:visibility="gone" />
-                </LinearLayout>
+					<TextView
+						android:id="@+id/tv_alert_address"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="주소를 입력해주세요."
+						android:textColor="#e63c3c"
+						android:visibility="gone" />
+				</LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:orientation="vertical">
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="4dp"
+					android:layout_marginBottom="4dp"
+					android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="4dp"
-                        android:text="동/호"
-                        android:textColor="#858585"
-                        android:textSize="15dp" />
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="4dp"
+						android:text="동/호"
+						android:textColor="#858585"
+						android:textSize="15dp" />
 
-                    <EditText
-                        android:id="@+id/et_house_address_detail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text"
-                        android:maxLength="30"
-                        android:maxLines="1" />
+					<EditText
+						android:id="@+id/et_house_address_detail"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:inputType="text"
+						android:maxLength="30"
+						android:maxLines="1" />
 
-                    <TextView
-                        android:id="@+id/tv_alert_address_detail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="동 호수를 입력해주세요."
-                        android:textColor="#e63c3c"
-                        android:visibility="gone" />
-                </LinearLayout>
+					<TextView
+						android:id="@+id/tv_alert_address_detail"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="동 호수를 입력해주세요."
+						android:textColor="#e63c3c"
+						android:visibility="gone" />
+				</LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:orientation="vertical">
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="4dp"
+					android:layout_marginBottom="4dp"
+					android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="4dp"
-                        android:text="평수"
-                        android:textColor="#858585"
-                        android:textSize="15dp" />
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="4dp"
+						android:text="평수"
+						android:textColor="#858585"
+						android:textSize="15dp" />
 
-                    <EditText
-                        android:id="@+id/et_house_size"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:maxLength="10"
-                        android:maxLines="1" />
+					<EditText
+						android:id="@+id/et_house_size"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:inputType="number"
+						android:maxLength="10"
+						android:maxLines="1" />
 
-                    <TextView
-                        android:id="@+id/tv_alert_house_size"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="평수를 입력해주세요."
-                        android:textColor="#e63c3c"
-                        android:visibility="gone" />
-                </LinearLayout>
+					<TextView
+						android:id="@+id/tv_alert_house_size"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="평수를 입력해주세요."
+						android:textColor="#e63c3c"
+						android:visibility="gone" />
+				</LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:orientation="vertical">
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="4dp"
+					android:layout_marginBottom="4dp"
+					android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="4dp"
-                        android:text="침실 수"
-                        android:textColor="#858585"
-                        android:textSize="15dp" />
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="4dp"
+						android:text="침실 수"
+						android:textColor="#858585"
+						android:textSize="15dp" />
 
-                    <EditText
-                        android:id="@+id/et_bedroom"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:maxLines="1" />
+					<EditText
+						android:id="@+id/et_bedroom"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:inputType="number"
+						android:maxLength="2"
+						android:maxLines="1" />
 
-                    <TextView
-                        android:id="@+id/tv_alert_bedroom"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="침실수를 입력해주세요."
-                        android:textColor="#e63c3c"
-                        android:visibility="gone" />
-                </LinearLayout>
+					<TextView
+						android:id="@+id/tv_alert_bedroom"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="침실수를 입력해주세요."
+						android:textColor="#e63c3c"
+						android:visibility="gone" />
+				</LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:orientation="vertical">
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="4dp"
+					android:layout_marginBottom="4dp"
+					android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="4dp"
-                        android:text="화장실 수"
-                        android:textColor="#858585"
-                        android:textSize="15dp" />
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="4dp"
+						android:text="화장실 수"
+						android:textColor="#858585"
+						android:textSize="15dp" />
 
-                    <EditText
-                        android:id="@+id/et_restroom"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:maxLines="1" />
+					<EditText
+						android:id="@+id/et_restroom"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:inputType="number"
+						android:maxLength="2"
+						android:maxLines="1" />
 
-                    <TextView
-                        android:id="@+id/tv_alert_restroom"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="화장실를 입력해주세요."
-                        android:textColor="#e63c3c"
-                        android:visibility="gone" />
-                </LinearLayout>
+					<TextView
+						android:id="@+id/tv_alert_restroom"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="화장실를 입력해주세요."
+						android:textColor="#e63c3c"
+						android:visibility="gone" />
+				</LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:orientation="vertical">
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="4dp"
+					android:layout_marginBottom="4dp"
+					android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="4dp"
-                        android:text="발코니 수"
-                        android:textColor="#858585"
-                        android:textSize="15dp" />
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="4dp"
+						android:text="발코니 수"
+						android:textColor="#858585"
+						android:textSize="15dp" />
 
-                    <EditText
-                        android:id="@+id/et_balcony"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:maxLines="1" />
+					<EditText
+						android:id="@+id/et_balcony"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:inputType="number"
+						android:maxLength="2"
+						android:maxLines="1" />
 
-                    <TextView
-                        android:id="@+id/tv_alert_balcony"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="발코니수를 입력해주세요."
-                        android:textColor="#e63c3c"
-                        android:visibility="gone" />
-                </LinearLayout>
+					<TextView
+						android:id="@+id/tv_alert_balcony"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="발코니수를 입력해주세요."
+						android:textColor="#e63c3c"
+						android:visibility="gone" />
+				</LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:orientation="vertical">
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="4dp"
+					android:layout_marginBottom="4dp"
+					android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="4dp"
-                        android:text="주방 수"
-                        android:textColor="#858585"
-                        android:textSize="15dp" />
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="4dp"
+						android:text="주방 수"
+						android:textColor="#858585"
+						android:textSize="15dp" />
 
-                    <EditText
-                        android:id="@+id/et_kitchen"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:maxLines="1" />
+					<EditText
+						android:id="@+id/et_kitchen"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:inputType="number"
+						android:maxLength="2"
+						android:maxLines="1" />
 
-                    <TextView
-                        android:id="@+id/tv_alert_kitchen"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="주방 수를 입력해주세요."
-                        android:textColor="#e63c3c"
-                        android:visibility="gone" />
-                </LinearLayout>
+					<TextView
+						android:id="@+id/tv_alert_kitchen"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="주방 수를 입력해주세요."
+						android:textColor="#e63c3c"
+						android:visibility="gone" />
+				</LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:orientation="vertical">
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="4dp"
+					android:layout_marginBottom="4dp"
+					android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="4dp"
-                        android:text="리빙룸 수"
-                        android:textColor="#858585"
-                        android:textSize="15dp" />
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="4dp"
+						android:text="리빙룸 수"
+						android:textColor="#858585"
+						android:textSize="15dp" />
 
-                    <EditText
-                        android:id="@+id/et_livingroom"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:maxLines="1" />
+					<EditText
+						android:id="@+id/et_livingroom"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:inputType="number"
+						android:maxLength="2"
+						android:maxLines="1" />
 
-                    <TextView
-                        android:id="@+id/tv_alert_livingroom"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="리빙룸 수를 입력해주세요."
-                        android:textColor="#e63c3c"
-                        android:visibility="gone" />
-                </LinearLayout>
+					<TextView
+						android:id="@+id/tv_alert_livingroom"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="리빙룸 수를 입력해주세요."
+						android:textColor="#e63c3c"
+						android:visibility="gone" />
+				</LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:orientation="vertical">
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="4dp"
+					android:layout_marginBottom="4dp"
+					android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="4dp"
-                        android:text="홀 수"
-                        android:textColor="#858585"
-                        android:textSize="15dp" />
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="4dp"
+						android:text="홀 수"
+						android:textColor="#858585"
+						android:textSize="15dp" />
 
-                    <EditText
-                        android:id="@+id/et_hall"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:maxLines="1" />
+					<EditText
+						android:id="@+id/et_hall"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:inputType="number"
+						android:maxLength="2"
+						android:maxLines="1" />
 
-                    <TextView
-                        android:id="@+id/tv_alert_hall"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="홀 수를 입력해주세요."
-                        android:textColor="#e63c3c"
-                        android:visibility="gone" />
-                </LinearLayout>
-            </LinearLayout>
+					<TextView
+						android:id="@+id/tv_alert_hall"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="홀 수를 입력해주세요."
+						android:textColor="#e63c3c"
+						android:visibility="gone" />
+				</LinearLayout>
+			</LinearLayout>
 
-            <Button
-                android:id="@+id/btn_go_next"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/btn_light_gray"
-                android:text="완료"
-                android:textColor="#333333"
-                android:textSize="17dp" />
-        </LinearLayout>
-    </ScrollView>
+			<Button
+				android:id="@+id/btn_go_next"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="16dp"
+				android:layout_marginTop="16dp"
+				android:layout_marginRight="16dp"
+				android:layout_marginBottom="16dp"
+				android:background="@drawable/btn_light_gray"
+				android:text="완료"
+				android:textColor="#333333"
+				android:textSize="17dp" />
+		</LinearLayout>
+	</ScrollView>
 </LinearLayout>
