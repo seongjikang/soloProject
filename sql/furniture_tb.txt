@@ -491,7 +491,7 @@ INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, 
 VALUES (5, '카페트', 'HS0003CA', 52000, '효성 초록 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type6/4/item.png', 4, '효성');
 
 INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
-VALUES (6, '카페트', 'RG0001CA', 32000, '러그랜드 가성비 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type7/1/item.png', 1, '러그랜드');
+VALUES (6, '카페트', 'RG0001CA', 32000, '러그랜드 가성비 카페트', 'http://13.125.12.186/image/furniture/icon/carpet/type7/1/item.png', 1, '러그랜드');
 
 INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
 VALUES (6, '카페트', 'RG0001CA', 32000, '러그랜드 가성비 카페트', 'http://13.125.12.186/image/furniture/icon/cabinet/type7/2/item.png', 2, '러그랜드');
@@ -753,3 +753,67 @@ VALUES (0, '기타', 'SAM0001TV', 2120000, '삼성 60인치 TV', 'http://13.125.12.186
 
 INSERT INTO furniture_tb (furniture_no, category, model, price, furniture_name, furniture_url,direction, brand) 
 VALUES (0, '기타', 'SAM0001TV', 2120000, '삼성 60인치 TV', 'http://13.125.12.186/image/furniture/icon/etc/type1/4/item.png', 4, '삼성');
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type8/4/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type8/4/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type8/3/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type8/3/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type8/2/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type8/2/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type8/1/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type8/1/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type7/4/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type7/4/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type7/3/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type7/3/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type7/2/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type7/2/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type7/1/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type7/1/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type6/4/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type6/4/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type6/3/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type6/3/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type6/2/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type6/2/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type6/1/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type6/1/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type5/4/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type5/4/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type5/3/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type5/3/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type5/2/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type5/2/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type5/1/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type5/1/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type4/4/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type4/4/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type4/3/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type4/3/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type4/2/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type4/2/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type4/1/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type4/1/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type3/4/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type3/4/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type3/3/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type3/3/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type3/2/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type3/2/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type3/1/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type3/1/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type2/4/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type2/4/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type2/3/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type2/3/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type2/2/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type2/2/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type2/1/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type2/1/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type1/4/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type1/4/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type1/3/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type1/3/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type1/2/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type1/2/item.png' and category='카페트';
+
+UPDATE furniture_tb SET furniture_url='http://13.125.12.186/image/furniture/icon/carpet/type1/1/item.png' WHERE furniture_url = 'http://13.125.12.186/image/furniture/icon/cabinet/type1/1/item.png' and category='카페트';
