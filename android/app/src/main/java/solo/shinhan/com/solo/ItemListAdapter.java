@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 public class ItemListAdapter extends BaseAdapter {
@@ -51,7 +53,8 @@ public class ItemListAdapter extends BaseAdapter {
 
         ImageView mFurnitureView = (ImageView) convertView.findViewById(R.id.furniture_view);
         RelativeLayout mFurnitureLayout = (RelativeLayout) convertView.findViewById(R.id.furniture_layout);
-        mFurnitureView.setImageBitmap(m_oData.get(position).getFurnitureInfo().getFurnitureImage());
+//        mFurnitureView.setImageBitmap(m_oData.get(position).getFurnitureInfo().getFurnitureImage());
+        Picasso.get().load(m_oData.get(position).getFurnitureInfo().getFurnitureImageString()).into(mFurnitureView);
         if(!SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(position).isSelectFurniture()) {
             mFurnitureLayout.setBackgroundColor(Color.WHITE);
         }

@@ -14,6 +14,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 public class HouseDetailActivity extends Activity {
     private Button mCollocateFurnitureBtn;
     private ImageView mBackBtn;
@@ -43,7 +45,8 @@ public class HouseDetailActivity extends Activity {
 
         houseNo = getIntent().getIntExtra("houseNo",-1);
 
-        mFloorPlanView.setImageBitmap(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseFloorPlan());
+//        mFloorPlanView.setImageBitmap(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseFloorPlan());
+        Picasso.get().load(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseFloorPlanString()).into(mFloorPlanView);
         mHouseName.setText(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseName());
         mHouseDetail.setText(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getAddressDetail());
         mHouseSize.setText(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseSize()+"㎡");

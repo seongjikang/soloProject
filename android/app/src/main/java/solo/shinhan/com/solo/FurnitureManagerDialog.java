@@ -12,6 +12,8 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 public class FurnitureManagerDialog extends Dialog {
@@ -41,7 +43,8 @@ public class FurnitureManagerDialog extends Dialog {
 
         mCancelBtn = (ImageView)findViewById(R.id.cancel_btn);
         mFurnitureView = (ImageView) findViewById(R.id.furniture_view);
-        mFurnitureView.setImageBitmap(SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(mCurrentPosition).getFurnitureInfo().getFurnitureImage());
+        Picasso.get().load(SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(mCurrentPosition).getFurnitureInfo().getFurnitureImageString()).into(mFurnitureView);
+//        mFurnitureView.setImageBitmap(SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(mCurrentPosition).getFurnitureInfo().getFurnitureImage());
         mRotateBtn = (Button) findViewById(R.id.rotate_btn);
         mDeleteBtn = (Button) findViewById(R.id.delete_btn);
 

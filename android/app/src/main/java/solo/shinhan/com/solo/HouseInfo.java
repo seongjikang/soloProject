@@ -16,11 +16,13 @@ class HouseInfo {
     private int kitchen;
     private int livingroom;
     private int hall;
+    private String houseViewString;
+    private String houseFloorPlanString;
 
     public HouseInfo() {
     }
 
-    public HouseInfo(int houseNo, String houseName, String address, double houseSize, String addressDetail, Bitmap houseView, Bitmap houseFloorPlan, int bedroom, int restroom, int balcony, int kitchen, int livingroom, int hall) {
+    public HouseInfo(int houseNo, String houseName, String address, double houseSize, String addressDetail, Bitmap houseView, Bitmap houseFloorPlan, int bedroom, int restroom, int balcony, int kitchen, int livingroom, int hall, String houseFloorPlanString, String houseViewString) {
         this.houseNo = houseNo;
         this.houseName = houseName;
         this.address = address;
@@ -34,6 +36,8 @@ class HouseInfo {
         this.kitchen = kitchen;
         this.livingroom = livingroom;
         this.hall = hall;
+        this.houseViewString = houseViewString;
+        this.houseFloorPlanString = houseFloorPlanString;
     }
 
     public int getHouseNo() {
@@ -138,5 +142,21 @@ class HouseInfo {
 
     public void setHall(int hall) {
         this.hall = hall;
+    }
+
+    public String getHouseViewString() {
+        return houseViewString;
+    }
+
+    public void setHouseViewString(String houseViewString) {
+        this.houseViewString = houseViewString;
+    }
+
+    public String getHouseFloorPlanString() {
+        return houseFloorPlanString;
+    }
+
+    public void setHouseFloorPlanString(String houseFloorPlanString) {
+        this.houseFloorPlanString = houseFloorPlanString;
     }
 }

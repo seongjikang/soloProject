@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 public class HouseInfoAdapter extends BaseAdapter{
@@ -61,7 +63,8 @@ public class HouseInfoAdapter extends BaseAdapter{
         holder.mAddress.setText(mItemList.get(i).getAddress());
         holder.mHouseSize.setText(""+mItemList.get(i).getHouseSize());
         holder.mAddressDetail.setText(mItemList.get(i).getAddressDetail());
-        holder.mHouseView.setImageBitmap(mItemList.get(i).getHouseView());
+//        holder.mHouseView.setImageBitmap(mItemList.get(i).getHouseView());
+        Picasso.get().load(mItemList.get(i).getHouseViewString()).into(holder.mHouseView);
 
         return view;
     }

@@ -19,10 +19,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class SelectActivity extends Activity {
 
@@ -210,5 +217,43 @@ public class SelectActivity extends Activity {
 			}*/
 		}
 	}
+/*
+
+	public void setImageFromUrl() {
+		List<HouseInfo> houseInfoList = SoloSingleton.getInstance().getHouseInfoList();
+		List<HouseInfo> newHouseInfoList = new ArrayList<>();
+		if(houseInfoList != null) {
+			HouseInfo houseInfo = null;
+			for(int i = 0; i < houseInfoList.size(); i++) {
+				houseInfo = houseInfoList.get(i);
+				houseInfo.setHouseView(getBitmapFromURL(houseInfo.getHouseViewString()));
+				houseInfo.setHouseFloorPlan(getBitmapFromURL(houseInfo.getHouseFloorPlanString()));
+				newHouseInfoList.add(houseInfo);
+			}
+			SoloSingleton.getInstance().setHouseInfoList(newHouseInfoList);
+		}
+
+		String[] furnitureCategory = {"소파", "테이블", "침대", "화장실", "캐비넷", "카페트", "의자", "책상", "주방", "세탁기", "기타"};
+		Map<String, ArrayList<FurnitureInfo>> furnitureMap = SoloSingleton.getInstance().getFurnitureMap();
+		Map<String, ArrayList<FurnitureInfo>> newFurnitureMap = new HashMap<>();
+		for(int j = 0; j < furnitureCategory.length; j++) {
+			String category = furnitureCategory[j];
+			ArrayList<FurnitureInfo> allFurnitureInfos = furnitureMap.get(category);
+			ArrayList<FurnitureInfo> newFurnitureInfos = new ArrayList<>();
+			if(allFurnitureInfos != null) {
+				for(int k = 0; k < allFurnitureInfos.size(); k++) {
+					FurnitureInfo furnitureInfo = allFurnitureInfos.get(k);
+					furnitureInfo.setFurnitureImage(getBitmapFromURL(furnitureInfo.getFurnitureImageString()));
+					newFurnitureInfos.add(furnitureInfo);
+				}
+				newFurnitureMap.put(category, newFurnitureInfos);
+			}
+		}
+		SoloSingleton.getInstance().setFurnitureMap(newFurnitureMap);
+
+
+	}
+
+*/
 
 }
