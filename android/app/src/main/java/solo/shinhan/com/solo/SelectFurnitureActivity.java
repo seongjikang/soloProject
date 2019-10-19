@@ -17,6 +17,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 public class SelectFurnitureActivity extends Activity {
@@ -87,7 +89,8 @@ public class SelectFurnitureActivity extends Activity {
 		mFurnitureListAdapter = new FurnitureListAdapter(mFurnitureList);
 		mFurnitureListView.setAdapter(mFurnitureListAdapter);
 
-		mFurnitureImage.setImageBitmap(mFurnitureList.get(0).getFurnitureImage());
+//		mFurnitureImage.setImageBitmap(mFurnitureList.get(0).getFurnitureImage());
+		Picasso.get().load(mFurnitureList.get(0).getFurnitureImageString()).into(mFurnitureImage);
 		mBrand.setText(mFurnitureList.get(0).getBrand());
 		mModel.setText(mFurnitureList.get(0).getModel());
 		mPrice.setText(mFurnitureList.get(0).getPrice() + "원");
@@ -224,7 +227,8 @@ public class SelectFurnitureActivity extends Activity {
 			public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 				view.setSelected(true);
 				view.setPressed(true);
-				mFurnitureImage.setImageBitmap(mFurnitureList.get(i).getFurnitureImage());
+//				mFurnitureImage.setImageBitmap(mFurnitureList.get(i).getFurnitureImage());
+				Picasso.get().load(mFurnitureList.get(i).getFurnitureImageString()).into(mFurnitureImage);
 				mFurniturePostion = i;
 				mBrand.setText(mFurnitureList.get(i).getBrand());
 				mModel.setText(mFurnitureList.get(i).getModel());
@@ -292,7 +296,8 @@ public class SelectFurnitureActivity extends Activity {
 				mFurnitureList.add(SoloSingleton.getInstance().getFurnitureMap().get(furnitureCategory[mCurrentPosition]).get(i));
 			}
 		}
-		mFurnitureImage.setImageBitmap(mFurnitureList.get(0).getFurnitureImage());
+//		mFurnitureImage.setImageBitmap(mFurnitureList.get(0).getFurnitureImage());
+		Picasso.get().load(mFurnitureList.get(0).getFurnitureImageString()).into(mFurnitureImage);
 		mBrand.setText(mFurnitureList.get(0).getBrand());
 		mModel.setText(mFurnitureList.get(0).getModel());
 		mPrice.setText(mFurnitureList.get(0).getPrice() + "원");

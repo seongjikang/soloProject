@@ -4,10 +4,14 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import java.util.ArrayList;
 
@@ -62,12 +66,35 @@ public class CollocateFurnitureView extends View {
     }
 
     @Override
-    protected void onDraw(Canvas canvas) {
+    protected void onDraw(final Canvas canvas) {
         // TODO Auto-generated method stub
         super.onDraw(canvas);
         if(SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().size() > 0 ) {
             for(int i = 0 ; i<SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().size(); i++) {
-                canvas.drawBitmap( resizeBitmapImage(SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(i).getFurnitureInfo().getFurnitureImage(),150),SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(i).getX(),SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(i).getY(),null);
+                final Bitmap[] newBitmap = new Bitmap[1];
+                final int finalI = i;
+                Picasso.get().load(SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(i).getFurnitureInfo().getFurnitureImageString()).into(new Target() {
+                    @Override
+                    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                        canvas.drawBitmap( resizeBitmapImage(bitmap,
+                                150),SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(finalI).getX(),
+                                SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(finalI).getY(),null);
+                    }
+
+                    @Override
+                    public void onBitmapFailed(Exception e, Drawable errorDrawable) {
+
+                    }
+
+                    @Override
+                    public void onPrepareLoad(Drawable placeHolderDrawable) {
+
+                    }
+                });
+                /*
+                canvas.drawBitmap( resizeBitmapImage(SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(i).getFurnitureInfo().getFurnitureImage(),
+                        150),SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(i).getX(),
+                        SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(i).getY(),null);*/
             }
         }
     }
