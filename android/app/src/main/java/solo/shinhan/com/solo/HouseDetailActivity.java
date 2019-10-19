@@ -3,8 +3,10 @@ package solo.shinhan.com.solo;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,16 +18,21 @@ public class HouseDetailActivity extends Activity {
     private Button mCollocateFurnitureBtn;
     private ImageView mBackBtn;
     private ImageView mFloorPlanView;
-    private TextView mHouseName, mHouseSize, mBedroom, mRestroom, mBalcony, mKitchen, mLivingroom,mHall;
+    private TextView mHouseName, mHouseSize, mBedroom, mRestroom, mBalcony, mKitchen, mLivingroom,mHall, mHouseDetail;
     int houseNo;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_house_detail);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.blue_common));
+        }
         mCollocateFurnitureBtn = (Button) findViewById(R.id.collocate_furniture_btn);
         mBackBtn = (ImageView) findViewById(R.id.back_btn);
         mFloorPlanView = (ImageView) findViewById(R.id.floor_plan_view);
         mHouseName = (TextView) findViewById(R.id.house_name) ;
+        mHouseDetail = findViewById(R.id.house_detail);
         mHouseSize = (TextView) findViewById(R.id.house_size);
         mBedroom = (TextView) findViewById(R.id.bedroom);
         mRestroom = (TextView) findViewById(R.id.restroom);
@@ -37,7 +44,8 @@ public class HouseDetailActivity extends Activity {
         houseNo = getIntent().getIntExtra("houseNo",-1);
 
         mFloorPlanView.setImageBitmap(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseFloorPlan());
-        mHouseName.setText(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseName()+ " " + SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getAddressDetail());
+        mHouseName.setText(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseName());
+        mHouseDetail.setText(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getAddressDetail());
         mHouseSize.setText(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseSize()+"㎡");
         mBedroom.setText(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getBedroom()+"");
         mRestroom.setText(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getRestroom()+"");

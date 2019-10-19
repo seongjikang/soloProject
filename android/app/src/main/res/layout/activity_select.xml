@@ -1,127 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/root_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:orientation="vertical">
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/root_layout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#FFFFFF"
+	android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/blue_common"
-        android:gravity="center_vertical">
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="60dp"
+		android:background="@color/blue_common"
+		android:gravity="center_vertical">
 
-        <ImageView
-            android:id="@+id/back_btn"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="16dp"
-            android:src="@drawable/top_back" />
+		<ImageView
+			android:id="@+id/back_btn"
+			android:layout_width="20dp"
+			android:layout_height="20dp"
+			android:layout_marginLeft="16dp"
+			android:src="@drawable/top_back" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center">
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:gravity="center">
 
-            <ImageView
-                android:layout_width="66dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/logo_soltal_text_white" />
-        </LinearLayout>
+			<ImageView
+				android:layout_width="200dp"
+				android:layout_height="wrap_content"
+				android:src="@drawable/solo_modern_text_only" />
+		</LinearLayout>
 
-        <ImageView
-            android:id="@+id/setting_btn"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginRight="16dp"
-            android:src="@drawable/top_menu" />
-    </LinearLayout>
+		<ImageView
+			android:id="@+id/setting_btn"
+			android:layout_width="20dp"
+			android:layout_height="20dp"
+			android:layout_marginRight="16dp"
+			android:src="@drawable/top_menu" />
+	</LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="200dp"
+		android:background="@color/blue_common"
+		android:gravity="bottom">
 
-        <LinearLayout
-            android:id="@+id/select_take_picture"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical">
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="32dp"
+			android:layout_marginBottom="16dp"
+			android:text="어떤 방식으로\n집을 꾸며볼까요?"
+			android:textColor="#FFFFFF"
+			android:textSize="28dp" />
+	</LinearLayout>
 
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginLeft="40dp"
-                android:src="@drawable/icon_camera" />
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
-                android:text="사진 찍기"
-                android:textColor="@color/blue_common"
-                android:textSize="24dp"
-                android:textStyle="bold" />
-        </LinearLayout>
+		<LinearLayout
+			android:id="@+id/select_take_picture"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_marginBottom="16dp"
+			android:layout_weight="1"
+			android:gravity="bottom">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#e9e9e9" />
+			<LinearLayout
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="32dp"
+				android:layout_weight="1"
+				android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/ll_go_album"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical">
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="사진 찍기"
+					android:textColor="@color/blue_common"
+					android:textSize="24dp"
+					android:textStyle="bold" />
 
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginLeft="40dp"
-                android:src="@drawable/icon_gallery" />
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="아파트 도면을 찍어서 리스트에 등록하세요."
+					android:textColor="#858585"
+					android:textSize="14dp" />
+			</LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
-                android:text="사진 가져오기"
-                android:textColor="@color/blue_common"
-                android:textSize="24dp"
-                android:textStyle="bold" />
-        </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#e9e9e9" />
+			<ImageView
+				android:layout_width="60dp"
+				android:layout_height="60dp"
+				android:layout_marginRight="40dp"
+				android:src="@drawable/photo_last" />
+		</LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/select_load_data"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical">
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="#e9e9e9" />
 
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginLeft="40dp"
-                android:src="@drawable/icon_home_select" />
+		<LinearLayout
+			android:id="@+id/ll_go_album"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_marginBottom="16dp"
+			android:layout_weight="1"
+			android:gravity="bottom">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
-                android:text="등록된 집 보러가기"
-                android:textColor="@color/blue_common"
-                android:textSize="24dp"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </LinearLayout>
+			<LinearLayout
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="32dp"
+				android:layout_weight="1"
+				android:orientation="vertical">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="사진 가져오기"
+					android:textColor="@color/blue_common"
+					android:textSize="24dp"
+					android:textStyle="bold" />
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="앨범에서 설계도면을 불러옵니다."
+					android:textColor="#858585"
+					android:textSize="14dp" />
+			</LinearLayout>
+
+			<ImageView
+				android:layout_width="60dp"
+				android:layout_height="60dp"
+				android:layout_marginRight="40dp"
+				android:src="@drawable/album_last" />
+		</LinearLayout>
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="#e9e9e9" />
+
+		<LinearLayout
+			android:id="@+id/select_load_data"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_marginBottom="16dp"
+			android:layout_weight="1"
+			android:gravity="bottom">
+
+			<LinearLayout
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="32dp"
+				android:layout_weight="1"
+				android:orientation="vertical">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="등록된 집 보러가기"
+					android:textColor="@color/blue_common"
+					android:textSize="24dp"
+					android:textStyle="bold" />
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="등록된 리스트를 불러옵니다."
+					android:textColor="#858585"
+					android:textSize="14dp" />
+			</LinearLayout>
+
+			<ImageView
+				android:layout_width="60dp"
+				android:layout_height="60dp"
+				android:layout_marginRight="40dp"
+				android:src="@drawable/home_last" />
+		</LinearLayout>
+	</LinearLayout>
 </LinearLayout>

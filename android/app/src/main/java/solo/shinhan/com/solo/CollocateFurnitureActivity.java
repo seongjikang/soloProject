@@ -3,10 +3,13 @@ package solo.shinhan.com.solo;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -40,6 +43,10 @@ public class CollocateFurnitureActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_collocate_furniture);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.white));
+        }
 
         mItemListAdapter = new ItemListAdapter(SoloSingleton.getInstance().getMyCollocateFurnitureInfoList());
 
@@ -86,6 +93,9 @@ public class CollocateFurnitureActivity extends Activity {
             public void onClick(View view) {
                 mOpenMenu = true;
                 mCollocateMenu.setVisibility(View.VISIBLE);
+                TranslateAnimation animation = new TranslateAnimation(500, 0, 0, 0);
+                animation.setDuration(500);
+                mCollocateMenu.startAnimation(animation);
             }
         });
 
@@ -104,6 +114,9 @@ public class CollocateFurnitureActivity extends Activity {
             @Override
             public void onClick(View view) {
                 mOpenMenu = false;
+                TranslateAnimation animation = new TranslateAnimation(0, 500, 0, 0);
+                animation.setDuration(500);
+                mCollocateMenu.startAnimation(animation);
                 mCollocateMenu.setVisibility(View.GONE);
             }
         });

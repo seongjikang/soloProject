@@ -29,7 +29,7 @@
         android:layout_marginStart="13dp"
         android:layout_marginLeft="13dp"
         android:layout_marginBottom="13dp"
-        android:src="@drawable/btn_go_back_blue" />
+        android:src="@drawable/back_common_blue" />
 
     <ListView
         android:id="@+id/item_list_view"
@@ -54,7 +54,7 @@
         android:layout_marginEnd="13dp"
         android:layout_marginRight="13dp"
         android:layout_marginBottom="13dp"
-        android:src="@drawable/btn_plus_blue" />
+        android:src="@drawable/plus_blue" />
 
     <LinearLayout
         android:id="@+id/collocate_menu"
@@ -63,7 +63,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:background="#80000000"
+        android:background="@color/blue_common"
         android:gravity="center"
         android:visibility="visible">
 
@@ -81,16 +81,16 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="70dp"
-                android:src="@drawable/logo_soltal_text_white" />
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/solo_modern_text_only" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="총액"
                 android:textColor="#FFFFFF"
-                android:textSize="13dp" />
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/all_price"

@@ -8,4 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
 
     </style>
+
+    <style name="statusBarTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/myStatusBarColor</item>
+        <item name="colorPrimaryDark">@color/myStatusBarColor</item>  // statusbar color 적용
+        <!-- Other attributes -->
+    </style>
+
+    <style name="progress_bar">
+        <item name="colorAccent">#FFFFFF</item>
+    </style>
 </resources>
