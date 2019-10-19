@@ -4,5 +4,6 @@
     <item android:state_pressed="true" android:drawable="@drawable/btn_bed_select"/>
     <item android:state_focused="true" android:drawable="@drawable/btn_bed_select"/>
     <item android:state_selected="true" android:drawable="@drawable/btn_bed_select"/>
+    <item android:state_selected="false" android:drawable="@drawable/btn_bed_default"/>
     <item android:drawable="@drawable/btn_bed_default"/>
 </selector>

@@ -1,529 +1,512 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFFFFF">
-
-    <LinearLayout
-        android:layout_width="50dp"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="#FFFFFF"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:id="@+id/ll_sofa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="4dp"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/selector_btn_sofa" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="소파"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/ll_bed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="4dp"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/selector_btn_bed" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="침대"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/ll_table"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="4dp"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:background="@drawable/selector_btn_table"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="테이블"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-<!--        여기부터 추가-->
-        <LinearLayout
-            android:id="@+id/ll_cabinet"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="4dp"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:background="@drawable/selector_btn_table"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="캐비넷"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_carpet"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="4dp"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:background="@drawable/selector_btn_table"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="카펫"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_chair"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="4dp"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:background="@drawable/selector_btn_table"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="의자"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_kitchen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="4dp"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:background="@drawable/selector_btn_table"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="주방"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_desk"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="4dp"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:background="@drawable/selector_btn_table"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="책상"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="4dp"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:background="@drawable/selector_btn_table"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="테이블"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="4dp"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:background="@drawable/selector_btn_table"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="테이블"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="4dp"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:background="@drawable/selector_btn_table"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="테이블"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="4dp"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:background="@drawable/selector_btn_table"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="테이블"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="4dp"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:background="@drawable/selector_btn_table"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="테이블"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="1dp"
-        android:layout_height="wrap_content"
-        android:background="#e9e9e9" />
-
-    <LinearLayout
-        android:layout_width="240dp"
-        android:layout_height="match_parent"
-        android:background="#FFFFFF"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="64dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="0.2"
-                android:gravity="center">
-
-                <ImageView
-                    android:id="@+id/left_arrow"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/btn_left_arrow_blue" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="0.6"
-                android:gravity="center">
-
-                <TextView
-                    android:id="@+id/furniture_category"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="소파"
-                    android:textSize="18dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="0.2"
-                android:gravity="center">
-
-                <ImageView
-                    android:id="@+id/right_arrow"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/btn_right_arrow_blue" />
-
-            </LinearLayout>
-        </LinearLayout>
-
-        <View
-            android:layout_marginBottom="4dp"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#e9e9e9" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#FFFFFF">
-
-            <ListView
-                android:id="@+id/furniture_list_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:divider="#e9e9e9"
-                android:dividerHeight="1dp"
-                android:drawSelectorOnTop="true" />
-
-        </RelativeLayout>
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:background="#e9e9e9" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="#FFFFFF"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_weight="1"
-            android:gravity="center">
-
-            <ImageView
-                android:id="@+id/furniture_item"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/item" />
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:background="#e9e9e9" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="브랜드"
-                    android:textColor="#858585"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/brand"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="6dp"
-                    android:text="이케아"
-                    android:textColor="#333333"
-                    android:textSize="17dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="모델명"
-                    android:textColor="#858585"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/model"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="6dp"
-                    android:text="이케아"
-                    android:textColor="#333333"
-                    android:textSize="17dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:textColor="#858585"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="6dp"
-                    android:text="이케아"
-                    android:textColor="#333333"
-                    android:textSize="17dp" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="8dp">
-
-            <Button
-                android:id="@+id/detail_furniture_info"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/btn_left"
-                android:text="상세정보"
-                android:textColor="#333333" />
-
-            <Button
-                android:id="@+id/collocate_furniture"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/btn_right"
-                android:text="가구배치"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
-
-    </LinearLayout>
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#FFFFFF"
+	android:orientation="horizontal">
+
+	<ScrollView
+		android:layout_marginBottom="40dp"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+
+		<LinearLayout
+			android:layout_width="50dp"
+			android:layout_height="match_parent"
+			android:layout_margin="16dp"
+			android:background="#FFFFFF"
+			android:orientation="vertical">
+
+			<LinearLayout
+				android:id="@+id/ll_sofa"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_margin="4dp"
+				android:gravity="center"
+				android:orientation="vertical">
+
+				<ImageButton
+					android:id="@+id/ib_btn_sofa"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:background="@drawable/selector_btn_sofa"
+					android:clickable="false" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="2dp"
+					android:text="소파"
+					android:textSize="15dp" />
+			</LinearLayout>
+
+
+			<LinearLayout
+				android:id="@+id/ll_bed"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_margin="4dp"
+				android:gravity="center"
+				android:orientation="vertical">
+
+				<ImageButton
+					android:id="@+id/ib_btn_bed"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:background="@drawable/selector_btn_bed"
+					android:clickable="false" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="2dp"
+					android:text="침대"
+					android:textSize="15dp" />
+			</LinearLayout>
+
+
+			<LinearLayout
+				android:id="@+id/ll_table"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_margin="4dp"
+				android:gravity="center"
+				android:orientation="vertical">
+
+				<ImageButton
+					android:id="@+id/ib_btn_table"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:background="@drawable/selector_btn_table"
+					android:clickable="false" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="2dp"
+					android:text="테이블"
+					android:textSize="15dp" />
+			</LinearLayout>
+
+
+			<LinearLayout
+				android:id="@+id/ll_desk"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_margin="4dp"
+				android:gravity="center"
+				android:orientation="vertical">
+
+				<ImageButton
+					android:id="@+id/ib_btn_desk"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:background="@drawable/selector_btn_desk"
+					android:clickable="false" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="2dp"
+					android:text="책상"
+					android:textSize="15dp" />
+			</LinearLayout>
+			<!--        여기부터 추가-->
+
+			<LinearLayout
+				android:id="@+id/ll_cabinet"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_margin="4dp"
+				android:gravity="center"
+				android:orientation="vertical">
+
+				<ImageButton
+					android:id="@+id/ib_btn_cabinet"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:background="@drawable/selector_btn_cabinet"
+					android:clickable="false" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="2dp"
+					android:text="캐비넷"
+					android:textSize="15dp" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/ll_carpet"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_margin="4dp"
+				android:gravity="center"
+				android:orientation="vertical">
+
+				<ImageButton
+					android:id="@+id/ib_btn_carpet"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:background="@drawable/selector_btn_carpet"
+					android:clickable="false" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="2dp"
+					android:text="카페트"
+					android:textSize="15dp" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/ll_chair"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_margin="4dp"
+				android:gravity="center"
+				android:orientation="vertical">
+
+				<ImageButton
+					android:id="@+id/ib_btn_chair"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:background="@drawable/selector_btn_chair"
+					android:clickable="false" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="2dp"
+					android:text="의자"
+					android:textSize="15dp" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/ll_kitchen"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_margin="4dp"
+				android:gravity="center"
+				android:orientation="vertical">
+
+				<ImageButton
+					android:id="@+id/ib_btn_kitchen"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:background="@drawable/selector_btn_kitchen"
+					android:clickable="false" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="2dp"
+					android:text="주방"
+					android:textSize="15dp" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/ll_washer"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_margin="4dp"
+				android:gravity="center"
+				android:orientation="vertical">
+
+				<ImageButton
+					android:id="@+id/ib_btn_washer"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:background="@drawable/selector_btn_washer"
+					android:clickable="false" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="2dp"
+					android:text="세탁기"
+					android:textSize="15dp" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/ll_bathroom"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_margin="4dp"
+				android:gravity="center"
+				android:orientation="vertical">
+
+				<ImageButton
+					android:id="@+id/ib_btn_bathroom"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:background="@drawable/selector_btn_bathroom"
+					android:clickable="false" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="2dp"
+					android:text="화장실"
+					android:textSize="15dp" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/ll_etc"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_margin="4dp"
+				android:gravity="center"
+				android:orientation="vertical">
+
+				<ImageButton
+					android:id="@+id/ib_btn_etc"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:background="@drawable/selector_btn_etc"
+					android:clickable="false" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="2dp"
+					android:text="기타"
+					android:textSize="15dp" />
+			</LinearLayout>
+
+		</LinearLayout>
+	</ScrollView>
+
+	<View
+		android:layout_width="1dp"
+		android:layout_height="wrap_content"
+		android:background="#e9e9e9" />
+
+	<LinearLayout
+		android:layout_width="240dp"
+		android:layout_height="match_parent"
+		android:background="#FFFFFF"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="64dp">
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_weight="0.2"
+				android:gravity="center">
+
+				<ImageView
+					android:id="@+id/left_arrow"
+					android:layout_width="25dp"
+					android:layout_height="25dp"
+					android:src="@drawable/btn_left_arrow_blue" />
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_weight="0.6"
+				android:gravity="center">
+
+				<TextView
+					android:id="@+id/furniture_category"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:text="소파"
+					android:textSize="18dp" />
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_weight="0.2"
+				android:gravity="center">
+
+				<ImageView
+					android:id="@+id/right_arrow"
+					android:layout_width="25dp"
+					android:layout_height="25dp"
+					android:src="@drawable/btn_right_arrow_blue" />
+
+			</LinearLayout>
+		</LinearLayout>
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:layout_marginBottom="4dp"
+			android:background="#e9e9e9" />
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="#FFFFFF">
+
+			<ListView
+				android:id="@+id/furniture_list_view"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_alignParentStart="true"
+				android:layout_alignParentLeft="true"
+				android:layout_alignParentTop="true"
+				android:layout_marginLeft="16dp"
+				android:layout_marginRight="16dp"
+				android:divider="#e9e9e9"
+				android:dividerHeight="1dp"
+				android:drawSelectorOnTop="true" />
+
+		</RelativeLayout>
+
+	</LinearLayout>
+
+	<View
+		android:layout_width="1dp"
+		android:layout_height="match_parent"
+		android:background="#e9e9e9" />
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_weight="1"
+		android:background="#FFFFFF"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="16dp"
+			android:layout_weight="1"
+			android:gravity="center">
+
+			<ImageView
+				android:id="@+id/furniture_item"
+				android:layout_width="50dp"
+				android:layout_height="50dp"
+				android:src="@drawable/item" />
+
+		</LinearLayout>
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:layout_marginLeft="16dp"
+			android:layout_marginRight="16dp"
+			android:background="#e9e9e9" />
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="16dp"
+			android:layout_marginTop="16dp"
+			android:layout_marginRight="16dp"
+			android:layout_marginBottom="16dp"
+			android:orientation="vertical">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="브랜드"
+					android:textColor="#858585"
+					android:textSize="15dp" />
+
+				<TextView
+					android:id="@+id/brand"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="6dp"
+					android:text="이케아"
+					android:textColor="#333333"
+					android:textSize="17dp" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="모델명"
+					android:textColor="#858585"
+					android:textSize="15dp" />
+
+				<TextView
+					android:id="@+id/model"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="6dp"
+					android:text="이케아"
+					android:textColor="#333333"
+					android:textSize="17dp" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="가격"
+					android:textColor="#858585"
+					android:textSize="15dp" />
+
+				<TextView
+					android:id="@+id/price"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="6dp"
+					android:text="이케아"
+					android:textColor="#333333"
+					android:textSize="17dp" />
+			</LinearLayout>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="50dp"
+			android:layout_marginTop="8dp">
+
+			<Button
+				android:id="@+id/detail_furniture_info"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:background="@drawable/btn_left"
+				android:text="상세정보"
+				android:textColor="#333333" />
+
+			<Button
+				android:id="@+id/collocate_furniture"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:background="@drawable/btn_right"
+				android:text="가구배치"
+				android:textColor="#FFFFFF" />
+		</LinearLayout>
+
+	</LinearLayout>
 </LinearLayout>
