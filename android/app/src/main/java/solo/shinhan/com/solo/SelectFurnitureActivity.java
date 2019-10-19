@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 
 public class SelectFurnitureActivity extends Activity {
 
-	private LinearLayout mLlSofa, mLlBed, mLlTable;
+	private LinearLayout mLlSofa, mLlBed, mLlTable, mLlDesk, mLlCabinet, mLlCarpet, mLlChair, mLlKitchen, mLlWasher, mLlBathroom, mLlEtc;
 	private ImageView mFurnitureImage;
 	private TextView mBrand, mModel, mPrice;
 	private Button mDetailFurnitureInfo;
@@ -65,6 +66,14 @@ public class SelectFurnitureActivity extends Activity {
 		mLlSofa = findViewById(R.id.ll_sofa);
 		mLlBed = findViewById(R.id.ll_bed);
 		mLlTable = findViewById(R.id.ll_table);
+		mLlDesk = findViewById(R.id.ll_desk);
+		mLlCabinet = findViewById(R.id.ll_cabinet);
+		mLlCarpet = findViewById(R.id.ll_carpet);
+		mLlChair = findViewById(R.id.ll_chair);
+		mLlKitchen = findViewById(R.id.ll_kitchen);
+		mLlWasher = findViewById(R.id.ll_washer);
+		mLlBathroom = findViewById(R.id.ll_bathroom);
+		mLlEtc = findViewById(R.id.ll_etc);
 
 		mFurnitureCategory.setText(furnitureCategory[mCurrentPosition]);
 
@@ -88,6 +97,7 @@ public class SelectFurnitureActivity extends Activity {
 			public void onClick(View view) {
 				mCurrentPosition = 0;
 				getPositionInfo();
+				setViewSelected((ImageButton) findViewById(R.id.ib_btn_sofa));
 			}
 		});
 
@@ -96,6 +106,7 @@ public class SelectFurnitureActivity extends Activity {
 			public void onClick(View view) {
 				mCurrentPosition = 1;
 				getPositionInfo();
+				setViewSelected((ImageButton) findViewById(R.id.ib_btn_table));
 			}
 		});
 
@@ -104,6 +115,79 @@ public class SelectFurnitureActivity extends Activity {
 			public void onClick(View view) {
 				mCurrentPosition = 2;
 				getPositionInfo();
+				setViewSelected((ImageButton) findViewById(R.id.ib_btn_bed));
+			}
+		});
+
+		mLlDesk.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				mCurrentPosition = 7;
+				getPositionInfo();
+				setViewSelected((ImageButton) findViewById(R.id.ib_btn_desk));
+			}
+		});
+
+		mLlCabinet.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				mCurrentPosition = 4;
+				getPositionInfo();
+				setViewSelected((ImageButton) findViewById(R.id.ib_btn_cabinet));
+			}
+		});
+
+		mLlCarpet.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				mCurrentPosition = 5;
+				getPositionInfo();
+				setViewSelected((ImageButton) findViewById(R.id.ib_btn_carpet));
+			}
+		});
+
+		mLlChair.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				mCurrentPosition = 6;
+				getPositionInfo();
+				setViewSelected((ImageButton) findViewById(R.id.ib_btn_chair));
+			}
+		});
+
+		mLlKitchen.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				mCurrentPosition = 8;
+				getPositionInfo();
+				setViewSelected((ImageButton) findViewById(R.id.ib_btn_kitchen));
+			}
+		});
+
+		mLlWasher.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				mCurrentPosition = 9;
+				getPositionInfo();
+				setViewSelected((ImageButton) findViewById(R.id.ib_btn_washer));
+			}
+		});
+
+		mLlBathroom.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				mCurrentPosition = 3;
+				getPositionInfo();
+				setViewSelected((ImageButton) findViewById(R.id.ib_btn_bathroom));
+			}
+		});
+
+		mLlEtc.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				mCurrentPosition = 10;
+				getPositionInfo();
+				setViewSelected((ImageButton) findViewById(R.id.ib_btn_etc));
 			}
 		});
 
@@ -180,6 +264,21 @@ public class SelectFurnitureActivity extends Activity {
 				finish();
 			}
 		});
+	}
+	private void setViewSelected(ImageButton selectedIb) {
+		findViewById(R.id.ib_btn_sofa).setSelected(false);
+		findViewById(R.id.ib_btn_table).setSelected(false);
+		findViewById(R.id.ib_btn_bed).setSelected(false);
+		findViewById(R.id.ib_btn_desk).setSelected(false);
+		findViewById(R.id.ib_btn_cabinet).setSelected(false);
+		findViewById(R.id.ib_btn_carpet).setSelected(false);
+		findViewById(R.id.ib_btn_chair).setSelected(false);
+		findViewById(R.id.ib_btn_kitchen).setSelected(false);
+		findViewById(R.id.ib_btn_washer).setSelected(false);
+		findViewById(R.id.ib_btn_bathroom).setSelected(false);
+		findViewById(R.id.ib_btn_etc).setSelected(false);
+
+		selectedIb.setSelected(true);
 	}
 
 	private void getPositionInfo() {
