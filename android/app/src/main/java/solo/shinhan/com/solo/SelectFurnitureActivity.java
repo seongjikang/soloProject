@@ -89,11 +89,13 @@ public class SelectFurnitureActivity extends Activity {
 		mFurnitureListAdapter = new FurnitureListAdapter(mFurnitureList);
 		mFurnitureListView.setAdapter(mFurnitureListAdapter);
 
-//		mFurnitureImage.setImageBitmap(mFurnitureList.get(0).getFurnitureImage());
-		Picasso.get().load(mFurnitureList.get(0).getFurnitureImageString()).into(mFurnitureImage);
+		mFurnitureImage.setImageBitmap(mFurnitureList.get(0).getFurnitureImage());
+//		Picasso.get().load(mFurnitureList.get(0).getFurnitureImageString()).into(mFurnitureImage);
 		mBrand.setText(mFurnitureList.get(0).getBrand());
 		mModel.setText(mFurnitureList.get(0).getModel());
 		mPrice.setText(mFurnitureList.get(0).getPrice() + "원");
+
+		setViewSelected((ImageButton) findViewById(R.id.ib_btn_sofa));
 
 		mLlSofa.setOnClickListener(new View.OnClickListener() {
 			@Override

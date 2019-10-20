@@ -7,6 +7,7 @@
     <drawable name="selected_color">#ED7D31</drawable>
 
     <color name="blue_common">#7797e6</color>
+    <color name="blue_light">#f2f6ff</color>
     <color name="blue_dark">#1c294a</color>
     <color name="myStatusBarColor">#7797e6</color>
     <color name="white">#FFFFFF</color>

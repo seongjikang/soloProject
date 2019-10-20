@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -44,6 +45,17 @@ public class LoanTermsActivity extends Activity {
 		});
 		cb1 = findViewById(R.id.cb1);
 		cb2 = findViewById(R.id.cb2);
+		cb2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+				((ImageView) findViewById(R.id.iv_check1)).setSelected(b);
+				((ImageView) findViewById(R.id.iv_check2)).setSelected(b);
+				((ImageView) findViewById(R.id.iv_check3)).setSelected(b);
+				((ImageView) findViewById(R.id.iv_check4)).setSelected(b);
+				((ImageView) findViewById(R.id.iv_check5)).setSelected(b);
+				((ImageView) findViewById(R.id.iv_check6)).setSelected(b);
+			}
+		});
 		ll_check1 = findViewById(R.id.ll_check1);
 		ll_check1.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -74,10 +86,10 @@ public class LoanTermsActivity extends Activity {
 	 * 약관동의 완료되었다면 본인인증 화면으로 이동
 	 */
 	public void validCheck() {
-		if(!cb1.isChecked()) {
+		if (!cb1.isChecked()) {
 			return; // alert
 		}
-		if(!cb2.isChecked()) {
+		if (!cb2.isChecked()) {
 			return; // alert
 		}
 		Intent intent = new Intent(LoanTermsActivity.this, InputRealInfoActivity.class);

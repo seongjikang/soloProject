@@ -46,156 +46,210 @@
 	</LinearLayout>
 	<!--toptitle-->
 
-	<!--설명 윗부분 및 신청버튼-->
-	<LinearLayout
+	<ScrollView
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="vertical">
+		android:layout_height="wrap_content">
 
-		<!--대출 상품 이름 설명-->
 		<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="vertical">
-
-			<TextView
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:text="쉽고 빠른 SOLO 신용대출"
-				android:textSize="30dp" />
-
-			<TextView
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:text="너무 많은 대출상품은 이제 그만!\n내게 꼭 맞는 맞춤상품 추천!"
-				android:textSize="15dp" />
-		</LinearLayout>
-		<!--대출 상품 이름 설명-->
-
-		<!--대출 최대한도 최저금리-->
-		<LinearLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
+			<!--설명 윗부분 및 신청버튼-->
 
 			<LinearLayout
-				android:layout_width="0dp"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_weight="1"
+				android:background="@color/blue_light"
+				android:orientation="vertical"
+				android:padding="16dp">
+
+				<!--대출 상품 이름 설명-->
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="16dp"
+					android:orientation="vertical">
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="08dp"
+						android:text="쉽고 빠른 SOLO 신용대출"
+						android:textColor="@color/blue_dark"
+						android:textSize="30dp" />
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="08dp"
+						android:text="너무 많은 대출상품은 이제 그만!\n내게 꼭 맞는 맞춤상품 추천!"
+						android:textColor="#333333"
+						android:textSize="15dp" />
+				</LinearLayout>
+				<!--대출 상품 이름 설명-->
+
+				<!--대출 최대한도 최저금리-->
+				<LinearLayout
+					android:layout_marginTop="16dp"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+
+					<LinearLayout
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:orientation="vertical">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="최저금리"
+							android:textColor="#777777"
+							android:textSize="14dp" />
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="연 2.35%"
+							android:textColor="@color/blue_dark"
+							android:textSize="24dp" />
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:orientation="vertical">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="최대한도"
+							android:textColor="#777777"
+							android:textSize="14dp" />
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="2억원"
+							android:textColor="@color/blue_dark"
+							android:textSize="24dp" />
+
+					</LinearLayout>
+
+				</LinearLayout>
+				<!--대출 최대한도 최저금리-->
+
+				<ImageView
+					android:layout_width="150dp"
+					android:layout_height="150dp"
+					android:layout_gravity="right"
+					android:src="@drawable/sol_and_friends" />
+
+				<Button
+					android:id="@+id/btn_apply"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="16dp"
+					android:layout_marginBottom="08dp"
+					android:background="@color/blue_dark"
+					android:text="나의 한도 확인하기"
+					android:textColor="#FFFFFF" />
+			</LinearLayout>
+			<!--설명 윗부분 및 신청버튼-->
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="16dp"
 				android:orientation="vertical">
 
 				<TextView
-					android:layout_width="wrap_content"
+					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:text="최저금리" />
+					android:layout_marginTop="08dp"
+					android:text="대출진행 절차"
+					android:textColor="#333333"
+					android:textSize="16dp" />
 
-				<TextView
-					android:layout_width="wrap_content"
+				<LinearLayout
+					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:text="연 2.35%" />
+					android:layout_marginTop="08dp"
+					android:background="@drawable/btn_light_gray_stroke"
+					android:padding="16dp">
 
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="STEP01"
+						android:textColor="@color/blue_dark" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="08dp"
+						android:text="재직/소득 확인" />
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/btn_light_gray_stroke"
+					android:padding="16dp">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="STEP02"
+						android:textColor="@color/blue_dark" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="08dp"
+						android:text="맞춤상품 한도/금리조회" />
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/btn_light_gray_stroke"
+					android:padding="16dp">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="STEP03"
+						android:textColor="@color/blue_dark" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="08dp"
+						android:text="대출신청정보입력" />
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/btn_light_gray_stroke"
+					android:padding="16dp">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="STEP04"
+						android:textColor="@color/blue_dark" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="08dp"
+						android:text="대출실행" />
+				</LinearLayout>
 			</LinearLayout>
-
-			<LinearLayout
-				android:layout_width="0dp"
-				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:orientation="vertical">
-
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="최대한도" />
-
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="2억원" />
-
-			</LinearLayout>
-
 		</LinearLayout>
-		<!--대출 최대한도 최저금리-->
-
-		<Button
-			android:id="@+id/btn_apply"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:text="나의 한도 확인하기" />
-	</LinearLayout>
-	<!--설명 윗부분 및 신청버튼-->
-
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="vertical">
-
-		<TextView
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:text="대출진행 절차" />
-
-		<LinearLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
-
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="STEP01" />
-
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="08dp"
-				android:text="재직/소득 확인" />
-		</LinearLayout>
-
-		<LinearLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
-
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="STEP02" />
-
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="08dp"
-				android:text="맞춤상품 한도/금리조회" />
-		</LinearLayout>
-
-		<LinearLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
-
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="STEP03" />
-
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="08dp"
-				android:text="대출신청정보입력" />
-		</LinearLayout>
-
-		<LinearLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
-
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="STEP04" />
-
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="08dp"
-				android:text="대출실행" />
-		</LinearLayout>
-	</LinearLayout>
+	</ScrollView>
 </LinearLayout>
