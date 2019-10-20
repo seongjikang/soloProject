@@ -154,10 +154,8 @@ public class CollocateFurnitureActivity extends Activity {
                 } else {
                     for(int j=0; j< SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().size();j++) {
                         if ( j == i){
-                            Log.i("들어오셈1",i+"");
                             SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(i).setSelectFurniture(true);
                         } else {
-                            Log.i("들어오셈2",j+"");
                             SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(j).setSelectFurniture(false);
                         }
                     }

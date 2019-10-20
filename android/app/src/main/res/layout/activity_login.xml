@@ -3,6 +3,7 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:background="@color/blue_common"
 	android:orientation="vertical">
 
@@ -22,9 +23,8 @@
 			android:id="@+id/iv_text_logo"
 			android:layout_width="match_parent"
 			android:layout_height="250dp"
-			android:layout_marginTop="100dp"
+			android:layout_marginTop="70dp"
 			android:src="@drawable/solo_modern_white" />
-
 
 	</LinearLayout>
 
@@ -36,7 +36,7 @@
 		android:layout_marginLeft="28dp"
 		android:layout_marginRight="28dp"
 		android:layout_marginBottom="08dp"
-		android:visibility="visible"
+		android:visibility="gone"
 		android:background="@drawable/btn_login"
 		android:gravity="center">
 
@@ -112,6 +112,62 @@
 
 		</LinearLayout>
 	</LinearLayout>
+
+	<RelativeLayout
+		android:id="@+id/pattern_rl"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+
+		<RelativeLayout
+			android:id="@+id/cancel_rl"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/blue_common">
+			<Button
+				android:layout_margin="10dp"
+				android:id="@+id/cancel_btn"
+				android:layout_width="30dp"
+				android:layout_height="30dp"
+				android:layout_alignParentEnd="true"
+				android:layout_alignParentTop="true"
+				android:background="@drawable/delete" />
+
+
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="300dp"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentStart="true"
+			android:background="@color/blue_common">
+
+			<TextView
+				android:id="@+id/pattern_message"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:layout_marginBottom="20dp"
+				android:layout_marginTop="15dp"
+				android:text="패턴을 그려주세요."
+				android:textColor="#ffffff"
+				android:textSize="15dp" />
+
+			<com.andrognito.patternlockview.PatternLockView
+				android:id="@+id/patter_view"
+				android:layout_width="190dp"
+				android:layout_height="192dp"
+				android:layout_alignParentBottom="true"
+				android:layout_centerHorizontal="true"
+				android:layout_gravity="center_horizontal"
+				android:layout_marginBottom="25dp"
+				app:aspectRatio="square"
+				app:aspectRatioEnabled="true"
+				app:dotAnimationDuration="150"
+				app:dotCount="3" />
+		</RelativeLayout>
+
+	</RelativeLayout>
 	<!--<Button
 		android:id="@+id/sol_login_btn"
 		android:layout_width="wrap_content"

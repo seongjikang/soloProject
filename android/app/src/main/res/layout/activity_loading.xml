@@ -13,7 +13,8 @@
         android:layout_alignParentRight="true"
         android:gravity="center"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="55dp">
         <ImageView
             android:id="@+id/iv_text_logo"
             android:src="@drawable/solo_modern_center"
