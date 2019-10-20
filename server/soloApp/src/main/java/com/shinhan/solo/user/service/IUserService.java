@@ -8,6 +8,7 @@ public interface IUserService {
 	int userRegister(User user);
 	User userSearch(String uuid);
 	User userSearch(String name, String idNum);
+	User userSearchForLogin(String uuid, String password);
 	int userModify(String password, String idNum);
 	int userRemove(String idNum);
 	List<User> userAllSearch();

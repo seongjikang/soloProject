@@ -53,6 +53,19 @@ public class UserService implements IUserService {
 		
 		return user;
 	}
+	
+	@Override
+	public User userSearchForLogin(String uuid, String password) {
+		User user = dao.userSelectForLogin(uuid, password);
+		
+		if (user == null) {
+			System.out.println("Select Fail!!");
+		} else {
+			System.out.println("Select Success!!");
+		}
+		
+		return user;
+	}
 
 	@Override
 	public int userModify(String password, String idNum) {
