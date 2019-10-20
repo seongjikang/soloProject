@@ -39,7 +39,7 @@ import java.util.List;
 import io.reactivex.functions.Consumer;
 import solo.shinhan.com.solo.security.AES256Util;
 
-public class JoinActivity extends AppCompatActivity {
+public class JoinActivity extends Activity {
     private int patternCount = 0;
     private String tempPattern = "";
     private PatternLockView mPatternLockView;

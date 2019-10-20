@@ -7,9 +7,12 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.design.widget.BottomSheetDialog;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -34,7 +37,7 @@ import java.io.IOException;
 
 import solo.shinhan.com.solo.data.CustomPreferences;
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends AppCompatActivity {
 	private long pressedTime = 0;
 
 	private LinearLayout mSolLoginBtn;
@@ -48,10 +51,10 @@ public class LoginActivity extends Activity {
 	private CheckRegister task;
 
 	private String uuid;
-	private boolean isUuid;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -74,16 +77,18 @@ public class LoginActivity extends Activity {
 		mSolLoginBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
+                LoginDialog loginDialog = LoginDialog.getInstance();
+                loginDialog.show(getSupportFragmentManager(),"bottomSheet");
                 /*
                     임시 USER DATA;
                 */
 				SoloUser soloUser = new SoloUser(0, "강성지", 30, "M");
 
 				SoloSingleton.getInstance().setSoloUser(soloUser);
-				Intent intent = new Intent(getBaseContext(), SelectActivity.class);
-				startActivity(intent);
-				overridePendingTransition(0, 0);
-				finish();
+				//Intent intent = new Intent(getBaseContext(), SelectActivity.class);
+				//startActivity(intent);
+				//overridePendingTransition(0, 0);
+				//finish();
 			}
 		});
 
