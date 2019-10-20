@@ -48,61 +48,96 @@
 	<!--toptitle-->
 
 	<LinearLayout
+		android:layout_weight="1"
 		android:orientation="vertical"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
+		android:layout_height="0dp">
 
 	<TextView
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:gravity="center"
 		android:padding="30dp"
+		android:textSize="14dp"
+		android:textColor="#777777"
 		android:text="고객님의 예상한도와\n예상금리를 알려드립니다." />
 
 		<LinearLayout
+			android:paddingTop="32dp"
+			android:paddingBottom="32dp"
+			android:gravity="center"
+			android:layout_margin="16dp"
+			android:background="@drawable/btn_light_gray_stroke"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content">
 
 			<LinearLayout
 				android:gravity="center"
+				android:layout_weight="6"
 				android:orientation="vertical"
 				android:layout_width="wrap_content"
 				android:layout_height="match_parent">
 
 				<TextView
+					android:gravity="center"
+					android:textColor="#333333"
 					android:text="나의 예상한도"
+					android:textSize="14dp"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"/>
 				<TextView
-					android:text="3600만원"
+					android:gravity="center"
+					android:text="36,000,000원"
+					android:textColor="#333333"
+					android:layout_marginTop="08dp"
+					android:textStyle="bold"
+					android:textSize="16dp"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"/>
 
 			</LinearLayout>
 
+			<View
+				android:background="#e9e9e9"
+				android:layout_width="1dp"
+				android:layout_height="50dp"/>
+
 			<LinearLayout
 				android:orientation="vertical"
-				android:layout_weight="1"
+				android:layout_weight="4"
 				android:gravity="center"
 				android:layout_width="wrap_content"
 				android:layout_height="match_parent">
 
 				<TextView
-					android:text="나의 예상한도"
+					android:gravity="center"
+					android:text="예상금리"
+					android:textSize="14dp"
+					android:textColor="#333333"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"/>
 				<TextView
-					android:text="3600만원"
+					android:gravity="center"
+					android:text="4.223%"
+					android:layout_marginTop="08dp"
+					android:textStyle="bold"
+					android:textSize="16dp"
+					android:textColor="#3ab53c"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"/>
 
 			</LinearLayout>
 		</LinearLayout>
 
-		<Button
-			android:id="@+id/btn_next"
-			android:text="다음"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"/>
 	</LinearLayout>
+	<Button
+		android:id="@+id/btn_next"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="16dp"
+		android:background="@drawable/selector_confirm_btn"
+		android:padding="16dp"
+		android:text="다음"
+		android:textColor="#FFFFFF"
+		android:textSize="16dp" />
 </LinearLayout>

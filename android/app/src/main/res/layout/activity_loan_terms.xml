@@ -49,65 +49,198 @@
 
 	<LinearLayout
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
+		android:layout_height="0dp"
+		android:layout_weight="1"
 		android:orientation="vertical">
 
 		<LinearLayout
 			android:id="@+id/ll_check1"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
+			android:layout_height="wrap_content"
+			android:layout_margin="08dp"
+			android:background="@drawable/btn_light_gray_stroke"
+			android:padding="16dp">
 
 			<CheckBox
 				android:id="@+id/cb1"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" />
+				android:layout_width="30dp"
+				android:layout_height="30dp"
+				android:background="@drawable/selector_checkbox"
+				android:button="@null" />
 
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:text="상품설명서" />
+				android:layout_marginLeft="16dp"
+				android:text="상품설명서"
+				android:textColor="#333333"
+				android:textSize="16dp" />
 		</LinearLayout>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="16dp"
+			android:paddingLeft="08dp"
+			android:text="상품설명서의 내용을 반드시 확인해주세요."
+			android:textColor="#777777"
+			android:textSize="14dp" />
 
 		<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:layout_margin="08dp"
 			android:orientation="vertical">
 
 			<LinearLayout
 				android:id="@+id/ll_check2"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content">
+				android:layout_height="wrap_content"
+				android:background="@drawable/btn_light_gray_stroke"
+				android:padding="16dp">
 
 				<CheckBox
 					android:id="@+id/cb2"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content" />
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:background="@drawable/selector_checkbox"
+					android:button="@null" />
 
 				<TextView
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:text="필수 동의" />
+					android:layout_marginLeft="16dp"
+					android:text="필수 동의"
+					android:textColor="#333333"
+					android:textSize="16dp" />
 
 			</LinearLayout>
 
 			<LinearLayout
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:orientation="vertical">
+				android:layout_marginTop="04dp"
+				android:background="@drawable/btn_light_gray_stroke"
+				android:orientation="vertical"
+				android:padding="16dp">
 
 				<LinearLayout
 					android:layout_width="match_parent"
-					android:layout_height="wrap_content">
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="04dp">
 
 					<!--TODO : CHECK IMAGE-->
 					<ImageView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content" />
+						android:id="@+id/iv_check1"
+						android:layout_width="10dp"
+						android:layout_height="10dp"
+						android:layout_gravity="center"
+						android:background="@drawable/selector_check"
+						android:src="@drawable/selector_check" />
 
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="개인(신용)정보 조회 동의서" />
+						android:layout_marginLeft="08dp"
+						android:text="개인(신용)정보 조회 동의서"
+						android:textColor="#333333"
+						android:textSize="14dp" />
+
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="04dp">
+
+					<!--TODO : CHECK IMAGE-->
+					<ImageView
+						android:id="@+id/iv_check2"
+						android:layout_width="10dp"
+						android:layout_height="10dp"
+						android:layout_gravity="center"
+						android:background="@drawable/selector_check"
+						android:src="@drawable/selector_check" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="08dp"
+						android:text="개인(신용)정보 수집 이용 제공 동의서(여신금융거래)"
+						android:textColor="#333333"
+						android:textSize="14dp" />
+
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="04dp">
+
+					<!--TODO : CHECK IMAGE-->
+					<ImageView
+						android:id="@+id/iv_check3"
+						android:layout_width="10dp"
+						android:layout_height="10dp"
+						android:layout_gravity="center"
+						android:background="@drawable/selector_check"
+						android:src="@drawable/selector_check" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="08dp"
+						android:text="계약체결 이행 등을 위한 필수동의서(SGI)"
+						android:textColor="#333333"
+						android:textSize="14dp" />
+
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="04dp">
+
+					<!--TODO : CHECK IMAGE-->
+					<ImageView
+						android:id="@+id/iv_check4"
+						android:layout_width="10dp"
+						android:layout_height="10dp"
+						android:layout_gravity="center"
+						android:background="@drawable/selector_check"
+						android:src="@drawable/selector_check" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="08dp"
+						android:text="은행여신거래기본약관"
+						android:textColor="#333333"
+						android:textSize="14dp" />
+
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="04dp">
+
+					<!--TODO : CHECK IMAGE-->
+					<ImageView
+						android:id="@+id/iv_check5"
+						android:layout_width="10dp"
+						android:layout_height="10dp"
+						android:layout_gravity="center"
+						android:background="@drawable/selector_check"
+						android:src="@drawable/selector_check" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="08dp"
+						android:text="대출거래 약정서"
+						android:textColor="#333333"
+						android:textSize="14dp" />
 
 				</LinearLayout>
 
@@ -117,77 +250,20 @@
 
 					<!--TODO : CHECK IMAGE-->
 					<ImageView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content" />
+						android:id="@+id/iv_check6"
+						android:layout_width="10dp"
+						android:layout_height="10dp"
+						android:layout_gravity="center"
+						android:background="@drawable/selector_check"
+						android:src="@drawable/selector_check" />
 
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="개인(신용)정보 수집 이용 제공 동의서(여신금융거래)" />
-
-				</LinearLayout>
-
-				<LinearLayout
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content">
-
-					<!--TODO : CHECK IMAGE-->
-					<ImageView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content" />
-
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="계약체결 이행 등을 위한 필수동의서(SGI)" />
-
-				</LinearLayout>
-
-				<LinearLayout
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content">
-
-					<!--TODO : CHECK IMAGE-->
-					<ImageView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content" />
-
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="은행여신거래기본약관" />
-
-				</LinearLayout>
-
-				<LinearLayout
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content">
-
-					<!--TODO : CHECK IMAGE-->
-					<ImageView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content" />
-
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="대출거래 약정서" />
-
-				</LinearLayout>
-
-				<LinearLayout
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content">
-
-					<!--TODO : CHECK IMAGE-->
-					<ImageView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content" />
-
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="개인정보 제3자 제공 동의" />
+						android:layout_marginLeft="08dp"
+						android:text="개인정보 제3자 제공 동의"
+						android:textColor="#333333"
+						android:textSize="14dp" />
 
 				</LinearLayout>
 			</LinearLayout>
@@ -198,5 +274,10 @@
 		android:id="@+id/btn_next"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:layout_margin="16dp"
+		android:textSize="16dp"
+		android:padding="16dp"
+		android:textColor="#FFFFFF"
+		android:background="@drawable/selector_confirm_btn"
 		android:text="다음" />
 </LinearLayout>

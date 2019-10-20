@@ -79,7 +79,8 @@ public class CollocateFurnitureActivity extends Activity {
         Picasso.get().load(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseFloorPlanString()).into(new Target() {
             @Override
             public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                mFloorPlanLayout.setBackground(new BitmapDrawable(bitmap));
+                BitmapDrawable bitmapDrawable = new BitmapDrawable(getResources(), bitmap);
+                mFloorPlanLayout.setBackground(bitmapDrawable);
             }
 
             @Override
@@ -235,7 +236,7 @@ public class CollocateFurnitureActivity extends Activity {
             //mFurnitureManagerDialog.settingFurnitureView();
 
             SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(mCurrentPosition).setDirection(mDirection);
-            String category  =SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(mCurrentPosition).getFurnitureInfo().getCategory();
+            String category = SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(mCurrentPosition).getFurnitureInfo().getCategory();
             int furnitureNo = SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().get(mCurrentPosition).getFurnitureInfo().getFurnitureNo();
             for(int i=0;i <SoloSingleton.getInstance().getFurnitureMap().get(category).size(); i++) {
                 if(SoloSingleton.getInstance().getFurnitureMap().get(category).get(i).getFurnitureNo() == furnitureNo) {

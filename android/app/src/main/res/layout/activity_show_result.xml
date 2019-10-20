@@ -48,9 +48,10 @@
 	<!--toptitle-->
 
 	<LinearLayout
-		android:orientation="vertical"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:orientation="vertical">
 
 
 		<TextView
@@ -58,12 +59,88 @@
 			android:layout_height="wrap_content"
 			android:gravity="center"
 			android:padding="30dp"
-			android:text="10일 이내(영업일)에\n직장/소득정보를 확인해 주세요." />
+			android:text="10일 이내(영업일)에\n직장/소득정보를 확인해 주세요."
+			android:textColor="#777777"
+			android:textSize="14dp" />
 
-		<Button
-			android:text="서류 제출"
+		<LinearLayout
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content"/>
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="16dp"
+			android:layout_marginRight="16dp"
+			android:layout_marginBottom="16dp"
+			android:orientation="vertical">
 
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="08dp"
+				android:background="@drawable/btn_light_gray_stroke"
+				android:padding="20dp">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="STEP01"
+					android:textColor="@color/blue_dark" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="08dp"
+					android:text="쏠(SOL)에 접속해 주세요." />
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="04dp"
+				android:background="@drawable/btn_light_gray_stroke"
+				android:padding="20dp">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="STEP02"
+					android:textColor="@color/blue_dark" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="08dp"
+					android:text="메뉴 > 대출 > [SOLO 모바일 대출 서류 제출하기] 버튼을 눌러주세요." />
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="04dp"
+				android:background="@drawable/btn_light_gray_stroke"
+				android:padding="20dp">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="STEP03"
+					android:textColor="@color/blue_dark" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="08dp"
+					android:text="인증번호 입력을 통해 인증을 완료한 후, 안내에 따라 서류 제출을 진행해주세요." />
+			</LinearLayout>
+		</LinearLayout>
 	</LinearLayout>
+
+	<Button
+		android:id="@+id/btn_next"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="16dp"
+		android:background="@drawable/selector_confirm_btn"
+		android:padding="16dp"
+		android:text="SOL로 서류 제출"
+		android:textColor="#FFFFFF"
+		android:textSize="16dp" />
 </LinearLayout>

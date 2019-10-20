@@ -46,64 +46,96 @@
 	</LinearLayout>
 	<!--toptitle-->
 
-	<TextView
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:gravity="center"
-		android:padding="30dp"
-		android:text="실명정보 확인을 위해\n이름과 주민등록번호를 입력하세요." />
-
-	<EditText
-		android:id="@+id/et_name"
-		android:layout_width="match_parent"
-		android:layout_height="50dp"
-		android:layout_marginLeft="16dp"
-		android:layout_marginRight="16dp"
-		android:background="@drawable/et_search"
-		android:hint="이름"
-		android:maxLength="20"
-		android:maxLines="1"
-		android:inputType="text"
-		android:paddingLeft="20dp"
-		android:paddingRight="20dp"
-		android:textSize="12dp" />
-
 	<LinearLayout
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_marginLeft="16dp"
-		android:layout_marginRight="16dp">
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:orientation="vertical">
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:padding="30dp"
+			android:text="실명정보 확인을 위해\n이름과 주민등록번호를 입력하세요."
+			android:textColor="#777777"
+			android:textSize="16dp" />
 
 		<EditText
-			android:id="@+id/et_id1"
-			android:layout_width="0dp"
+			android:id="@+id/et_name"
+			android:layout_width="match_parent"
 			android:layout_height="50dp"
-			android:layout_weight="1"
-			android:background="@drawable/et_search"
+			android:layout_marginLeft="16dp"
+			android:layout_marginRight="16dp"
+			android:background="@drawable/btn_light_gray_stroke"
+			android:hint="이름"
+			android:inputType="text"
 			android:maxLength="20"
 			android:maxLines="1"
-			android:inputType="number"
 			android:paddingLeft="20dp"
 			android:paddingRight="20dp"
 			android:textSize="12dp" />
 
-		<EditText
-			android:id="@+id/et_id2"
-			android:layout_width="0dp"
-			android:layout_height="50dp"
-			android:layout_weight="1"
-			android:background="@drawable/et_search"
-			android:maxLength="20"
-			android:maxLines="1"
-			android:inputType="number"
-			android:paddingLeft="20dp"
-			android:paddingRight="20dp"
-			android:textSize="12dp" />
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginLeft="16dp"
+			android:layout_marginRight="16dp"
+			android:background="@drawable/btn_light_gray_stroke"
+			android:gravity="center">
+
+			<EditText
+				android:id="@+id/et_id1"
+				android:layout_width="0dp"
+				android:layout_height="50dp"
+				android:layout_marginLeft="08dp"
+				android:layout_marginRight="08dp"
+				android:layout_weight="1"
+				android:background="@null"
+				android:gravity="center"
+				android:inputType="number"
+				android:maxLength="6"
+				android:maxLines="1"
+				android:paddingLeft="20dp"
+				android:paddingRight="20dp"
+				android:textSize="16dp" />
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_marginLeft="04dp"
+				android:layout_marginRight="04dp"
+				android:gravity="center"
+				android:text=" - " />
+
+			<EditText
+				android:id="@+id/et_id2"
+				android:layout_width="0dp"
+				android:layout_height="50dp"
+				android:layout_marginLeft="08dp"
+				android:layout_marginRight="08dp"
+				android:layout_weight="1"
+				android:background="@null"
+				android:gravity="center"
+				android:inputType="number"
+				android:maxLength="7"
+				android:maxLines="1"
+				android:paddingLeft="20dp"
+				android:paddingRight="20dp"
+				android:textSize="16dp" />
+		</LinearLayout>
 	</LinearLayout>
 
 	<Button
 		android:id="@+id/btn_next"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:text="확인" />
+		android:layout_margin="16dp"
+		android:background="@drawable/selector_confirm_btn"
+		android:padding="16dp"
+		android:text="확인"
+		android:textColor="#FFFFFF"
+		android:textSize="16dp" />
 </LinearLayout>
