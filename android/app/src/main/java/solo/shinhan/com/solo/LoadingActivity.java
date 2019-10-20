@@ -10,6 +10,7 @@ import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
@@ -29,6 +30,7 @@ import java.util.HashMap;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import solo.shinhan.com.solo.data.CustomPreferences;
 import solo.shinhan.com.solo.data.DataResult;
 import solo.shinhan.com.solo.data.DataResultImpl;
 
@@ -108,6 +110,9 @@ public class LoadingActivity extends Activity {
 
 	private void startLoading() {
 		loadData();
+		String uuid = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
+		CustomPreferences.setString(this, "uuid",uuid);
+
 		SoloSingleton.getInstance().getMyCollocateFurnitureInfoList().clear();
 	}
 

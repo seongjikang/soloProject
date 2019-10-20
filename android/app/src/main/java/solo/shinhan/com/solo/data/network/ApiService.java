@@ -1,5 +1,7 @@
 package solo.shinhan.com.solo.data.network;
 
+import android.support.annotation.NonNull;
+
 import com.google.gson.JsonObject;
 
 import retrofit2.Call;
@@ -15,4 +17,5 @@ public interface ApiService {
 
 	@POST("/v1/house/listup")
 	public Call<JsonObject> getHouseList();
+
 }

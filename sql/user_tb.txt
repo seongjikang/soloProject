@@ -1,6 +1,7 @@
 create table user_tb (
  name VARCHAR(50) NOT NULL,
- id_number VARCHAR(14) NOT NULL,
+ uuid VARCHAR(50) NOT NULL,
+ id_number VARCHAR(50) NOT NULL,
  password VARCHAR(50) NOT NULL,
  PRIMARY KEY (id_number)
 ) DEFAULT CHARSET=utf8;
