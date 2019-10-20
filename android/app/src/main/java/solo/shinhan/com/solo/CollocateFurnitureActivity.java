@@ -49,6 +49,7 @@ public class CollocateFurnitureActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_collocate_furniture);
 
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.white));
         }
