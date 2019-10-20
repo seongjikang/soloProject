@@ -132,6 +132,24 @@ public class UserController {
 		return jsonMain;
 	}
 	
+	@RequestMapping(value = "/user/login", method = RequestMethod.POST, produces="application/json;charset=utf-8")
+	public @ResponseBody JSONObject userSearchForLogin(@RequestBody JSONObject request) {
+		JSONObject jsonMain = new JSONObject();
+		
+		String uuid = request.get("uuid").toString();
+		String password = request.get("password").toString();
+		
+		User user = service.userSearchForLogin(uuid,password);
+		
+		if (user == null) {
+			jsonMain.put("result","fail");
+		} else {
+			jsonMain.put("result","success");
+		}
+		
+		return jsonMain;
+	}
+	
 	@RequestMapping(value = "/user/listup", method = RequestMethod.POST, produces="application/json;charset=utf-8")
 	public @ResponseBody JSONObject userListUp() {
 		JSONObject jsonMain = new JSONObject();

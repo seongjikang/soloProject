@@ -10,5 +10,6 @@ public interface IUserDao {
 	User userSelect(String name, String idNum); // 대출 서류 심사
 	int userUpdate(String password, String idNum);
 	int userDelete(String idNum);
+	User userSelectForLogin(String uuid, String password);
 	List<User> userAllSelect();
 }

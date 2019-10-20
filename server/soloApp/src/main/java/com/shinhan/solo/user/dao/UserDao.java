@@ -25,6 +25,7 @@ public class UserDao implements IUserDao {
 	private final static String USER_INSERT_QUERY = "INSERT INTO user_tb (name, uuid, id_number, password) values (?, ?, ?, ?)";
 	private final static String USER_SELECT_QUERY_BY_UUID = "SELECT * FROM user_tb WHERE uuid = ?" ;
 	private final static String USER_SELECT_QUERY_BY_INFO = "SELECT * FROM user_tb WHERE name = ? and id_number = ?" ;
+	private final static String USER_SELECT_QUERY_FOR_LOGIN = "SELECT * FROM user_tb WHERE uuid = ? and password = ?" ;
 	private final static String USER_UPDATE_QUERY = "UPDATE user_tb SET password = ? WHERE id_number = ? ";
 	private final static String USER_DELETE_QUERY = "DELETE FROM user_tb WHERE id_number = ?";
 	private final static String USER_ALL_SELECT_QUERY = "SELECT * FROM user_tb";
@@ -97,6 +98,30 @@ public class UserDao implements IUserDao {
 		List<User> users = null;
 
 		users = template.query(USER_SELECT_QUERY_BY_INFO, new Object[]{name, idNum}, new RowMapper<User>() {
+
+			@Override
+			public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+				User user = new User();
+				user.setName(rs.getString("name"));
+				user.setUuid(rs.getString("uuid"));
+				user.setUuid(rs.getString("id_number"));
+				user.setPassword(rs.getString("password"));
+				return user;
+			}
+			
+		});
+		
+		if(users.isEmpty())
+			return null;
+
+		return users.get(0);
+	}
+	
+	@Override
+	public User userSelectForLogin(String uuid, String password) {
+		List<User> users = null;
+
+		users = template.query(USER_SELECT_QUERY_FOR_LOGIN, new Object[]{uuid, password}, new RowMapper<User>() {
 
 			@Override
 			public User mapRow(ResultSet rs, int rowNum) throws SQLException {
