@@ -3,19 +3,52 @@ package solo.shinhan.com.solo;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.BasicResponseHandler;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
+import solo.shinhan.com.solo.data.CustomPreferences;
 
 public class LoginActivity extends Activity {
 	private long pressedTime = 0;
 
 	private LinearLayout mSolLoginBtn;
 	private LinearLayout mNoUuid;
+	private LinearLayout mSignUpBtn;
+	private EditText mEditName;
+	private EditText mEditIdNum;
+
+    private final static String CHECK_REGISTER_URL = "http://13.125.12.186/v1/user/search/register";
+
+	private CheckRegister task;
+
+	private String uuid;
+	private boolean isUuid;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +61,15 @@ public class LoginActivity extends Activity {
 
 		mSolLoginBtn = (LinearLayout) findViewById(R.id.sol_login_btn);
 		mNoUuid = findViewById(R.id.ll_no_uuid);
+        mSignUpBtn = (LinearLayout)findViewById(R.id.sign_up_btn);
+        mEditName = (EditText)findViewById(R.id.et_name);
+        mEditIdNum = (EditText)findViewById(R.id.et_id_num);
+
+        uuid = CustomPreferences.getString(this, "uuid");
+
+        Log.i("uuid","uuid : " + uuid);
+
+        showLoginBtn(uuid);
 
 		mSolLoginBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -45,23 +87,50 @@ public class LoginActivity extends Activity {
 			}
 		});
 
-		showLoginBtn();
+        mSignUpBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mEditName.getText().toString() == null || mEditName.getText().toString().equals("") || mEditIdNum.getText().toString() == null || mEditIdNum.getText().toString().equals("")) {
+                  Toast.makeText(getBaseContext(), "이름과 주민등록번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
+                } else {
+                    if(mEditIdNum.getText().toString().length() != 13) {
+                        Toast.makeText(getBaseContext(), "잘못된 주민등록번호 입니다. 다시입력해주세요.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Intent intent = new Intent(getBaseContext(), JoinActivity.class);
+                        intent.putExtra("name",mEditName.getText().toString());
+                        intent.putExtra("id_num",mEditIdNum.getText().toString());
+                        startActivity(intent);
+                        overridePendingTransition(0, 0);
+                    }
+                }
+
+            }
+        });
 	}
 
-	/**
+    @Override
+    protected void onResume() {
+        super.onResume();
+        showLoginBtn(uuid);
+    }
+
+    /**
 	 * Uuid 있으면 SOL로 로그인 버튼 / 아니면 회원가입 뷰 보여줌
 	 *
 	 * @return
 	 */
-	public void showLoginBtn() {
-		boolean isUuid = true;
-		if (isUuid) {
-			mSolLoginBtn.setVisibility(View.VISIBLE);
-			mNoUuid.setVisibility(View.GONE);
-		} else {
-			mSolLoginBtn.setVisibility(View.GONE);
-			mNoUuid.setVisibility(View.VISIBLE);
-		}
+	public void showLoginBtn(String uuid) {
+		try {
+
+            JSONObject requestJson = new JSONObject();
+            requestJson.put("uuid", uuid);
+
+            task = new CheckRegister();
+            task.execute(CHECK_REGISTER_URL, requestJson.toString());
+
+        } catch (JSONException e) {
+		    e.printStackTrace();
+        }
 	}
 
 	@Override
@@ -81,4 +150,99 @@ public class LoginActivity extends Activity {
 			}
 		}
 	}
+
+	private class CheckRegister extends AsyncTask<String, Void, String> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            boolean check = CustomPreferences.getBoolean(getApplicationContext(),"register_check");
+            Log.i("register_check",check + "");
+            if (CustomPreferences.getBoolean(getApplicationContext(),"register_check")) {
+                mSolLoginBtn.setVisibility(View.VISIBLE);
+                mNoUuid.setVisibility(View.GONE);
+            } else {
+                mSolLoginBtn.setVisibility(View.GONE);
+                mNoUuid.setVisibility(View.VISIBLE);
+            }
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected void onCancelled(String s) {
+            super.onCancelled(s);
+        }
+
+        @Override
+        protected void onCancelled() {
+            super.onCancelled();
+        }
+
+        @Override
+        protected String  doInBackground(String... strings) {
+
+            try {
+                String check_register_url = strings[0];
+                String requestJson = strings[1];
+                Log.i("requestJson",requestJson);
+
+                HttpClient http = new DefaultHttpClient();
+
+                HttpPost httpPost = new HttpPost(check_register_url);
+                httpPost.setHeader("Accept", "application/json");
+                httpPost.setHeader("Connection", "keep-alive");
+                httpPost.setHeader("Content-Type", "application/json");
+
+                httpPost.setEntity(new StringEntity(requestJson));
+
+                HttpResponse response = http.execute(httpPost);
+
+                if (response.getStatusLine().getStatusCode() == 200) {
+                    ResponseHandler<String> handler = new BasicResponseHandler();
+                    String body = handler.handleResponse(response);
+                    System.out.println(body);
+                    return checkRegister(body);
+                } else {
+                    System.out.println("response is error : " + response.getStatusLine().getStatusCode());
+                    return "fail";
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return "fail";
+        }
+    }
+
+    private String checkRegister(String body) {
+
+        JsonParser parser = new JsonParser();
+        JsonObject response = (JsonObject) parser.parse(body);
+
+        Log.i("responseBody",response.toString());
+
+        JsonElement element = parser.parse(response.toString());
+        String result = element.getAsJsonObject().get("result").getAsString();
+
+        Log.i("result_data",result);
+
+        if ( result.equals("able")) {
+            //isUuid =false;
+            CustomPreferences.setBoolean(this,"register_check",false);
+        } else if(result.equals("unable")) {
+            //isUuid =true;
+            CustomPreferences.setBoolean(this,"register_check",true);
+        }
+
+	    return null;
+    }
 }

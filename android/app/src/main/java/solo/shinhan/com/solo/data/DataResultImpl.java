@@ -24,4 +24,5 @@ public class DataResultImpl implements DataResult{
 		call.enqueue(callback);
 		return;
 	}
+
 }
