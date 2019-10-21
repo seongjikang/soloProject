@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.shinhan.solo.member.Member;
 import com.shinhan.solo.user.User;
 import com.shinhan.solo.user.service.UserService;
 
@@ -170,6 +172,34 @@ public class UserController {
 		return jsonMain;
 	}
 	
+	// Login
+	@RequestMapping("/user/loginForm")
+	public String loginForm(User user) {
+		return "/user/loginForm";
+	}
+	
+	@RequestMapping(value = "/user/login", method = RequestMethod.POST)
+	public String memLogin(User user, HttpSession session) {
+		
+		User tmpUser = service.userSearchForLogin(user.getUuid(), user.getPassword());
+		
+		if (tmpUser != null )
+		{
+			session.setAttribute("user", tmpUser);
+			return "/user/loginOk";
+		} else {
+			return "/user/loginFail";
+		}
+		
+	}
+	
+	@RequestMapping("/user/logout")
+	public String memLogout(User user, HttpSession session) {
+		
+		session.invalidate();
+		
+		return "/user/logoutOk";
+	}
 	
 	
 }
