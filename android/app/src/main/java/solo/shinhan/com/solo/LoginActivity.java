@@ -83,7 +83,6 @@ import solo.shinhan.com.solo.security.AES256Util;
 public class LoginActivity extends AppCompatActivity {
 	private long pressedTime = 0;
 
-	private LinearLayout mSolLoginBtn;
 	private LinearLayout mNoUuid;
 	private LinearLayout mSignUpBtn;
 	private RelativeLayout mPatternLogin;
@@ -141,7 +140,6 @@ public class LoginActivity extends AppCompatActivity {
 			getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.blue_common));
 		}
 
-		mSolLoginBtn = (LinearLayout) findViewById(R.id.sol_login_btn);
 		mNoUuid = findViewById(R.id.ll_no_uuid);
         mSignUpBtn = (LinearLayout)findViewById(R.id.sign_up_btn);
         mEditName = (EditText)findViewById(R.id.et_name);
@@ -198,6 +196,11 @@ public class LoginActivity extends AppCompatActivity {
                             requestJson.put("uuid", uuid);
                             requestJson.put("password",password);
 
+							SoloUser soloUser = new SoloUser(0, "강성지", 30, "M");
+
+							SoloSingleton.getInstance().setSoloUser(soloUser);
+							SoloSingleton.getInstance().setSoloUser(soloUser);
+
                             loginTask = new LoginTask();
                             loginTask.execute(LOGIN_URL,requestJson.toString());
 
@@ -213,27 +216,6 @@ public class LoginActivity extends AppCompatActivity {
 		Log.i("uuid", "uuid : " + uuid);
 
 		showLoginBtn(uuid);
-
-		mSolLoginBtn.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-
-			    mSolLoginBtn.setVisibility(View.GONE);
-			    mPatternLogin.setVisibility(View.VISIBLE);
-				//				joinUser("lina", "1234", "9401072222222", "lina");
-                /*
-                    임시 USER DATA;
-                */
-				SoloUser soloUser = new SoloUser(0, "강성지", 30, "M");
-
-				SoloSingleton.getInstance().setSoloUser(soloUser);
-				SoloSingleton.getInstance().setSoloUser(soloUser);
-				//Intent intent = new Intent(getBaseContext(), SelectActivity.class);
-				//startActivity(intent);
-				//overridePendingTransition(0, 0);
-				//finish();
-			}
-		});
 
         mSignUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -262,6 +244,8 @@ public class LoginActivity extends AppCompatActivity {
 		super.onResume();
 		showLoginBtn(uuid);
 	}
+
+
 
 	/**
 	 * Uuid 있으면 SOL로 로그인 버튼 / 아니면 회원가입 뷰 보여줌
@@ -406,10 +390,10 @@ public class LoginActivity extends AppCompatActivity {
 			boolean check = CustomPreferences.getBoolean(getApplicationContext(), "register_check");
 			Log.i("register_check", check + "");
 			if (CustomPreferences.getBoolean(getApplicationContext(), "register_check")) {
-				mSolLoginBtn.setVisibility(View.VISIBLE);
+				mPatternLogin.setVisibility(View.VISIBLE);
 				mNoUuid.setVisibility(View.GONE);
 			} else {
-				mSolLoginBtn.setVisibility(View.GONE);
+				mPatternLogin.setVisibility(View.GONE);
 				mNoUuid.setVisibility(View.VISIBLE);
 			}
 		}
