@@ -6,7 +6,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
@@ -30,10 +29,10 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.protocol.HTTP;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.net.URLEncoder;
 import java.util.List;
 
 import io.reactivex.functions.Consumer;
@@ -152,7 +151,7 @@ public class JoinActivity extends Activity {
                                             patternCount = 0;
 
                                             JSONObject requestJson = new JSONObject();
-                                            requestJson.put("name", URLEncoder.encode(name,"UTF-8"));
+                                            requestJson.put("name", name);
                                             requestJson.put("password",password);
                                             requestJson.put("uuid",uuid);
                                             requestJson.put("id_number",idNum);
@@ -220,7 +219,7 @@ public class JoinActivity extends Activity {
                 httpPost.setHeader("Connection", "keep-alive");
                 httpPost.setHeader("Content-Type", "application/json");
 
-                httpPost.setEntity(new StringEntity(requestJson));
+                httpPost.setEntity(new StringEntity(requestJson,HTTP.UTF_8));
 
                 HttpResponse response = http.execute(httpPost);
 

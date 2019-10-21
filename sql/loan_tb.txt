@@ -1,0 +1,8 @@
+create table loan_tb (
+ name VARCHAR(50) NOT NULL,
+ id_number VARCHAR(50) NOT NULL,
+ max_money INT(11) NOT NULL,
+ request_money INT(11) NOT NULL,
+ loan_access VARCHAR(10) NOT NULL,
+ PRIMARY KEY (id_number)
+) DEFAULT CHARSET=utf8;
