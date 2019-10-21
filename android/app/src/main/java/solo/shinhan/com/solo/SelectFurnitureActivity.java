@@ -60,6 +60,13 @@ public class SelectFurnitureActivity extends Activity {
 		mModel = (TextView) findViewById(R.id.model);
 		mPrice = (TextView) findViewById(R.id.price);
 		mDetailFurnitureInfo = (Button) findViewById(R.id.detail_furniture_info);
+		mDetailFurnitureInfo.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(getApplicationContext(), DetailARActivity.class);
+				startActivity(intent);
+			}
+		});
 		mCollocateFurniture = (Button) findViewById(R.id.collocate_furniture);
 		mLeftArrow = (ImageView) findViewById(R.id.left_arrow);
 		mRightArrow = (ImageView) findViewById(R.id.right_arrow);

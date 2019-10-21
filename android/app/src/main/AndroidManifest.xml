@@ -8,6 +8,8 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+    <uses-feature android:name="android.hardware.camera.ar" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".loan.ShowResultActivity"></activity>
+        <activity android:name=".DetailARActivity"></activity>
+        <activity android:name=".loan.ShowResultActivity" />
         <activity android:name=".loan.LoanRegCompleteActivity" />
         <activity android:name=".loan.InputRealInfoActivity" />
         <activity android:name=".loan.ShowLimitActivity" />
@@ -55,6 +58,10 @@
             android:name=".CollocateFurnitureActivity"
             android:configChanges="screenSize|orientation|layoutDirection"
             android:screenOrientation="landscape" />
+
+        <meta-data
+            android:name="com.google.ar.core"
+            android:value="required" />
     </application>
 
 </manifest>
