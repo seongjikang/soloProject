@@ -69,3 +69,16 @@ http://13.125.12.186/v1/user/delete
 {
     "result": "success"
 }
+
+7) 로그인
+http://13.125.12.186/v1/user/login
+-input
+{
+	"uuid":"abced",
+	"password":"1234"
+}
+
+-output
+{
+	"result": "success"
+}
