@@ -214,7 +214,7 @@ public class DetailARActivity extends AppCompatActivity implements GLSurfaceView
 			planeRenderer.createOnGlThread(/*context=*/ this, "models/trigrid.png");
 			pointCloudRenderer.createOnGlThread(/*context=*/ this);
 
-			virtualObject.createOnGlThread(/*context=*/ this, "models/andy.obj", "models/andy.png");
+			virtualObject.createOnGlThread(/*context=*/ this, "models/sofa.obj", "models/grey.png");
 			virtualObject.setMaterialProperties(0.0f, 2.0f, 0.5f, 6.0f);
 
 			virtualObjectShadow.createOnGlThread(
