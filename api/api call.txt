@@ -8,7 +8,7 @@ http://13.125.12.186/v1/house/listup
 
 3. user
 1) 유저 전체 조회
-http://13.125.12.186/v1/house/listup
+http://13.125.12.186/v1/user/listup
 
 2) 유저 가입
 http://13.125.12.186/v1/user/join
@@ -81,4 +81,52 @@ http://13.125.12.186/v1/user/login
 -output
 {
 	"result": "success"
+}
+
+4. laon
+
+1) 대출 신청 목록 조회
+http://13.125.12.186/v1/loan/loanInfo
+
+2) 대출 신청
+http://13.125.12.186/v1/loan/apply
+-input
+{
+	"name":"강성지",
+	"id_number":"00000000000",
+	"max_money":"15000000",
+	"request_money":"5000000",
+	"loan_request":"apply" // 1. apply 는 신청(대기중) 
+}
+-output
+{
+	"result": "success"
+}
+
+3) 대출 승인
+http://13.125.12.186/v1/loan/approve
+-input
+{
+	"id_number":"00000000000",
+	"loan_result":"approve" // 1. 승인 : approve, 2.거절 :refuse
+}
+-output
+{
+	"loan_result":"approve"
+}
+
+4)대출 결과 확인하기
+http://13.125.12.186/v1/loan/loanstatus
+-input
+{
+	"id_number":"00000000000"
+}
+-output
+{
+	"name":"강성지",
+	"id_number":"00000000000",
+	"max_money":"15000000",
+	"request_money":"5000000"
+	"loan_status":"approve" //1.  승인 : approve, 2.거절 :refuse 3. 심사 중 : apply
+	"result":"success"
 }

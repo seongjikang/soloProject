@@ -80,7 +80,7 @@ public class UserDao implements IUserDao {
 				User user = new User();
 				user.setName(rs.getString("name"));
 				user.setUuid(rs.getString("uuid"));
-				user.setUuid(rs.getString("id_number"));
+				user.setIdNumber(rs.getString("id_number"));
 				user.setPassword(rs.getString("password"));
 				return user;
 			}
