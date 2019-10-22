@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -36,19 +37,25 @@
                             </tr>
                         </thead>
                         <tbody>
+                        	<c:forEach items="${list}" var="loanString">
                             <tr>
-                                <td>강성지</td>
-                                <td>900805-1234567</td>
-                                <td>36000000</td>
-                                <td>5000000</td>
-                                <td>승인완료</td>
+                            	<form method="post" action="">
+                                <td>${loanString.name}</td>
+                                <td>${loanString.idNumber}</td>
+                                <td>${laonString.maxMoney}</td>
+                                <td>${laonString.requestMoney}</td>
+                                <td><select name="loan_status" id="select-id">
+ 	 									<option value="approve">승인</option>
+  										<option value="refuse">거절</option>
+									</select>
+								</td>
                                 <td>
-                                	<form method="post" action="">
     								<input type="hidden" name="name" value="your value"/>
     								<button type="submit">승인 하기</button>
-									</form>
 								</td>
+								</form>
                             </tr>
+                            </c:forEach>
                         </tbody>
                     </table>
                 </div>
