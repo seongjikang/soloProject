@@ -1,7 +1,5 @@
 package solo.shinhan.com.solo.data.network;
 
-import android.support.annotation.NonNull;
-
 import com.google.gson.JsonObject;
 
 import org.json.JSONObject;

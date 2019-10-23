@@ -2,7 +2,6 @@ package solo.shinhan.com.solo;
 
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -32,6 +31,7 @@ import java.util.ArrayList;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
+import androidx.appcompat.app.AppCompatActivity;
 import solo.shinhan.com.solo.common.helpers.CameraPermissionHelper;
 import solo.shinhan.com.solo.common.helpers.DisplayRotationHelper;
 import solo.shinhan.com.solo.common.helpers.FullScreenHelper;

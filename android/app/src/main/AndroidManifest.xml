@@ -11,6 +11,7 @@
     <uses-feature android:name="android.hardware.camera.ar" />
 
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -28,7 +29,7 @@
         <activity android:name=".loan.LoanInfoActivity" />
 
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:authorities="solo.shinhan.com.solo"
             android:exported="false"
             android:grantUriPermissions="true">
@@ -58,6 +59,13 @@
             android:name=".CollocateFurnitureActivity"
             android:configChanges="screenSize|orientation|layoutDirection"
             android:screenOrientation="landscape" />
+
+        <service
+            android:name=".FirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
 
         <meta-data
             android:name="com.google.ar.core"

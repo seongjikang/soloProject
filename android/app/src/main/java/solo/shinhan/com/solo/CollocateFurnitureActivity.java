@@ -7,8 +7,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
@@ -23,6 +21,8 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import solo.shinhan.com.solo.loan.LoanInfoActivity;
 import solo.shinhan.com.solo.loan.LoanTermsActivity;
 
