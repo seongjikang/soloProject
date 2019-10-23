@@ -48,6 +48,9 @@ public class HouseDetailActivity extends Activity {
 
 //        mFloorPlanView.setImageBitmap(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseFloorPlan());
         Picasso.get().load(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseFloorPlanString()).into(mFloorPlanView);
+        if(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseFloorPlanString() == null) {
+            mFloorPlanView.setImageBitmap(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseFloorPlan());
+        }
         mHouseName.setText(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseName());
         mHouseDetail.setText(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getAddressDetail());
         mHouseSize.setText(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseSize()+"㎡");
