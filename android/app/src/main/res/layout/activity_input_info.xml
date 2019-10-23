@@ -40,10 +40,11 @@
 
 		<ImageView
 			android:id="@+id/setting_btn"
-			android:layout_width="20dp"
-			android:layout_height="20dp"
+			android:layout_width="28dp"
+			android:layout_height="match_parent"
 			android:layout_marginRight="16dp"
-			android:src="@drawable/top_menu" />
+			android:padding="4dp"
+			android:src="@drawable/top_btn_home" />
 	</LinearLayout>
 	<!--toptitle-->
 
@@ -90,11 +91,11 @@
 			android:orientation="vertical">
 
 			<LinearLayout
-				android:background="@drawable/btn_light_gray_stroke"
-				android:padding="20dp"
-				android:layout_marginBottom="04dp"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content">
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="04dp"
+				android:background="@drawable/btn_light_gray_stroke"
+				android:padding="20dp">
 
 				<TextView
 					android:layout_width="70dp"
@@ -109,18 +110,18 @@
 					android:text="대기업/중소기업/공공기관" />
 
 				<ImageView
-					android:layout_gravity="center"
-					android:src="@drawable/down_arrow"
 					android:layout_width="14dp"
-					android:layout_height="14dp"/>
+					android:layout_height="14dp"
+					android:layout_gravity="center"
+					android:src="@drawable/down_arrow" />
 			</LinearLayout>
 
 			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
 				android:layout_marginBottom="04dp"
 				android:background="@drawable/btn_light_gray_stroke"
-				android:padding="20dp"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content">
+				android:padding="20dp">
 
 				<TextView
 					android:layout_width="70dp"
@@ -133,19 +134,20 @@
 					android:layout_marginLeft="20dp"
 					android:layout_weight="1"
 					android:text="(주)신한은행" />
+
 				<ImageView
-					android:layout_gravity="center"
-					android:src="@drawable/arrow_right"
 					android:layout_width="14dp"
-					android:layout_height="14dp"/>
+					android:layout_height="14dp"
+					android:layout_gravity="center"
+					android:src="@drawable/arrow_right" />
 			</LinearLayout>
 
 			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
 				android:layout_marginBottom="04dp"
 				android:background="@drawable/btn_light_gray_stroke"
-				android:padding="20dp"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content">
+				android:padding="20dp">
 
 				<TextView
 					android:layout_width="70dp"
@@ -158,19 +160,20 @@
 					android:layout_marginLeft="20dp"
 					android:layout_weight="1"
 					android:text="행원" />
+
 				<ImageView
-					android:layout_gravity="center"
-					android:src="@drawable/down_arrow"
 					android:layout_width="14dp"
-					android:layout_height="14dp"/>
+					android:layout_height="14dp"
+					android:layout_gravity="center"
+					android:src="@drawable/down_arrow" />
 			</LinearLayout>
 
 			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
 				android:layout_marginBottom="04dp"
 				android:background="@drawable/btn_light_gray_stroke"
-				android:padding="20dp"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content">
+				android:padding="20dp">
 
 				<TextView
 					android:layout_width="70dp"
@@ -183,19 +186,20 @@
 					android:layout_marginLeft="20dp"
 					android:layout_weight="1"
 					android:text="정규직" />
+
 				<ImageView
-					android:layout_gravity="center"
-					android:src="@drawable/down_arrow"
 					android:layout_width="14dp"
-					android:layout_height="14dp"/>
+					android:layout_height="14dp"
+					android:layout_gravity="center"
+					android:src="@drawable/down_arrow" />
 			</LinearLayout>
 
 			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
 				android:layout_marginBottom="04dp"
 				android:background="@drawable/btn_light_gray_stroke"
-				android:padding="20dp"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content">
+				android:padding="20dp">
 
 				<TextView
 					android:layout_width="70dp"
@@ -208,18 +212,19 @@
 					android:layout_marginLeft="20dp"
 					android:layout_weight="1"
 					android:text="2018년 09월" />
+
 				<ImageView
-					android:layout_gravity="center"
-					android:src="@drawable/down_arrow"
 					android:layout_width="14dp"
-					android:layout_height="14dp"/>
+					android:layout_height="14dp"
+					android:layout_gravity="center"
+					android:src="@drawable/down_arrow" />
 			</LinearLayout>
 
 			<LinearLayout
-				android:background="@drawable/btn_light_gray_stroke"
-				android:padding="20dp"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content">
+				android:layout_height="wrap_content"
+				android:background="@drawable/btn_light_gray_stroke"
+				android:padding="20dp">
 
 				<TextView
 					android:layout_width="70dp"
@@ -227,29 +232,29 @@
 					android:text="연소득" />
 
 				<EditText
-					android:gravity="right|center_vertical"
 					android:id="@+id/et_name"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_marginLeft="16dp"
 					android:layout_marginRight="16dp"
+					android:layout_weight="1"
 					android:background="@drawable/et_search"
+					android:gravity="right|center_vertical"
 					android:hint="연소득 입력"
 					android:inputType="number"
-					android:maxLength="20"
+					android:maxLength="10"
 					android:maxLines="1"
-					android:layout_weight="1"
 					android:paddingLeft="20dp"
 					android:paddingRight="20dp"
 					android:textSize="14dp" />
 
 				<TextView
-					android:text="만원"
-					android:gravity="center"
-					android:textColor="#333333"
-					android:textSize="14dp"
 					android:layout_width="30dp"
-					android:layout_height="wrap_content"/>
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:text="만원"
+					android:textColor="#333333"
+					android:textSize="14dp" />
 			</LinearLayout>
 		</LinearLayout>
 

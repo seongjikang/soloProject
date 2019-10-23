@@ -14,7 +14,6 @@ public class DataResultImpl implements DataResult {
 	public void getAllFurniture(Callback<JsonObject> callback) {
 		ApiServiceFactory apiServiceFactory = new ApiServiceFactory();
 		Call<JsonObject> call = apiServiceFactory.makeApiService().getFurnitureList();
-
 		call.enqueue(callback);
 		return;
 	}
@@ -23,7 +22,6 @@ public class DataResultImpl implements DataResult {
 	public void getAllHouse(Callback<JsonObject> callback) {
 		ApiServiceFactory apiServiceFactory = new ApiServiceFactory();
 		Call<JsonObject> call = apiServiceFactory.makeApiService().getHouseList();
-
 		call.enqueue(callback);
 		return;
 	}
@@ -32,7 +30,6 @@ public class DataResultImpl implements DataResult {
 	public void getUserList(Callback<JsonObject> callback) {
 		ApiServiceFactory apiServiceFactory = new ApiServiceFactory();
 		Call<JsonObject> call = apiServiceFactory.makeApiService().getUserList();
-
 		call.enqueue(callback);
 		return;
 	}
@@ -47,7 +44,6 @@ public class DataResultImpl implements DataResult {
 		param.addProperty("password", password);
 
 		Call<JsonObject> call = apiServiceFactory.makeApiService().joinUser(param);
-
 		call.enqueue(callback);
 		return;
 	}
@@ -59,7 +55,6 @@ public class DataResultImpl implements DataResult {
 		param.addProperty("uuid", uuid);
 
 		Call<JsonObject> call = apiServiceFactory.makeApiService().searchRegistUser(param);
-
 		call.enqueue(callback);
 		return;
 	}
@@ -71,9 +66,18 @@ public class DataResultImpl implements DataResult {
 		param.addProperty("name", name);
 		param.addProperty("id_number", idNumber);
 
-
 		Call<JsonObject> call = apiServiceFactory.makeApiService().certificateUser(param);
+		call.enqueue(callback);
+		return;
+	}
 
+	@Override
+	public void getResultOfLoanApply(Callback<JsonObject> callback, String idNumber) {
+		ApiServiceFactory apiServiceFactory = new ApiServiceFactory();
+		JsonObject param = new JsonObject();
+		param.addProperty("id_number", idNumber);
+
+		Call<JsonObject> call = apiServiceFactory.makeApiService().getResultOfLoanApply(param);
 		call.enqueue(callback);
 		return;
 	}

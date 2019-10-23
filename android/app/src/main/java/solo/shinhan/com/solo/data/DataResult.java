@@ -11,4 +11,5 @@ public interface DataResult {
 	public void joinUser(Callback<JsonObject> callback, String name, String uuid, String idNumber, String password);
 	public void searchRegistUser(Callback<JsonObject> callback, String uuid);
 	public void certificateUser(Callback<JsonObject> callback, String name, String idNumber);
+	public void getResultOfLoanApply(Callback<JsonObject> callback, String idNumber);
 }

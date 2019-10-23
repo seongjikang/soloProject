@@ -36,43 +36,12 @@
 
 		<ImageView
 			android:id="@+id/setting_btn"
-			android:layout_width="20dp"
-			android:layout_height="20dp"
+			android:layout_width="28dp"
+			android:padding="4dp"
+			android:layout_height="match_parent"
 			android:layout_marginRight="16dp"
-			android:src="@drawable/top_menu" />
+			android:src="@drawable/top_btn_home" />
 	</LinearLayout>
-
-	<RelativeLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="50dp"
-		android:layout_marginBottom="12dp"
-		android:background="@color/blue_common">
-
-		<EditText
-			android:id="@+id/search_house"
-			android:layout_width="match_parent"
-			android:layout_height="50dp"
-			android:layout_marginLeft="16dp"
-			android:layout_marginRight="16dp"
-			android:background="@drawable/et_search"
-			android:hint="지역 검색하기 ( ex) 충무로 )"
-			android:inputType="text"
-			android:maxLength="20"
-			android:maxLines="1"
-			android:paddingLeft="20dp"
-			android:paddingRight="50dp"
-			android:textSize="12dp" />
-
-		<ImageView
-			android:layout_width="20dp"
-			android:layout_height="20dp"
-			android:layout_alignParentRight="true"
-			android:layout_centerVertical="true"
-			android:layout_marginRight="36dp"
-			android:src="@drawable/icon_search" />
-	</RelativeLayout>
-
 
 	<LinearLayout
 		android:layout_width="match_parent"
@@ -96,4 +65,10 @@
 		android:layout_height="match_parent"
 		android:background="#FFFFFF" />
 
+	<View
+		android:id="@+id/dark_view"
+		android:visibility="gone"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="#55000000" />
 </LinearLayout>

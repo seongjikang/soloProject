@@ -43,6 +43,9 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
+import solo.shinhan.com.solo.loan.LoanInfoActivity;
+import solo.shinhan.com.solo.loan.LoanResultActivity;
+
 public class SelectActivity extends Activity {
 
 	private LinearLayout mTakePicture;
@@ -62,6 +65,12 @@ public class SelectActivity extends Activity {
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		if(getIntent().getStringExtra("goLoanList") != null && getIntent().getStringExtra("goLoanList").equals("goLoanList")) {
+			Intent intent = new Intent(getApplicationContext(), LoanResultActivity.class);
+			startActivity(intent);
+		}
+
 		setContentView(R.layout.activity_select);
 
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -89,7 +98,7 @@ public class SelectActivity extends Activity {
 			public void onClick(View view) {
 				Intent intent = new Intent(getBaseContext(), MainActivity.class);
 				startActivity(intent);
-				overridePendingTransition(0, 0);
+//				overridePendingTransition(0, 0);
 //                finish();
 			}
 		});
@@ -98,6 +107,13 @@ public class SelectActivity extends Activity {
 			@Override
 			public void onClick(View view) {
 				getPhotoFromAlbum();
+			}
+		});
+		((LinearLayout)findViewById(R.id.go_loan)).setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(getApplicationContext(), LoanInfoActivity.class);
+				startActivity(intent);
 			}
 		});
 	}
@@ -144,7 +160,6 @@ public class SelectActivity extends Activity {
 			}
 			intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
 			startActivityForResult(intent, FROM_CAMERA);
-			overridePendingTransition(0, 0);
 		}
 	}
 
@@ -186,7 +201,6 @@ public class SelectActivity extends Activity {
 		intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
 
 		startActivityForResult(intent, FROM_SELECT_PHOTO);
-		overridePendingTransition(0, 0);
 	}
 
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -212,13 +226,13 @@ public class SelectActivity extends Activity {
 				Intent intent = new Intent(getBaseContext(), RegistImageActivity.class);
 				intent.putExtra("imagePath", mImagePath);
 				startActivity(intent);
-				overridePendingTransition(0, 0);
+//				overridePendingTransition(0, 0);
 			}
 		} else if (requestCode == FROM_CAMERA && resultCode == RESULT_OK) {
 			Intent intent = new Intent(getBaseContext(), RegistImageActivity.class);
 			intent.putExtra("imagePath", mImagePath);
 			startActivity(intent);
-			overridePendingTransition(0, 0);
+//			overridePendingTransition(0, 0);
 			/*
 			Bitmap bitmap = (Bitmap) data.getExtras().get("data");
 			if (bitmap != null) {

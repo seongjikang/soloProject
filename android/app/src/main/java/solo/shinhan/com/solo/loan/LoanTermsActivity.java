@@ -10,9 +10,11 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 import solo.shinhan.com.solo.R;
+import solo.shinhan.com.solo.SelectActivity;
 
 public class LoanTermsActivity extends Activity {
 
@@ -79,6 +81,15 @@ public class LoanTermsActivity extends Activity {
 				onBackPressed();
 			}
 		});
+		((ImageView)findViewById(R.id.setting_btn)).setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(getApplicationContext(), SelectActivity.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
+				finish();
+			}
+		});
 	}
 
 	/**
@@ -86,9 +97,11 @@ public class LoanTermsActivity extends Activity {
 	 */
 	public void validCheck() {
 		if (!cb1.isChecked()) {
+			Toast.makeText(getApplicationContext(), "모든 항목에 동의해주세요", Toast.LENGTH_SHORT).show();
 			return; // alert
 		}
 		if (!cb2.isChecked()) {
+			Toast.makeText(getApplicationContext(), "모든 항목에 동의해주세요", Toast.LENGTH_SHORT).show();
 			return; // alert
 		}
 		Intent intent = new Intent(LoanTermsActivity.this, InputRealInfoActivity.class);

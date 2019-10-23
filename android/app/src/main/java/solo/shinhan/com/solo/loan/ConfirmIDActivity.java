@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import solo.shinhan.com.solo.R;
+import solo.shinhan.com.solo.SelectActivity;
 
 public class ConfirmIDActivity extends AppCompatActivity {
 
@@ -45,6 +46,15 @@ public class ConfirmIDActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View view) {
 				onBackPressed();
+			}
+		});
+		((ImageView)findViewById(R.id.setting_btn)).setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(getApplicationContext(), SelectActivity.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
+				finish();
 			}
 		});
 	}

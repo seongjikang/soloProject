@@ -6,10 +6,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 import solo.shinhan.com.solo.R;
+import solo.shinhan.com.solo.SelectActivity;
 
 public class InputInfoActivity extends Activity {
 
@@ -42,11 +45,24 @@ public class InputInfoActivity extends Activity {
 				onBackPressed();
 			}
 		});
+		((ImageView)findViewById(R.id.setting_btn)).setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(getApplicationContext(), SelectActivity.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
+				finish();
+			}
+		});
 	}
 
 	public void checkValid() {
 
 		// TODO check..
+		if(((EditText)findViewById(R.id.et_name)).getText() == null || ((EditText)findViewById(R.id.et_name)).getText().length() < 1) {
+			Toast.makeText(getApplicationContext(), "연소득을 입력하세요.", Toast.LENGTH_SHORT).show();
+			return;
+		}
 
 		Intent intent = new Intent(getApplicationContext(), ShowLimitActivity.class);
 		startActivity(intent);
