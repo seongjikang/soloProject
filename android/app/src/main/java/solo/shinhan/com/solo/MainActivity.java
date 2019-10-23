@@ -1,11 +1,13 @@
 package solo.shinhan.com.solo;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -40,6 +42,21 @@ public class MainActivity extends Activity {
        // mAdapter = new HouseInfoAdapter(getApplicationContext(),R.id.root_layout,oData);
         mHouseList = (ListView) findViewById(R.id.house_list_view);
         mBackBtn = (ImageView) findViewById(R.id.back_btn);
+        mBackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+        ((ImageView)findViewById(R.id.setting_btn)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SelectActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         Log.i("size",SoloSingleton.getInstance().getHouseInfoList().size()+"");
 
@@ -51,14 +68,8 @@ public class MainActivity extends Activity {
                 Intent intent = new Intent(getBaseContext(), HouseDetailActivity.class);
                 intent.putExtra("houseNo",i);
                 startActivity(intent);
-                overridePendingTransition(0,0);
+//                overridePendingTransition(0,0);
 //                finish();
-            }
-        });
-        mBackBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
             }
         });
     }
@@ -66,6 +77,6 @@ public class MainActivity extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
-        overridePendingTransition(0,0);
+//        overridePendingTransition(0,0);
     }
 }

@@ -43,4 +43,9 @@ public interface ApiService {
 	@POST("/v1/user/search/certificate")
 	public Call<JsonObject> certificateUser(@Body JsonObject body);
 
+	// 대출결과 확인하기
+	@Headers({ "Content-Type: application/json;charset=UTF-8"})
+	@POST("/v1/loan/loanstatus")
+	public Call<JsonObject> getResultOfLoanApply(@Body JsonObject body);
+
 }

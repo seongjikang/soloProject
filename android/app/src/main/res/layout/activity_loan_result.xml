@@ -5,7 +5,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:orientation="vertical"
-	tools:context=".loan.ShowLimitActivity">
+	tools:context=".loan.LoanResultActivity">
 
 
 	<!--toptitle-->
@@ -30,9 +30,8 @@
 			android:gravity="center">
 
 			<TextView
-				android:layout_width="200dp"
+				android:layout_width="66dp"
 				android:layout_height="wrap_content"
-				android:gravity="center"
 				android:text="신용대출"
 				android:textColor="#FFFFFF"
 				android:textSize="18dp" />
@@ -59,79 +58,136 @@
 			android:layout_height="wrap_content"
 			android:gravity="center"
 			android:padding="30dp"
-			android:text="고객님의 예상한도와\n예상금리를 알려드립니다."
+			android:text="고객님의 대출심사결과를 알려드립니다."
 			android:textColor="#777777"
 			android:textSize="14dp" />
 
 		<LinearLayout
+			android:id="@+id/ll_complete"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="16dp"
+			android:background="@drawable/btn_light_gray_stroke"
+			android:gravity="center"
+			android:orientation="vertical"
+			android:paddingTop="32dp"
+			android:paddingBottom="32dp"
+			android:visibility="gone">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:gravity="center_horizontal">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:text="고객님의 대출 신청이 "
+					android:textColor="#333333"
+					android:textSize="14dp" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:text="최종 승인 완료"
+					android:textColor="#328fed"
+					android:textSize="14dp"
+					android:textStyle="bold" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:text=" 되었습니다."
+					android:textColor="#333333"
+					android:textSize="14dp" />
+			</LinearLayout>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:text="[실행] 버튼을 눌러 대출을 실행해주세요."
+				android:textColor="#333333"
+				android:textSize="14dp" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/ll_apply"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="16dp"
+			android:background="@drawable/btn_light_gray_stroke"
+			android:gravity="center"
+			android:orientation="vertical"
+			android:paddingTop="32dp"
+			android:paddingBottom="32dp"
+			android:visibility="gone">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:gravity="center_horizontal">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:text="고객님의 대출 신청이 "
+					android:textColor="#333333"
+					android:textSize="14dp" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:text="신청중"
+					android:textColor="#24ad60"
+					android:textSize="14dp"
+					android:textStyle="bold" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:text=" 입니다."
+					android:textColor="#333333"
+					android:textSize="14dp" />
+			</LinearLayout>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:text="대출 심사가 완료되면 푸쉬 알림을 보내드립니다."
+				android:textColor="#333333"
+				android:textSize="14dp" />
+
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/ll_refuse"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_margin="16dp"
 			android:background="@drawable/btn_light_gray_stroke"
 			android:gravity="center"
 			android:paddingTop="32dp"
-			android:paddingBottom="32dp">
+			android:paddingBottom="32dp"
+			android:visibility="gone">
 
-			<LinearLayout
+			<TextView
 				android:layout_width="wrap_content"
-				android:layout_height="match_parent"
-				android:layout_weight="6"
+				android:layout_height="wrap_content"
 				android:gravity="center"
-				android:orientation="vertical">
+				android:text="고객님께서는 대출심사 기준에 부합되지 않아\n대출 진행이 어렵습니다. 다음 기회에 이용 부탁드립니다."
+				android:textColor="#333333"
+				android:textSize="14dp" />
 
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:gravity="center"
-					android:text="나의 예상한도"
-					android:textColor="#333333"
-					android:textSize="14dp" />
-
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_marginTop="08dp"
-					android:gravity="center"
-					android:text="36,000,000원"
-					android:textColor="#333333"
-					android:textSize="16dp"
-					android:textStyle="bold" />
-
-			</LinearLayout>
-
-			<View
-				android:layout_width="1dp"
-				android:layout_height="50dp"
-				android:background="#e9e9e9" />
-
-			<LinearLayout
-				android:layout_width="wrap_content"
-				android:layout_height="match_parent"
-				android:layout_weight="4"
-				android:gravity="center"
-				android:orientation="vertical">
-
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:gravity="center"
-					android:text="예상금리"
-					android:textColor="#333333"
-					android:textSize="14dp" />
-
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_marginTop="08dp"
-					android:gravity="center"
-					android:text="4.223%"
-					android:textColor="#3ab53c"
-					android:textSize="16dp"
-					android:textStyle="bold" />
-
-			</LinearLayout>
 		</LinearLayout>
-
 	</LinearLayout>
 
 	<Button
@@ -141,7 +197,8 @@
 		android:layout_margin="16dp"
 		android:background="@drawable/selector_confirm_btn"
 		android:padding="16dp"
-		android:text="대출 신청 완료"
+		android:text="실행"
 		android:textColor="#FFFFFF"
 		android:textSize="16dp" />
+
 </LinearLayout>

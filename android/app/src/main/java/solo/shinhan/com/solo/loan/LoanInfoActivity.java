@@ -10,6 +10,7 @@ import android.widget.ImageView;
 
 import androidx.core.content.ContextCompat;
 import solo.shinhan.com.solo.R;
+import solo.shinhan.com.solo.SelectActivity;
 
 public class LoanInfoActivity extends Activity {
 
@@ -36,6 +37,14 @@ public class LoanInfoActivity extends Activity {
 				startActivity(intent);
 			}
 		});
+		((Button)findViewById(R.id.btn_loan_result)).setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				// TODO 대출 결과 확인
+				Intent intent = new Intent(LoanInfoActivity.this, LoanResultActivity.class);
+				startActivity(intent);
+			}
+		});
 	}
 
 	private void setTopTitleView() {
@@ -46,5 +55,15 @@ public class LoanInfoActivity extends Activity {
 				onBackPressed();
 			}
 		});
+		((ImageView)findViewById(R.id.setting_btn)).setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(getApplicationContext(), SelectActivity.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
+				finish();
+			}
+		});
+
 	}
 }

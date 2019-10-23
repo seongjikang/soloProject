@@ -40,10 +40,11 @@
 
 		<ImageView
 			android:id="@+id/setting_btn"
-			android:layout_width="20dp"
-			android:layout_height="20dp"
+			android:layout_width="28dp"
+			android:padding="4dp"
+			android:layout_height="match_parent"
 			android:layout_marginRight="16dp"
-			android:src="@drawable/top_menu" />
+			android:src="@drawable/top_btn_home" />
 	</LinearLayout>
 	<!--toptitle-->
 

@@ -66,7 +66,7 @@ public class HouseDetailActivity extends Activity {
                 intent.putExtra("category","not");
                 intent.putExtra("furnitureType",-1);
                 startActivity(intent);
-                overridePendingTransition(0,0);
+//                overridePendingTransition(0,0);
                 finish();
             }
         });
@@ -77,12 +77,23 @@ public class HouseDetailActivity extends Activity {
                 onBackPressed();
             }
         });
+
+        ((ImageView)findViewById(R.id.setting_btn)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SelectActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        overridePendingTransition(0,0);
+//        overridePendingTransition(0,0);
     }
 
     /*@Override

@@ -8,9 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 import solo.shinhan.com.solo.R;
+import solo.shinhan.com.solo.SelectActivity;
 
 public class InputRealInfoActivity extends Activity {
 
@@ -52,6 +54,15 @@ public class InputRealInfoActivity extends Activity {
 				onBackPressed();
 			}
 		});
+		((ImageView)findViewById(R.id.setting_btn)).setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(getApplicationContext(), SelectActivity.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
+				finish();
+			}
+		});
 	}
 
 	/**
@@ -59,12 +70,15 @@ public class InputRealInfoActivity extends Activity {
 	 */
 	private void checkValid() {
 		if(et_name.getText() == null || et_name.getText().length() < 1) {
+			Toast.makeText(getApplicationContext(), "이름을 입력해주세요.", Toast.LENGTH_SHORT).show();
 			return;
 		}
-		if(et_id1.getText() == null || et_id1.getText().length() < 1) {
+		if(et_id1.getText() == null || et_id1.getText().length() < 6) {
+			Toast.makeText(getApplicationContext(), "주민등록번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
 			return;
 		}
-		if(et_id2.getText() == null || et_id2.getText().length() < 1) {
+		if(et_id2.getText() == null || et_id2.getText().length() < 7) {
+			Toast.makeText(getApplicationContext(), "주민등록번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
 			return;
 		}
 		Intent intent = new Intent(getApplicationContext(), InputInfoActivity.class);

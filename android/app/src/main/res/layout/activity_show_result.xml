@@ -20,8 +20,7 @@
 			android:id="@+id/back_btn"
 			android:layout_width="20dp"
 			android:layout_height="20dp"
-			android:layout_marginLeft="16dp"
-			android:src="@drawable/top_back" />
+			android:layout_marginLeft="16dp" />
 
 		<LinearLayout
 			android:layout_width="match_parent"
@@ -40,10 +39,11 @@
 
 		<ImageView
 			android:id="@+id/setting_btn"
-			android:layout_width="20dp"
-			android:layout_height="20dp"
+			android:layout_width="28dp"
+			android:padding="4dp"
+			android:layout_height="match_parent"
 			android:layout_marginRight="16dp"
-			android:src="@drawable/top_menu" />
+			android:src="@drawable/top_btn_home" />
 	</LinearLayout>
 	<!--toptitle-->
 
@@ -53,13 +53,19 @@
 		android:layout_weight="1"
 		android:orientation="vertical">
 
+		<ImageView
+			android:layout_marginTop="30dp"
+			android:layout_gravity="center"
+			android:src="@drawable/check"
+			android:layout_width="70dp"
+			android:layout_height="70dp"/>
 
 		<TextView
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:gravity="center"
-			android:padding="30dp"
-			android:text="10일 이내(영업일)에\n직장/소득정보를 확인해 주세요."
+			android:padding="10dp"
+			android:text="대출 신청이 완료되었습니다.\n10일 이내(영업일)에 직장/소득정보를 확인해 주세요."
 			android:textColor="#777777"
 			android:textSize="14dp" />
 
@@ -140,7 +146,7 @@
 		android:layout_margin="16dp"
 		android:background="@drawable/selector_confirm_btn"
 		android:padding="16dp"
-		android:text="SOL로 서류 제출"
+		android:text="신청 목록 확인하기"
 		android:textColor="#FFFFFF"
 		android:textSize="16dp" />
 </LinearLayout>
