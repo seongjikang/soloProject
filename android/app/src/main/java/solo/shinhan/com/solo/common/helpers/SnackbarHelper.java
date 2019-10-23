@@ -15,10 +15,11 @@
 package solo.shinhan.com.solo.common.helpers;
 
 import android.app.Activity;
-import android.support.design.widget.BaseTransientBottomBar;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.TextView;
+
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 
 /**
  * Helper to manage the sample snackbar. Hides the Android boilerplate code, and exposes simpler
@@ -112,12 +113,13 @@ public final class SnackbarHelper {
                     });
               }
             }
+            /*
             ((TextView)
                     messageSnackbar
                         .getView()
                         .findViewById(android.support.design.R.id.snackbar_text))
                 .setMaxLines(maxLines);
-            messageSnackbar.show();
+            messageSnackbar.show();*/
           }
         });
   }

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
@@ -35,6 +34,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.List;
 
+import androidx.annotation.Nullable;
 import io.reactivex.functions.Consumer;
 import solo.shinhan.com.solo.security.AES256Util;
 

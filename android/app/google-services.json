@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "560152240710",
+    "firebase_url": "https://solo-f47d3.firebaseio.com",
+    "project_id": "solo-f47d3",
+    "storage_bucket": "solo-f47d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:560152240710:android:5ac58ea4173d7bf422e047",
+        "android_client_info": {
+          "package_name": "solo.shinhan.com.solo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "560152240710-1tt7l8qesepah495scta2664r5264ig8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJL7L_mntaERdFPs6689xSlIMjvcgQ5Ok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "560152240710-1tt7l8qesepah495scta2664r5264ig8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
