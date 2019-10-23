@@ -65,6 +65,9 @@ public class HouseInfoAdapter extends BaseAdapter{
         holder.mAddressDetail.setText(mItemList.get(i).getAddressDetail());
 //        holder.mHouseView.setImageBitmap(mItemList.get(i).getHouseView());
         Picasso.get().load(mItemList.get(i).getHouseViewString()).into(holder.mHouseView);
+        if(mItemList.get(i).getHouseViewString() == null) {
+            holder.mHouseView.setImageBitmap(mItemList.get(i).getHouseView());
+        }
 
         return view;
     }

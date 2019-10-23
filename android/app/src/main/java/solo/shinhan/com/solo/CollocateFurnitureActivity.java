@@ -94,6 +94,10 @@ public class CollocateFurnitureActivity extends Activity {
             }
         });
 
+        if(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseFloorPlanString() == null) {
+            mFloorPlanLayout.setBackground(new BitmapDrawable(SoloSingleton.getInstance().getHouseInfoList().get(houseNo).getHouseFloorPlan()));
+        }
+
         mCollocateFurnitureView = new CollocateFurnitureView(getApplicationContext());
 
         if (getIntent().getIntExtra("currentDirection",-1) != -1) {
